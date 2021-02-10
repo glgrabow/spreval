@@ -1,0 +1,40 @@
+#function to do exploratory data analysis of object array
+#histogram, boxplot, density and quartile plots constructed
+
+"eda.shape" = function(x,title=NA,qq=T)
+{
+  par(mfrow = c(2, 2))
+  #extract name of array
+  nm <-deparse(substitute(x))
+  hist(x, xlab = nm, ylab = "no. observations",main=title)
+  boxplot(x, plot = T, notch = T, col = NULL,border=1,
+          staplelty = 1, staplewex = 1,
+          staplehex = 1, outchar = T, outpch = NA, outline = T, outwex
+          = 1, main=title,ylab=nm)
+  iqd <- summary(x)[5] - summary(x)[2]
+  plot(density(x, width = 2 * iqd, na.rm = T), xlab = nm, ylab = "",
+       type = "l",main=title)
+  if(qq){qqnorm(x, main=title,pch = 1)}
+  if(qq){qqline(x)}
+  invisible()
+  par(mfrow=c(1,1))#set back to one plot per page
+
+}
+
+#function to spit out summary stats, skewness and kurtosis
+"eda.stats" = function(x)
+{
+  library(fBasics)
+  print(summary(x))
+  print(paste("skew",skewness(x)))
+  print(paste("kurtosis",kurtosis(x)))
+}
+
+#function to do quantiles for 0.001 to 0.999
+#and return interquartile range
+"quart" = function(x)
+{
+  quantile(x, c(0.001, 0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7,
+                0.8, 0.9, 0.95, 0.99, 0.999))
+  diff(quantile(x, c(.25, .75)))
+}

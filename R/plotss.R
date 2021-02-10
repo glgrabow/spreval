@@ -1,0 +1,40 @@
+plotss=function(cdata,sploc,con=T,xlab=NA,ylab=NA,title=NA,labelpoints=T,imcol=F,edastat=NA)
+{
+#cdata is n x 3 matrix of catch can data; 1st column x, 2nd column y, 3rd column catch depths
+#sploc is n x 2 matrix of 1st column x, second column y sprinkler location.  x=4, y = 4 for 4 sprinklers
+#with cans in-between
+# xlab and ylab for plan view plot of sprinklers and catch cans, provide units too if wish
+#setup plotting space
+plot.new()
+par(mfrow=c(1,1))#set back to one plot per page
+plot(min(sploc[ ,1]):max(sploc[ ,1]),min(sploc[ ,2]):max(sploc[ ,2]),asp=1,xlab=xlab,ylab=ylab,type="n",main=title)
+#plot sprinkler locations - plan view
+sprinklerx<-sploc[ ,1];sprinklery<-sploc[ ,2]
+points(sprinklerx,sprinklery,pch=16)
+cx<-cdata[ ,1];cy<-cdata[ ,2]
+depth<-cdata[ ,3]
+densigram<-interp(cx,cy,depth)
+col<-gray.colors(n, start = 0.3, end = 0.9, gamma = 2.2, alpha = NULL, rev = FALSE)#default image color is b/w
+if(imcol){col = hcl.colors(12, "YlOrRd", rev = TRUE)} #color image which is normal default for image function
+image(densigram, col=col,add=T)
+#image.legend(densigram,30,80,size=c(1.5,.10),hor=T,lab=c(5,0,7),cex=0.75,nint=25)
+if(con){
+contour(densigram, add=T, plotit=T,labex=0.6)
+}
+points(cx,cy,pch=1,col=1)#plot rain gages -plan view
+if(labelpoints){
+  offset.x<-par("pin")[1]/50
+  offset.y<-par("pin")[2]/50*(max(cy)-min(cy))
+  label.locx<-cx-offset.x
+  label.locy<-cy+offset.y
+  gage.labels<-depth
+  text(label.locx,label.locy,gage.labels,cex=0.7,col=1)
+}
+
+if(edastat){
+eda.shape(depth,title=title)
+eda.stats(depth)
+}
+
+}
+
