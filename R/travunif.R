@@ -29,7 +29,7 @@
     segments(-lane.space/2,0,-lane.space/2,10+10,lty=2)#R requires explicit x1,y1,x2,y2
     segments(lane.space/2,0,lane.space/2,10+10,lty=2)#R requires explicit x1,y1,x2,y2
     segments(0,0,0,10+10,lty=1,lwd=2,col=1)# hose in center of plot
-  #now plot adjacent left and right pulls with catch can locations given lane spacing, and catch can depths 
+  #now plot adjacent left and right pulls with catch can locations given lane spacing, and catch can depths
   #print(i);print(j);print(left.pull);print(right.pull)
   left.pull<-gage.loc-lane.space
   right.pull<-gage.loc+lane.space
@@ -65,9 +65,9 @@
     #print(i);print(j);print(k);print(l)
     #check to see if beyond interpolable bounds, if so use last real overlap gage (not interp)
     #print(depth.over.left$y[no.gages/2-no.out-k+1])
-    
+
     #doesn't return TRUE when =="NA" so use test with is.na
-    if(no.gages/2-no.out-k+1>0){    
+    if(no.gages/2-no.out-k+1>0){
       if(is.na(depth.over.left$y[no.gages/2-no.out-k+1]))
       {add.left<-depths[no.gages]}
       else add.left<-depth.over.left$y[no.gages/2-no.out-k+1]
@@ -76,8 +76,7 @@
     corr.depths[start.left-k+1]=depths[start.left-k+1]+add.left #left side
     if(is.na(depth.over.right$y[no.gages-no.out-k+1]))
     {add.right<-depths[no.gages/2]}
-    
-    else
+      else
       add.right<-depth.over.right$y[no.gages-no.out-k+1]
     #print(add.right)
     corr.depths[start.right-k+1]=depths[start.right-k+1]+add.right # right side
@@ -107,12 +106,12 @@
 
 #if plot requested -  plot cross-section of depths
   if(plot){
-    
+
     leg.colors<-c(1,1);leg.pch<-c(1,NA);leg.cex<-0.7;leg.lines<-c(0,1)
     leg.names<-c("raw catch depth", "ovelap depth")
     #scale up y axis for superimposed depths
     #predict scaling by using DU50
-    stretch.depths<-depths/(DU50.curr/100) 
+    stretch.depths<-depths/(DU50.curr/100)
     ######################################################################
     #determine scaling factors for plotting labels on plot
     ######################################################################
@@ -125,18 +124,19 @@
     #plotit.raw<-sort.col(raw.loc.depths,columns.to.sort="@ALL",columns.to.sort.by=1,ascending=TRUE)
     plotit.raw<-with(raw.loc.depths,raw.loc.depths[order(raw.loc.depths$gage.loc), ])#R equivalent sort
     # set plot and plot raw depths
-   
+
     plot(xlim<-c(min(plotit.raw[ ,1]),max(plotit.raw[ ,1])),ylim<-c(0,max(use.depths*1.1)),type="n",xlab="distance from gun",ylab="depth") #set plot bounds
-    points(plotit.raw[ ,1],plotit.raw[ ,2])# plot raw catch can depths 
-    
+    points(plotit.raw[ ,1],plotit.raw[ ,2])# plot raw catch can depths
+
     plotit.use<-data.frame(cbind(use.locations,use.depths))
     #print(plotit.use)
-    plotit.use<-with(plotit.use,plotit.use[order(plotit.use$use.locations), ])#R way to sort
+    plotit.use<-with(plotit.use,plotit.use[order(plotit.use$use.locations), ])#R sort to draw lines by location
     lines(plotit.use[ ,1],plotit.use[ ,2],col=1,lty=1)
-    
+
     leg.x<-mean(c(maxx,middle.x)*1.3)
     legend("topright",leg.names,col=leg.colors,lty=leg.lines,pch=leg.pch,cex=leg.cex)
-    
+
   }
-  return(list(CU.curr,DU50.curr,DU.curr))
+  uniList<-list("CU"=CU.curr,"DU50"=DU50.curr,"DU"=DU.curr)
+  return(uniList)
 }

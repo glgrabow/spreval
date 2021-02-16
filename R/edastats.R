@@ -25,16 +25,18 @@
 "eda.stats" = function(x)
 {
   library(fBasics)
-  print(summary(x))
-  print(paste("skew",skewness(x)))
-  print(paste("kurtosis",kurtosis(x)))
+  summary<-summary(x)
+  skew<-skewness(x)
+  kurt<-kurtosis(x)
+  return(list("summary"=summary,"skew"=skew,"kurt"=kurt))
 }
 
 #function to do quantiles for 0.001 to 0.999
 #and return interquartile range
 "quart" = function(x)
 {
-  quantile(x, c(0.001, 0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7,
+  q<-quantile(x, c(0.001, 0.01, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7,
                 0.8, 0.9, 0.95, 0.99, 0.999))
-  diff(quantile(x, c(.25, .75)))
+  d<-diff(quantile(x, c(.25, .75)))
+  return(list("quantiles"=q,"inter"=d))
 }

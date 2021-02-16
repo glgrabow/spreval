@@ -1,25 +1,35 @@
 \name{travunif}
 \alias{travunif}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{funtion to compute CU and DU of traveling gun irrigation system
+\title{Compute CU and DU of traveling gun irrigation systems
 %%  ~~function to do ... ~~
 }
-\description{
+\description{This function computes 3 values of sprinkler irrigation distribution uniformity -
+CU (Christiansen's coefficient of uniformity), DU (dist. unif. of low quarter), DU50 (dist. unif. of low half)
+for traveling gun irrigation systems.  Data from a single transect of catch cans from one hard hose pull is used, and data is overlapped to account for additional contribution from adjacent traveller pulls.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-travunif(x)
+travunif(ls,cs,lcdata,rcdata,site=NA,plot=T)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
+  \item{ls}{lane spacing}
+  \item{cd}{catch can spacing}
+  \item{lcdata}{catch can data from cans left of hose - order is from closet to hose outward}
+  \item{rcdata}{catch can data from cans right of hose - order is from closet to hose outward}
+  \item{site}{optional character label for location (site) of evaluation  - used in plot titles}
+  \item{plot}{logical argument to invoke plotting}
 %%     ~~Describe \code{x} here~~
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
-\value{
+\value{A named list with the following items:
+\item{CU}{CU from catch can data with overlap from adjacent lanes}
+\item{DU50}{DU50 from catch can data with overlap from adjacent lanes}
+\item{DU}{DU from catch can data with overlap from adjacent lanes}
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
@@ -27,9 +37,12 @@ travunif(x)
 %% ...
 }
 \references{
+Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997b.  Field calibration procedures for animal wastewater application equipment, hard hose and cable tow traveler irrigation system. NC Cooperative Extension Service publication  AG-553-2.  Raleigh, NC
+
+Liu, Z., G.L. Grabow, R.L. Huffman, J. Osborne, and R.O. Evans. 2012.  Factors Affecting Uniformity of Irrigation-Type Manure Application Systems. Applied Eng. in Agric.  28(1)
 %% ~put references to the literature/web site here ~
 }
-\author{
+\author{Garry Grabow
 %%  ~~who you are~~
 }
 \note{
@@ -42,14 +55,23 @@ travunif(x)
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+# units can be SI or US Customary, e.g.
+# SI - mm for catch can data and m for lane and catch
+# can spacing
+# U.S. cust. -  in. for catch can data and ft for lane
+# and catch can spacing
+left<-c(0.17,0.22,0.18,0.21,0.13,0.05,0.02,0) # units are in.
+right<-c(0.16,0.2,0.21,0.2,0.21,0.13,0.06,0.02)
+ls<-165;gs<-16 # units are ft
+travunif(ls,gs,left,right)
+%%##---- Should be DIRECTLY executable !! ----
+%%##-- ==>  Define data, use random,
+%%##--	or do  help(data=index)  for the standard data sets.
 
-## The function is currently defined as
-function (x)
-{
-  }
+%## The function is currently defined as
+%function (x)
+%{
+%  }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory (show via RShowDoc("KEYWORDS")):
