@@ -1,7 +1,7 @@
 #function to do exploratory data analysis of object array
 #histogram, boxplot, density and quartile plots constructed
 
-"eda.shape" = function(x,title=NA,qq=T)
+"eda.shape" = function(x,title="",qq=T)
 {
   par(mfrow = c(2, 2))
   #extract name of array
@@ -24,10 +24,10 @@
 #function to spit out summary stats, skewness and kurtosis
 "eda.stats" = function(x)
 {
-  library(fBasics)
+
   summary<-summary(x)
-  skew<-skewness(x)
-  kurt<-kurtosis(x)
+  skew<-timeDate::skewness(x)#point to timeDate function for skew and kurtosis
+  kurt<-timeDate::kurtosis(x)
   return(list("summary"=summary,"skew"=skew,"kurt"=kurt))
 }
 

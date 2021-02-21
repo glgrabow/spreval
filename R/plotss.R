@@ -1,4 +1,4 @@
-plotss=function(cdata,sploc,con=T,xlab=NA,ylab=NA,title=NA,labelpoints=T,imcol=F,edastat=NA)
+plotss=function(cdata,sploc,con=T,xlab="",ylab="",title="",labelpoints=TRUE,imcol=FALSE,edastat=FALSE)
 {
 #cdata is n x 3 matrix of catch can data; 1st column x, 2nd column y, 3rd column catch depths
 #sploc is n x 2 matrix of 1st column x, second column y sprinkler location.  x=4, y = 4 for 4 sprinklers
@@ -13,8 +13,8 @@ sprinklerx<-sploc[ ,1];sprinklery<-sploc[ ,2]
 points(sprinklerx,sprinklery,pch=16)
 cx<-cdata[ ,1];cy<-cdata[ ,2]
 depth<-cdata[ ,3]
-densigram<-interp(cx,cy,depth)
-col<-gray.colors(n, start = 0.3, end = 0.9, gamma = 2.2, alpha = NULL, rev = FALSE)#default image color is b/w
+densigram<-akima::interp(cx,cy,depth)
+col<-gray.colors(12, start = 0.3, end = 0.9, gamma = 2.2, alpha = NULL, rev = FALSE)#default image color is b/w
 if(imcol){col = hcl.colors(12, "YlOrRd", rev = TRUE)} #color image which is normal default for image function
 image(densigram, col=col,add=T)
 #image.legend(densigram,30,80,size=c(1.5,.10),hor=T,lab=c(5,0,7),cex=0.75,nint=25)

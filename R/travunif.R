@@ -99,8 +99,8 @@
   use.locations<-append(use.left.loc,use.right.loc)
   #calculate CU
   CU.curr<-CU(use.depths)
-  #calculate DU50
-  DU50.curr<-DU50(use.depths)
+  #calculate DUlh
+  DUlh.curr<-DUlh(use.depths)
   #calculate DU
   DU.curr<-DU(use.depths)
 
@@ -110,8 +110,8 @@
     leg.colors<-c(1,1);leg.pch<-c(1,NA);leg.cex<-0.7;leg.lines<-c(0,1)
     leg.names<-c("raw catch depth", "ovelap depth")
     #scale up y axis for superimposed depths
-    #predict scaling by using DU50
-    stretch.depths<-depths/(DU50.curr/100)
+    #predict scaling by using DUlh
+    stretch.depths<-depths/(DUlh.curr/100)
     ######################################################################
     #determine scaling factors for plotting labels on plot
     ######################################################################
@@ -137,6 +137,6 @@
     legend("topright",leg.names,col=leg.colors,lty=leg.lines,pch=leg.pch,cex=leg.cex)
 
   }
-  uniList<-list("CU"=CU.curr,"DU50"=DU50.curr,"DU"=DU.curr)
+  uniList<-list("CU"=CU.curr,"DUlh"=DUlh.curr,"DU"=DU.curr)
   return(uniList)
 }

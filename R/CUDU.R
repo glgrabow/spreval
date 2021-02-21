@@ -18,8 +18,8 @@
   mean(x[1:end])/mean(x)*100
 }
 
-#function to compute Distribution uniformmity of low half
-"DU50"=function(x)
+#function to compute Distribution uniformity of low half
+"DU.lh"=function(x)
 {
   x<-sort(x)
   end<-round(length(x)/2,digits=0)
@@ -75,7 +75,7 @@
     excess<-sum(above.x*yfract)#multiply arrays and sum excess
     #print(excess)
     eff<-1-excess/target
-  # check to see if sum is 1 for above and below target, or in inches so will vary from 1
+  # above and below in units of length (mm, in.) fo eff + adeq will not sum to 1.0
     below.x<-xx[xx<=target];below.x<-below.x-target# array of x - target for above target, i.e., excess irrigation
     below.y<-yy[xx <= target];tot.y<-sum(yy);yfract<-below.y/tot.y #y above target as ratio of total y
     deficit<-sum(below.x*yfract)

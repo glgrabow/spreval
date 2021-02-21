@@ -1,7 +1,7 @@
 \name{PELQ}
 \alias{PELQ}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{function to compute potential applicatoin efficiency of low quarter for sprinkler irrigation system
+\title{function to compute potential application efficiency of low quarter for sprinkler irrigation system
 %%  ~~function to do ... ~~
 }
 \description{

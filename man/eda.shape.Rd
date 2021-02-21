@@ -1,36 +1,38 @@
 \name{eda.shape}
 \alias{eda.shape}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{function to plot distribution of an array
+\title{Generate distribution plots of an array
 %%  ~~function to do ... ~~
 }
-\description{
+\description{Generate histogram, boxplot, density, and quartile plots
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-eda.shape(x)
+eda.shape(x,title="",qq=T)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
+  \item{x}{array}
+  \item{title}{character; optional title for plots}
+  \item{qq}{logical; for plotting quartile plot, default=T}
 %%     ~~Describe \code{x} here~~
 }
-}
-\details{
+
+\details{This function is modified from the SPlus version of the same name, see references
 %%  ~~ If necessary, more details than the description above ~~
 }
-\value{
+\value{Four plots on one page [mfrow = c(2, 2)]- histogram, boxplot, density, and quartile
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+\references{TIBCO Spotfire S+ 8.2 2010. Guide to Statistics, v0l. 1, p.124ff
 %% ~put references to the literature/web site here ~
 }
-\author{
-%%  ~~who you are~~
+\author{Garry Grabow \email{glgrabow@ncsu.edu
+}
 }
 \note{
 %%  ~~further notes~~
@@ -38,19 +40,18 @@ eda.shape(x)
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+\seealso{\code{\link{eda.stats}},\code{\link[graphics]{hist}},
+\code{\link[graphics]{boxplot}},\code{\link[stats]{density}},
+\code{\link[stats]{qqnorm}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x)
-{
+#generate and plot univariate normally distributed data
+require(graphics)
+x<-rnorm(25,1,0.25)
+eda.shape(x,title="my normal data")
   }
-}
+
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory (show via RShowDoc("KEYWORDS")):
 % \keyword{ ~kwd1 }

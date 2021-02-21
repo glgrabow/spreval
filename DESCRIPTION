@@ -1,17 +1,16 @@
 Package: spreval
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Sprinkler Irrigation Uniformity and Efficiency
 Version: 0.1.0
 Author: Garry Grabow
 Maintainer: The package maintainer <glgrabow@ncsu.edu>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
+Description: functions to evalaute sprinkler irrigation uniformity
+    and efficiency using standard and other measures.
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 Imports:
-    fBasics,
-    akima
+    timeDate,akima
 Suggests: 
     knitr,
     rmarkdown

@@ -27,30 +27,33 @@ DU(x)
 %% ...
 }
 \references{
+Keller, J., and R. D. Bliesner. 2000. Sprinkler and Trickle Irrigation. Caldwell, N.J.: Blackburn Press
 %% ~put references to the literature/web site here ~
 }
-\author{
+\author{Garry Grabow \email{glgrabow@ncsu.edu
 %%  ~~who you are~~
-}
+}}
 \note{
 %%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+\seealso{\code{\link{CU}},\code{\link{DU50}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+# data below are volumes caught in ml.  Catch cans must be of
+# equal surface area at top when using volume data
+x<-c(47,42,45,24,13,26,33,34,27,30,40,44,32,12,12)
+xdu<-DU(x)
+#round results
+durnd<-round(xdu,2)
+xdu
+durnd
 
-## The function is currently defined as
-function (x)
-{
-  }
 }
+
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory (show via RShowDoc("KEYWORDS")):
 % \keyword{ ~kwd1 }

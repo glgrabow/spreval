@@ -1,10 +1,11 @@
 \name{CU}
 \alias{CU}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{function to compute CU of sprinkler irrigation system
+\title{Compute CU for Sprinkler Irrigation Systems
 %%  ~~function to do ... ~~
 }
-\description{
+\description{Compute Christiansen Coefficient of Uniformity (CU or UC).
+Coefficient is based upon the deviations from the mean value.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -19,17 +20,20 @@ CU(x)
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
-\value{
+\value{CU value in percentage.  Note that CU can take on a negative value if the
+average deviation from the mean is greater than the mean.
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
+\references{Christiansen, J. E. 1942. Irrigation by sprinkling. California Agricultural Experiment Station Bulletin 670. Berkeley, Cal.: University of California.
+
+Keller, J., and R. D. Bliesner. 2000. Sprinkler and Trickle Irrigation. Caldwell, N.J.: Blackburn Press
 %% ~put references to the literature/web site here ~
 }
-\author{
+\author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
 }
 \note{
@@ -38,16 +42,21 @@ CU(x)
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+\seealso{\code{\link{DU}},\code{\link{DU50}}
+
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+# data below are volumes caught in ml.  Catch cans must be of
+# equal surface area at top when using volume data
+x<-c(47,42,45,24,13,26,33,34,27,30,40,44,32,12,12)
+xcu<-CU(x)
+#round results
+curnd<-round(xcu,2)
+xcu
+curnd
 
-## The function is currently defined as
-function (x)
+
 {
   }
 }
