@@ -22,7 +22,7 @@ PELQ(x,SI=TRUE,rate,ss,sl,dur)
   \item{dur}{duration or irrigation event, min}
 %%     ~~Describe \code{x} here~~
 }
-}
+
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
@@ -41,7 +41,7 @@ Utah State University, Logan, Utah. \url{https://pdf.usaid.gov/pdf_docs/PNAAG745
 }
 \author{Garry Grabow \email{glgrabow@ncsu.edu
 %%  ~~who you are~~
-}
+}}
 \note{
 %%  ~~further notes~~
 }
@@ -50,7 +50,7 @@ Utah State University, Logan, Utah. \url{https://pdf.usaid.gov/pdf_docs/PNAAG745
 
 \seealso{\code{\link{PELQ}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+}}
 \examples{
 #see pp 41-43 of reference document
 SI<-FALSE # use U.S. customary units
@@ -61,15 +61,10 @@ sl<-50; ss<-30 # 30 x 50 ft sprinkler x lateral spacing
 dur<-60 # 1 hr test duration (dur. in min)
 PELQ(x,SI=FALSE,rate,ss,sl,dur)
 
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x)
-{
-  }
 }
+
+
+
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory (show via RShowDoc("KEYWORDS")):
 % \keyword{ ~kwd1 }

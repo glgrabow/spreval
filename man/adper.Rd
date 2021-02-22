@@ -1,63 +1,77 @@
 \name{adper}
 \alias{adper}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Compute percentiles less than and greater than target depth,
-and amount of under- or over-irrigation
+\title{Compute percentiles of area receiving less than and greater than target depth
 %%  ~~function to do ... ~~
 }
 \description{
 This returns measures of the percentage (fraction) of areas receiving
 less or more application than the target depth, assuming catch cans
 represent approximately equal areas.  It also a measure of adequacy
-and efficiency by areas of density curve receiving amounts equal to or
-more of the targe (adequacy) and less than or equal to target (efficiency)
+and efficiency determined from areas of a density curve receiving amounts equal to or
+more of the target (adequacy) and less than or equal to target (efficiency)
 
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-adper(x)
+adper(x,target,plot=TRUE)
 }
-%- maybe also 'usage' for other objects documented here.
+%%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
+  \item{x}{array of catch can depths}
+  \item{target}{target depth meant to be applied}
+  \item{plot}{logical; plot density and ecdf plots of depths and target line}
+ }
+
 %%     ~~Describe \code{x} here~~
+
+\details{results are given as determined by both a density function and empirical cumulative
+distribution function (ecdf). if target is equal to soil moisture depletion, then 1- efficiency is
+the percentile of area that loses water to deep perolation (not held in root zone). Adequacy and efficiency percentiles should add to approximatley 1.0. Note that definitions of adequacy and efficiency here based only on percentiles is not a standard definition as deviation from target depth is not considered.  See \code{\link{eff} for a more traditional approach.}
 }
-}
-\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
-\value{
+
+\value{named list, including;
+ \item{adequacy.density}{percentile receiving >= target amount determined from density curve}
+ \item{eff.density}{percentile receiving <=target amount as determined from density curve}
+ \item{adequacy.ecdf}{same as adequacy.density but as determined from ecdf function}
+ \item{eff.ecdf}{same as eff.density but as determined from ecdf function}
+ }
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
-}
+
 \references{
 %% ~put references to the literature/web site here ~
 }
-\author{
+\author{Garry Grabow \email{glgrabow@ncsu.edu}}
 %%  ~~who you are~~
-}
+
 \note{
 %%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+\seealso{\code{\link{eff},\code{\link{density}},\code{\link{ecdf}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+}}
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
+#data from same exercise as PELQ example
+x<-c(.23,.31,.24,.24,.28,.31,.27,.22,.26,.31,
+.31,.25,.20,.22,.32)# catch can depths in inches caught during 1.0 hr. test
+x<-x*23.5 # extend to 23.5 hour irrigation
+target<-4.4 # replace soil water deficit of 4.4 in.
+adper(x,target)
+#change target to average catch
+target2<-mean(x)
+adper(x,target2)
 
-## The function is currently defined as
-function (x)
-{
-  }
 }
+
+
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory (show via RShowDoc("KEYWORDS")):
 % \keyword{ ~kwd1 }
