@@ -28,7 +28,7 @@ travunif(ls,cs,lcdata,rcdata,site="",plot=T)
 }
 \value{A named list with the following items:
 \item{CU}{CU from catch can data with overlap from adjacent lanes}
-\item{DUlh}{DUlh from catch can data with overlap from adjacent lanes}
+\item{DUlh}{DU low half (using  function DU.lh) from catch can data with overlap from adjacent lanes}
 \item{DU}{DU from catch can data with overlap from adjacent lanes}
 %%  ~Describe the value returned
 %%  If it is a LIST, use

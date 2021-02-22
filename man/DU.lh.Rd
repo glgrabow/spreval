@@ -1,7 +1,7 @@
 \name{DU.lh}
 \alias{DU.lh}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{function to compute distribution uniformity of lower half
+\title{Compute distribution uniformity of lower half
 %%  ~~function to do ... ~~
 }
 \description{Computes uniformity of lower half of a solid set sprinkler system
