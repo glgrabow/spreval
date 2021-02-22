@@ -1,8 +1,8 @@
-#function to compute distribution uniformity
+#function to compute potential efficiency of low quarter
 #of low-quarter. From Mirriam and Keller, 1978, p. 41. Note that depths instead of rates (as suggested in Mirriam and Keller)
 #are used in the calculation, but the numberical result is identical
 # x is caught depth (catch cans), rate is sprinkler flow rate (lpm or gpm), ss is sprinkler spacing, sl is lateral spacing
-"PELQ"=function(x,SI=T,rate,ss,sl,dur)
+"PELQ"=function(x,SI=TRUE,rate,ss,sl,dur)
 {
   #get subarray of low quarter
   x<-sort(x)

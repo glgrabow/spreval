@@ -100,7 +100,7 @@
   #calculate CU
   CU.curr<-CU(use.depths)
   #calculate DUlh
-  DUlh.curr<-DUlh(use.depths)
+  DUlh.curr<-DU.lh(use.depths)
   #calculate DU
   DU.curr<-DU(use.depths)
 

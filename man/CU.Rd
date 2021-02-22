@@ -42,7 +42,7 @@ Keller, J., and R. D. Bliesner. 2000. Sprinkler and Trickle Irrigation. Caldwell
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{\code{\link{DU}},\code{\link{DU50}}
+\seealso{\code{\link{DU}},\code{\link{DU.lh}}
 
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }

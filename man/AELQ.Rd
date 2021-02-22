@@ -1,22 +1,21 @@
 \name{AELQ}
 \alias{AELQ}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Function to determine application efficiency of the low quarter, (AELQ) for sprinkler irrigation system
+\title{ Compute application efficiency of the low quarter, (AELQ) for a sprinkler irrigation system
 %%  ~~function to do ... ~~
 }
 \description{This measure is based upon soil moisture depletion (SMD) at time of irrigation and
-is SMD/avg. applied depth in \%.  The AELQ will always be less than or equal to the Potential Application
-Efficiency of the low quarter (PELQ) if the goal is to satisfy the low quarter (and not less).
+is SMD/avg. applied depth in \%.  The AELQ will always be less than or equal to the Potential Application Efficiency of the low quarter (PELQ) if the goal is to satisfy the low quarter (and not less).
 AELQ=PELQ when the irrigation depth satifies the SMD in the low quarter. AELQ is a measure of both operation and sprinkler system uniformity.
 
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-AELQ(SI=T,rate,ss,sl,dur,smd)
+AELQ(SI=TRUE,rate,ss,sl,dur,smd)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{SI}{logical; units SI (mm, m, lpm) or US Customary (in., ft, gpm).  SI is default}
+  \item{SI}{logical; units SI (mm, m, lpm) or US Customary (in., ft, gpm).  SI (TRUE) is default}
   \item{rate}{sprinkler discharge rate (lpm or gpm)}
   \item{ss}{sprinkler spacing (m or ft)}
   \item{sl}{lateral spacing (m or ft)}
@@ -55,12 +54,12 @@ Utah State University, Logan, Utah. \url{https://pdf.usaid.gov/pdf_docs/PNAAG745
 }
 \examples{
 #see pp 41-44 of reference document
-SI=F # use U.S. customary units
+SI<-FALSE # use U.S. customary units
 smd<-4.4 #soil moisture depletion of 4.4 inches
 rate<-4.6 # 4.6 gpm sprinkler discharge
 sl<-50; ss<-30 # 30 x 50 ft sprinkler x lateral spacing
 dur<-60*23.5 #23.5 hr duration (dur in min)
-AELQ(FALSE,rate,ss,sl,dur,smd)
+AELQ(SI,rate,ss,sl,dur,smd)
 
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
