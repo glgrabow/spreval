@@ -5,30 +5,30 @@
 %%  ~~function to do ... ~~
 }
 \description{This function computes 3 values of sprinkler irrigation distribution uniformity -
-CU (Christiansen's coefficient of uniformity), DU (dist. unif. of low quarter), DU50 (dist. unif. of low half)
+CU (Christiansen's coefficient of uniformity), DU (dist. unif. of low quarter), DU.lh (dist. unif. of low half)
 for traveling gun irrigation systems.  Data from a single transect of catch cans from one hard hose pull is used, and data is overlapped to account for additional contribution from adjacent traveller pulls.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-travunif(ls,cs,lcdata,rcdata,site=NA,plot=T)
+travunif(ls,cs,lcdata,rcdata,site="",plot=T)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{ls}{lane spacing}
-  \item{cd}{catch can spacing}
+  \item{cs}{catch can spacing}
   \item{lcdata}{catch can data from cans left of hose - order is from closet to hose outward}
   \item{rcdata}{catch can data from cans right of hose - order is from closet to hose outward}
   \item{site}{optional character label for location (site) of evaluation  - used in plot titles}
-  \item{plot}{logical argument to invoke plotting}
+  \item{plot}{logical argument to invoke plotting, default is TRUE}
 %%     ~~Describe \code{x} here~~
 }
-}
+
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{A named list with the following items:
 \item{CU}{CU from catch can data with overlap from adjacent lanes}
-\item{DU50}{DU50 from catch can data with overlap from adjacent lanes}
+\item{DUlh}{DUlh from catch can data with overlap from adjacent lanes}
 \item{DU}{DU from catch can data with overlap from adjacent lanes}
 %%  ~Describe the value returned
 %%  If it is a LIST, use
