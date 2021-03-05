@@ -9,7 +9,7 @@ This returns measures of the percentage (fraction) of areas receiving
 less or more application than the target depth, assuming catch cans
 represent approximately equal areas.  It also a measure of adequacy
 and efficiency determined from areas of a density curve receiving amounts equal to or
-more of the target (adequacy) and less than or equal to target (efficiency)
+more of the target (adequacy) and less than or equal to target (efficiency).
 
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
@@ -18,9 +18,9 @@ adper(x,target,plot=TRUE)
 }
 %%- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{array of catch can depths}
-  \item{target}{target depth meant to be applied}
-  \item{plot}{logical; plot density and ecdf plots of depths and target line}
+  \item{x}{array of catch can depths.}
+  \item{target}{target depth meant to be applied.}
+  \item{plot}{logical; plot density and ecdf plots of depths and target line.}
  }
 
 %%     ~~Describe \code{x} here~~
@@ -55,9 +55,9 @@ the percentile of area that loses water to deep perolation (not held in root zon
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{\code{\link{eff},\code{\link{density}},\code{\link{ecdf}}
+\seealso{\code{\link{eff}},\code{\link[stats]{density}},\code{\link[stats]{ecdf}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-}}
+}
 \examples{
 #data from same exercise as PELQ example
 x<-c(.23,.31,.24,.24,.28,.31,.27,.22,.26,.31,

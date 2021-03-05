@@ -1,29 +1,30 @@
 \name{sfplot}
 \alias{sfplot}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Create step function plot
+\title{Create step function plot.
 %%  ~~function to do ... ~~
 }
-\description{uses an ecdf object to plot a step function plot
-with cumulative frequecy on x axis and input array on y axis with y-axis reversed
+\description{Uses an ecdf object to plot a step function plot
+with cumulative frequency on x axis and input array on y axis with y-axis reversed
 (min(y)= 0 at top of y-axis).
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-sfplot(x)
+sfplot(x,target,ylab)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
+  \item{x}{numeric array}
+  \item{target}{target, e.g., depths from catch cans.  Default is NA.}
+  \item{ylab}{label for y axis, e.g. depth applied. Default is object name of x if not supplied.}
+
 %%     ~~Describe \code{x} here~~
 }
-}
-\details{A minimum y of 0 is forced such that the plot can be interpreted at 0 being ground surface. If "target"
-is supplied, a horizontal line at the value of target is drawn. Points and area below the target line indicate
-water applied in excess of the target amount.
+
+\details{Plot includes step function lines unlike \code{\link{rotecdf}}. A minimum y of 0 is forced such that the plot can be interpreted as 0 being ground surface. If "target" is supplied, a horizontal line at the value of target is drawn. Points and area below the target line indicate water applied in excess of the target amount.
 %%  ~~ If necessary, more details than the description above ~~
 }
-\value{
+\value{Step function plot as empirical cumulative distribution function with x on y-axis and f(x), i.e., cum. prob., on x-axis.
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
@@ -33,7 +34,7 @@ water applied in excess of the target amount.
 \references{
 %% ~put references to the literature/web site here ~
 }
-\author{
+\author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
 }
 \note{
@@ -42,19 +43,19 @@ water applied in excess of the target amount.
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{rotecdf
+\seealso{\code{\link{rotecdf}},\code{\link[stats]{stepfun}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
-
-## The function is currently defined as
-function (x)
-{
-  }
+target<-3
+# generate data with mean of target amount and high variability (non-uniformity)
+x<-rnorm(25,3,1.75)
+sfplot(x,target,ylab="depth applied (caught)")
+# generate data with mean of target amount and low varibility (uniformity)
+xx<-rnorm(25,3,0.5)
+sfplot(xx,target)#no y axis label provided - defaults to array object name
 }
+
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory (show via RShowDoc("KEYWORDS")):
 % \keyword{ ~kwd1 }

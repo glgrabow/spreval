@@ -14,12 +14,12 @@ travunif(ls,cs,lcdata,rcdata,site="",plot=T)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{ls}{lane spacing}
-  \item{cs}{catch can spacing}
-  \item{lcdata}{catch can data from cans left of hose - order is from closet to hose outward}
-  \item{rcdata}{catch can data from cans right of hose - order is from closet to hose outward}
-  \item{site}{optional character label for location (site) of evaluation  - used in plot titles}
-  \item{plot}{logical argument to invoke plotting, default is TRUE}
+  \item{ls}{lane spacing.}
+  \item{cs}{catch can spacing.}
+  \item{lcdata}{catch can data from cans left of hose - order is from closet to hose outward.}
+  \item{rcdata}{catch can data from cans right of hose - order is from closet to hose outward.}
+  \item{site}{optional character label for location (site) of evaluation  - used in plot titles.}
+  \item{plot}{logical argument to invoke plotting, default is TRUE.}
 %%     ~~Describe \code{x} here~~
 }
 
@@ -28,7 +28,7 @@ travunif(ls,cs,lcdata,rcdata,site="",plot=T)
 }
 \value{A named list with the following items:
 \item{CU}{CU from catch can data with overlap from adjacent lanes}
-\item{DUlh}{DU low half (using  function DU.lh) from catch can data with overlap from adjacent lanes}
+\item{DUlh}{DU low half (using  function \code{\link{DU.lh}}) from catch can data with overlap from adjacent lanes}
 \item{DU}{DU from catch can data with overlap from adjacent lanes}
 %%  ~Describe the value returned
 %%  If it is a LIST, use
@@ -39,10 +39,10 @@ travunif(ls,cs,lcdata,rcdata,site="",plot=T)
 \references{
 Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997b.  Field calibration procedures for animal wastewater application equipment, hard hose and cable tow traveler irrigation system. NC Cooperative Extension Service publication  AG-553-2.  Raleigh, NC
 
-Liu, Z., G.L. Grabow, R.L. Huffman, J. Osborne, and R.O. Evans. 2012.  Factors Affecting Uniformity of Irrigation-Type Manure Application Systems. Applied Eng. in Agric.  28(1)
+Liu, Z., G.L. Grabow, R.L. Huffman, J. Osborne, and R.O. Evans. 2012.  Factors Affecting Uniformity of Irrigation-Type Manure Application Systems. Applied Eng. in Agric.  28(1):43-56.
 %% ~put references to the literature/web site here ~
 }
-\author{Garry Grabow
+\author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
 }
 \note{

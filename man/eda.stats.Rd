@@ -1,10 +1,10 @@
 \name{eda.stats}
 \alias{eda.stats}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Summary statistics of an array
+\title{Summary statistics of a numeric array.
 %%  ~~function to do ... ~~
 }
-\description{
+\description{Generates summary statistics of mean, median, skew, kurtosis, min, max and quartiles.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{

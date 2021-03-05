@@ -1,10 +1,10 @@
 \name{DU}
 \alias{DU}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{function to compute DU of sprinkler irrigation system
+\title{DU of sprinkler irrigation system
 %%  ~~function to do ... ~~
 }
-\description{
+\description{Computes DU (distribution uniformity of low half) for sprinkler systems using catch can data.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -12,7 +12,7 @@ DU(x)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
+  \item{x}{numeric array of catch can data.
 %%     ~~Describe \code{x} here~~
 }
 }
@@ -30,9 +30,9 @@ DU(x)
 Keller, J., and R. D. Bliesner. 2000. Sprinkler and Trickle Irrigation. Caldwell, N.J.: Blackburn Press
 %% ~put references to the literature/web site here ~
 }
-\author{Garry Grabow \email{glgrabow@ncsu.edu
+\author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
-}}
+}
 \note{
 %%  ~~further notes~~
 }

@@ -40,7 +40,7 @@
 # assuming that less than target with stay in root zone, but a lower adequacy will result.
 # Use consistent units (SI, or US custom)
 
-"adper"=function(x,target,plot=T)
+"adper"=function(x,target,plot=TRUE)
 {
   out<-ecdf(x) (target)
   adeq<-1-out # frame as receiving target or more versus target as a percentile of catches

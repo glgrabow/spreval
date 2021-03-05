@@ -1,7 +1,7 @@
 \name{PELQ}
 \alias{PELQ}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Compute potential application efficiency of low quarter for a sprinkler irrigation system
+\title{Compute potential application efficiency of low quarter for a sprinkler irrigation system.
 %%  ~~function to do ... ~~
 }
 \description{This function determines PELQ as the average of the low quarter caught depths
@@ -14,12 +14,12 @@ PELQ(x,SI=TRUE,rate,ss,sl,dur)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{numeric array of catch can depths}
-  \item{SI}{logical; units SI (mm, m, lpm) or US Customary (in., ft, gpm).  SI (TRUE) is default}
-  \item{rate}{sprinkler discharge rate (lpm or gpm)}
-  \item{ss}{sprinkler spacing (m or ft)}
-  \item{sl}{lateral spacing (m or ft)}
-  \item{dur}{duration or irrigation event, min}
+  \item{x}{numeric array of catch can depths.}
+  \item{SI}{logical; units SI (mm, m, lpm) or US Customary (in., ft, gpm).  SI (TRUE) is default.}
+  \item{rate}{sprinkler discharge rate (lpm or gpm).}
+  \item{ss}{sprinkler spacing (m or ft).}
+  \item{sl}{lateral spacing (m or ft).}
+  \item{dur}{duration or irrigation event, min.}
 %%     ~~Describe \code{x} here~~
 }
 

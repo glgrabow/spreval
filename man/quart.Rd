@@ -4,7 +4,7 @@
 \title{Compute several levels of quantiles and interquartile range
 %%  ~~function to do ... ~~
 }
-\description{
+\description{generates quantiles at 0.1, 1,5,10-90, 95, 99, 99,9 percentiles.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -12,7 +12,7 @@ quart(x)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{numerical array
+  \item{x}{numeric array
 %%     ~~Describe \code{x} here~~
 }
 }
@@ -22,7 +22,7 @@ quart(x)
 \value{
 named list with  following items:
 \item{q}{quantiles at 0.1, 1,5,10-90, 95, 99, 99,9 percentiles}
-\item{d}{interquartile range - i.e., 75th quantile minu 25th quantile}
+\item{d}{interquartile range - i.e., 75th quantile minus 25th quantile}
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}

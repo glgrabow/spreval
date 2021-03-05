@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{Computes uniformity of lower half of a solid set sprinkler system
-vs. lower quarter as does DU
+vs. lower quarter as does DU.  Note that this computation uses the same method as low quarter, except is uses the observations of the low half rather than low quarter.  It does not use an emprirical equation that converts DU (low quarter) to DUlh (lower half) as some have proposed.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -13,14 +13,14 @@ DU.lh(x)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{a numeric array of catch depths
+  \item{x}{a numeric array of catch depths or volumes.
 %%     ~~Describe \code{x} here~~
 }
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
-\value{
+\value{DU of lower half value in percentage.
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
@@ -30,7 +30,7 @@ DU.lh(x)
 \references{
 %% ~put references to the literature/web site here ~
 }
-\author{
+\author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
 }
 \note{
@@ -39,7 +39,7 @@ DU.lh(x)
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+\seealso{\code{\link{CU}},\code{\link{DU}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{

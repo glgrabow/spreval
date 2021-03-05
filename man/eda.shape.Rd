@@ -1,10 +1,10 @@
 \name{eda.shape}
 \alias{eda.shape}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Generate distribution plots of an array
+\title{Generate distribution plots of an array.
 %%  ~~function to do ... ~~
 }
-\description{Generate histogram, boxplot, density, and quartile plots
+\description{Generate histogram, boxplot, density, and quartile plots.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -12,16 +12,16 @@ eda.shape(x,title="",qq=T)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{array}
+  \item{x}{numeric array}
   \item{title}{character; optional title for plots}
   \item{qq}{logical; for plotting quartile plot, default=T}
 %%     ~~Describe \code{x} here~~
 }
 
-\details{This function is modified from the SPlus version of the same name, see references
+\details{This function is modified from the SPlus version of the same name, see references.
 %%  ~~ If necessary, more details than the description above ~~
 }
-\value{Four plots on one page [mfrow = c(2, 2)]- histogram, boxplot, density, and quartile
+\value{Four plots on one page [mfrow = c(2, 2)]- histogram, boxplot, density, and quartile.
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}

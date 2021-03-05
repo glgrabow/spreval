@@ -5,9 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{determines amount of water above and below target depth to determine efficiency and adequacy
-from catch can data. If target depth is equal to depletion in the root zone, all catch can depths greater
-than target are, in concept, lost to deep percolation and reduce efficiency, and all depths less than target
-are 100\% efficient but reduce adequacy.
+from catch can data. If target depth is equal to soil moisture depletion in the root zone, all catch can depths greater than target are, in concept, lost to deep percolation and reduce efficiency, and all depths less than target are 100\% efficient but reduce adequacy.
 
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
@@ -18,14 +16,12 @@ eff(x, target)
 \arguments{
   \item{x}{numeric array of catch can depths}
  %%     ~~Describe \code{x} here~~
-  \item{target}{target dept
+  \item{target}{target depth}
 %%     ~~Describe \code{target} here~~
 }
-}
+
 \details{computes efficiency and adequacy as amount of catch equal or less than
-target depth (efficiency), and amount of catch equal or exceeding target depth (adequacy). Amounts
-obtained using results of a density (frequency) plot and normalized to target depth and reported in decimal (not percent) form. If all catch can depths (and resultant density curve) are all below the target depth, the application efficiency is
-100\%.  This assumes that the target depth is equal to the soil water deficit (or less).
+target depth (efficiency is applied water retained in root zone divide by total water applied), and amount of catch equal or exceeding target depth (adequacy). Amounts obtained using results of a density (frequency) plot and normalized to target depth and reported in decimal (not percent) form.
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{A named list with the following items:
@@ -43,7 +39,7 @@ obtained using results of a density (frequency) plot and normalized to target de
 \author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
 }
-\note{
+\note{If all catch can depths (and resultant density curve) are all below the target depth, the application efficiency is 100\%.  This assumes that the target depth is equal to the soil water deficit (or less). So deficit irrigations are likely to be 100\% or near 100\% efficient.
 %%  ~~further notes~~
 }
 
