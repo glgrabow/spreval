@@ -14,7 +14,7 @@ imcol=FALSE,edastat=FALSE)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{cdata}{n x 3 matrix of catch can data; 1st column x, 2nd column y can locations, 3rd column catch depths}
-  \item{sploc}{n x 2 matrix of sprinkler location data; 1st column x, second column y.  x=4, y = 4 for 4 sprinklers with cans in-between.}
+  \item{sploc}{n x 2 matrix of sprinkler location data; 1st column xi, second column yi.  i=4 for 4 sprinklers with cans in-between.}
   \item{con}{Logical; TRUE to overlay contour plot on densigram, default is TRUE}
   \item{xlab}{label for x axis of plot}
   \item{ylab}{label for y axis of plot}

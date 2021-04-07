@@ -1,0 +1,141 @@
+---
+title: "lateral-move systems"
+author: "Garry Grabow"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+```{r setup}
+library(spreval)
+```
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+Lateral-move irrigation systems as defined here refer to sprinker lateral sytems that are not "fixed" permanantly in one position as with "solid set sytems" but rather are "periodic-move" systems.  In these systems one or more laterals is charged with flow to supply flow and pressure to sprinklers on the operating laterals.  After an irrigation "set" is complete, the lateral is moved to another location for a subsequent irrigation.  These systems reduce sysetem capital costs (and pump costs) as compared to solid-set systems by limiting the number of laterals and sprinklers. An irrigation on a tract of land is accomplished by moving the laterals in irrigation "sets" across the field such that they are returned to their original positions by the time the next irrigation cycle is required. Example types of these systems are "hand-move" and "wheel-move" systems. Normally the laterals are moved in a direction perpendicular to a lateral, but some systems use hose-fed laterals with non-overlapping sprinklers, that are pulled in the lateral direction for acheiving full coverage and overlap along the laterals in subsequent sets. 
+
+Because of their unique layout, lateral-move irrigation systems are evaluted for performance and uniformity in a slightly different manner than with a solid set, or hose-pull irrigation system.
+
+## Example
+Data for this example are taken from the `catchcan` dataset.  This data set contains catch can data for three types of sprinkler systems.  The dataset for our lateral move example looks like this:
+```{r, echo=TRUE,results='asis'}
+data(catchcan)
+cc.data<-catchcan$lateral
+knitr::kable(cc.data,format="html")
+```
+
+where the columns labeled "l" show catch can collection rates (in/hr) to the left of the lateral (plan view) and those labled with "r" are right of the lateral. A better view of the data from the single lateral trial can be performed using `speval::ssplot`.  
+
+```{r,echo=TRUE,results='asis',fig.show='hold',fig.width = 5,fig.height = 5}
+#x,y matrix 10 ft x 10 ft catch can spacing
+x<-seq(-35,25,10) # x=0 is lateral position
+y<-seq(55,5,-10)
+grd<-list(x,y) # prepare list for make.surface function [fields]
+grid<-fields::make.surface.grid(grd)
+rates<-matrix(t(cc.data),ncol=1)#transpose matrix and stack rows into 1 column
+cdata<-cbind(grid[ ,1],grid[ ,2],rates) #construct required catch can data matrix
+sp.x<-rep(0,3);sp.y<-seq(0,60,30)# sprinkler spacing (y) = 30 ft
+sploc<-cbind(sp.x,sp.y) #construct required sprinkler location matrix
+plotss(cdata,sploc,imcol=TRUE)# call function
+text(c(0,0,0),rep(c(2,28,58),2),c("s4","s5","s6"),cex=0.8)# label sprinklers as in reference
+```
+
+In the figure above, the solid black dots at the upper, middle, and lower part of the plot at x=0 are the sprinkler locations along the single lateral, so in this test, data is from 3 sprinklers contributing to the catch cans indicated by open circle symbols. The 4 columns of catch cans to the left of the lateral, and only 3 to the right, are indicative of a prevailing wind from the upper right of the figure.
+
+To evaluate sprinkler system uniformity, it is necessary to take account for operation of the lateral adjacent to the lateral operated for the test.  This is done by overlaping, or superimposing the data from the one operating lateral as if an adjacent lateral was operating, or in the case of a periodic-move system, what would be expected from the next irrigation set with the lateral moved to a new position. The function `speval::overlap` is useful for superimposing the test data to simulate adjacent lateral operation for subsequent evaluation. `speval::overlap` operates using one "row" of can data from both left and right of the lateral; so overlap will need to be called for each row of catch can data.
+
+```{r, echo=TRUE,results='asis'}
+sl<-50 # 50 ft lateral spacing (pass to overlap)
+sc<-10 # 10 ft catch can spacing perpindicular to lateral (pass to overlap)
+#split data into left and right of lateral
+left<-cc.data[ ,1:4];right<-cc.data[ ,5:7]#first 4 columns left of lateral
+super.l=matrix(data=NA,nrow=nrow(left),ncol=sl/sc) # columns will be limited to between 2 adjacent laterals
+super.r=matrix(data=NA,nrow=nrow(right),ncol=sl/sc)
+for (i in 1:nrow(left)){
+  lcdata<-rev(left[i,]);rcdata<-right[i, ]#overlap requires order from proximal lateral  to distal so rev (left)
+  super<-overlap(sl,sc,lcdata,rcdata)
+  super.l[i, ]<-super$sum.left;super.r[i, ]<-super$sum.right
+}
+knitr::kable(super.l,format="html")
+knitr::kable(super.r,format="html")
+```
+Note that superimposing from right to left or left to right makes no difference other than being a mirror image.   Either resultant matrix can be used to evaluate uniformity and other performance measures.  This overlapped data can now be processed and plotted as with the original data using `speval::plotss`.
+```{r,echo=FALSE,results='asis',fig.show='hold',fig.width = 5,fig.height = 5}
+x<-seq(5,45,10) # x=0 is lateral position; look at right of test lateral
+y<-seq(55,5,-10) # start at "top" y position, as a matrix
+grd<-list(x,y) # prepare list for make.surface function [fields]
+grid<-fields::make.surface.grid(grd)
+o.rates<-matrix(t(super.r),ncol=1)#transpose matrix and stack rows into 1 column
+o.cdata<-cbind(grid[ ,1],grid[ ,2],o.rates) #construct required catch can data matrix
+sp.x.o<-c(sp.x,rep(50,3));sp.y.o<-c(sp.y,seq(0,60,30))#add second lateral location for overlap
+sploc.o<-cbind(sp.x.o,sp.y.o) 
+plotss(o.cdata,sploc.o,imcol=TRUE)# call function
+text(c(2,2,2,48,48,48),rep(c(2,30,58),2),rep(c("s4","s5","s6"),2),cex=0.8)#label sprinkler numbers as in reference
+```
+
+Note that the uniformity is improved by accounting for overlap of adjacent laterals.
+
+Now we can use some measures of apllication uniformity and efficiency, specifically Christiansen's coefficient of uniformity, distribution uniformity (of low quarter), distribution uniformity of the low half, and potential efficiency of the low quarter using the respective functions `CU`, `DU`, `DU.lh` and `PELQ`.  We will divide the overlapped data set into 2 portions: the catch can data between sprinklers 4 and 5 (lower), and those between 5 and 6 (upper).
+```{r, echo=TRUE,results='asis'}
+lower<-super.r[4:6,];upper<-super.r[1:3,]#use superimposed data
+upper.uni<-c(CU(upper),DU(upper),DU.lh(upper),PELQ(upper,SI=FALSE,rate=4.6,ss=30,sl=50,dur=60))# use U.S. cust. units
+lower.uni<-c(CU(lower),DU(lower),DU.lh(lower),PELQ(lower,SI=FALSE,rate=4.6,ss=30,sl=50,dur=60))
+table<-round(rbind(upper.uni,lower.uni),0)
+knitr::kable(table,row.names=TRUE,col.names=c("CU","DU","DU.lh","PELQ"))
+```
+
+Lastly, the application efficiency of the low quarter not only takes into account uniformity of application but the amount of applied water that is stored in the soil.  Whenever the irrigation (average applied depth) exactly satisfies the soil moisture depletion (SMD) in the low-quarter watered areas, AELQ=PELQ.  Irrigation depths greater than low-quarter SMD result in values of AELQ < PELQ. We can use the `speval::ALEQ` function, and in our example, for which the SMD= 4.4 in., and the sprinkler discharge rate is 4.6 gpm, ALEQ equals `r round(AELQ(SI=FALSE,rate=4.6,ss=30,sl=50,dur=1410,smd=4.4))`%
+
+Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
+
+- Never uses retina figures
+- Has a smaller default figure size
+- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
+
+## Vignette Info
+
+Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
+
+## Styles
+
+The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
+
+    output: 
+      rmarkdown::html_vignette:
+        css: mystyles.css
+
+## Figures
+
+The figure sizes have been customised so that you can easily put two images side-by-side. 
+
+```{r, fig.show='hold'}
+plot(1:10)
+plot(10:1)
+```
+
+You can enable figure captions by `fig_caption: yes` in YAML:
+
+    output:
+      rmarkdown::html_vignette:
+        fig_caption: yes
+
+Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
+
+## More Examples
+
+You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
+
+```{r, echo=FALSE, results='asis'}
+knitr::kable(head(mtcars, 10))
+```
+
+Also a quote using `>`:
+
+> "He who gives up [code] safety for [code] speed deserves neither."
+([via](https://twitter.com/hadleywickham/status/504368538874703872))

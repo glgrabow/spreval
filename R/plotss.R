@@ -5,7 +5,7 @@ plotss=function(cdata,sploc,con=TRUE,xlab="",ylab="",title="",labelpoints=TRUE,i
 #with cans in-between
 # xlab and ylab for plan view plot of sprinklers and catch cans, provide units too if wish
 #setup plotting space
-plot.new()
+#plot.new()
 size<-min(par("din")[1],par("din")[2])  # get minimum length of plot height and width by starting with device size
 size<-size-par("mai")[1]# now subtract space for labels location 1 "x-axis" has greatest default space
 #par(pin=c(size,size))#set for square aspect ratio.  asp overides xlim and ylim so need this alternative
@@ -14,9 +14,12 @@ sprinklerx<-sploc[ ,1];sprinklery<-sploc[ ,2]
 cx<-cdata[ ,1];cy<-cdata[ ,2]
 depth<-cdata[ ,3]
 densigram<-akima::interp(cx,cy,depth)
-col<-gray.colors(12, start = 0.3, end = 0.9, gamma = 2.2, alpha = NULL, rev = FALSE)#default image color is b/w
+col<-gray.colors(12, start = 0.9, end = 0.3, gamma = 2.2, alpha = NULL, rev = FALSE)#default image color is b/w
 if(imcol){col = hcl.colors(12, "YlOrRd", rev = TRUE)} #color image which is normal default for image function
-image(densigram, col=col,xlim=c(min(sploc[ ,1]),max(sploc[ ,1])),ylim=c(min(sploc[ ,2]),max(sploc[ ,2])),
+# set range of plot to either maximum space of sprinklers (extrnal to cans) or to catch can range, e.g., 1 lateral
+xmin<-min(min(sploc[ ,1]),min(cx));xmax<-max(max(sploc[ ,1]),max(cx))
+ymin<-min(min(sploc[ ,2]),min(cy));ymax<-max(max(sploc[ ,2]),max(cy))
+image(densigram, col=col,xlim=c(xmin,xmax),ylim=c(ymin,ymax),
       xaxs="i",yaxs="i")
 points(sprinklerx,sprinklery,pch=16)
 title(main=title,xlab=xlab,ylab=ylab)

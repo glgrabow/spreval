@@ -19,6 +19,7 @@ rcdata.index<-which(gdata.right[,1]<=sl);rcdata.use<-rcdata[rcdata.index]
 #move cans by Sl
 lc.over<-rev(lcdata.use) #invert order to overlap.  rev in base package
 rc.over<-rev(rcdata.use)
+#print(lc.over);print(rc.over)
 sum.left<-lcdata.use+rc.over;sum.right<-rcdata.use+lc.over
 return(list("sum.left"=sum.left,"sum.right"=sum.right)) #array index is left to right in plan view.
 }
