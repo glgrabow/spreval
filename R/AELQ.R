@@ -7,11 +7,21 @@
 #rate is sprinkler flow rate, ss is sprinkler spacing, sl is lateral spacing, dur is irrigation duration, smd is soil
 #moisture deficit at the time of irrigation event
 
-"AELQ"=function(SI=TRUE,rate,ss,sl,dur,smd)
+"AELQ"=function(x,rate,ss,sl,dur,smd,SI=TRUE)
 {
   #get subarray of low quarter
-  #SI use mm for depth, meters for spacing, lpm for sprinkler flow rate, minutes duration
-  #US Customary use in. for depth, feet for spacing, gpm for sprinkler flow rate, minutes duration
- if(SI){smd/((rate/1000/(ss*sl)*dur)*1000)*100}
-  else{smd/(96.3*rate/(ss*sl)*dur/60)*100}
+  x<-sort(x)
+  end<-round(length(x)/4,digits=0)
+  infil<-mean(x[1:end])*dur # determination of infiltrated (caught) depth to compare with SMD
+  # if infil>SMD then AELQ=smd/avg. applied depth, else AELQ= low quarter caught depth/avg. applied depth
+  #SI use mm for depth, meters for spacing, lpm for sprinkler flow rate, hr duration
+  #US Customary use in. for depth, feet for spacing, gpm for sprinkler flow rate, hr duration
+  if(infil>=smd){
+   if(SI){smd/((rate/1000/(ss*sl)*dur*60)*1000)*100}
+   else{smd/(96.3*rate/(ss*sl)*dur)*100}}
+  else{
+    if(SI){infil/((rate/1000/(ss*sl)*dur*60)*1000)*100}
+    else{infil/(96.3*rate/(ss*sl)*dur)*100}
+    }
+
 }

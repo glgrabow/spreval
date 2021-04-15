@@ -1,12 +1,12 @@
 \name{PELQ}
 \alias{PELQ}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Compute potential application efficiency of low quarter for a sprinkler irrigation system.
+\title{Potential application efficiency of low quarter for a sprinkler irrigation system.
 %%  ~~function to do ... ~~
 }
-\description{This function determines PELQ as the average of the low quarter caught depths
-divided by the averege depth of applied water.  As such is is a measure of the potential of the
-sprinkler irrigation system considering uniformity (low quarter) and any losses due to drift and evaporation (uses caught depths).
+\description{This function determines PELQ as the average of the low quarter catch rates
+divided by the average catch rate of applied water.  As such is is a measure of the potential of the
+sprinkler irrigation system considering uniformity (low quarter) and any losses due to drift and evaporation (uses catch can rates).
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -19,11 +19,11 @@ PELQ(x,SI=TRUE,rate,ss,sl,dur)
   \item{rate}{sprinkler discharge rate (lpm or gpm).}
   \item{ss}{sprinkler spacing (m or ft).}
   \item{sl}{lateral spacing (m or ft).}
-  \item{dur}{duration or irrigation event, min.}
+  \item{dur}{duration of irrigation event, hr.}
 %%     ~~Describe \code{x} here~~
 }
 
-\details{
+\details{catch can depths converted to catch rates.
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{PELQ (potential application efficiency of low quarter, \%
@@ -55,10 +55,10 @@ Utah State University, Logan, Utah. \url{https://pdf.usaid.gov/pdf_docs/PNAAG745
 #see pp 41-43 of reference document
 SI<-FALSE # use U.S. customary units
 x<-c(.23,.31,.24,.24,.28,.31,.27,.22,.26,.31,
-.31,.25,.20,.22,.32)# catch can depths in inches caught during test
-rate<-4.6 # 4.6 gpm sprinkler discharge (measured)
+.31,.25,.20,.22,.32)# catch can depths caught during test converted to in/hr
+rate<-4.6 # 4.6 gpm sprinkler discharge rate (measured)
 sl<-50; ss<-30 # 30 x 50 ft sprinkler x lateral spacing
-dur<-60 # 1 hr test duration (dur. in min)
+dur<-1 # 1 hr test duration (dur. in min)
 PELQ(x,SI=FALSE,rate,ss,sl,dur)
 
 }
