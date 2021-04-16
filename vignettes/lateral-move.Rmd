@@ -31,7 +31,7 @@ cc.data<-catchcan$lateral
 knitr::kable(cc.data,format="html")
 ```
 
-where the columns labeled "l" show catch can collection rates (in/hr) to the left of the lateral (plan view) and those labled with "r" are right of the lateral. A better view of the data from the single lateral trial can be performed using `speval::ssplot`.  
+where the columns labeled "l" show catch can collection rates (in/hr) to the left of the lateral (plan view) and those labled with "r" are right of the lateral. A better view of the data from the single lateral trial can be performed using `speval::plotss`.  
 
 ```{r,echo=TRUE,results='asis',fig.show='hold',fig.width = 5,fig.height = 5,fig.cap="Raw catch can data"}
 #x,y matrix 10 ft x 10 ft catch can spacing
@@ -141,52 +141,8 @@ knitr::kable(table,row.names=TRUE,col.names=c("CU","DU","DU.lh","PELQ"),caption=
 
 and the AELQ for the 40- and 60-ft lateral spacings are `r round(AELQ(super.r.40[1:3,],rate=4.6,ss=30,sl=40,dur=23.5,smd=4.4,SI=FALSE))`% and `r round(AELQ(super.r.60[1:3,],rate=4.6,ss=30,sl=60,dur=23.5,smd=4.4,SI=FALSE))`% respectively.  Note that the AELQ, that measures efficiency,  is lower for the lesser 40 ft lateral spacing, in contrast to the better application uniformity for the 40 ft spacing.  This is because the application rate at the closer lateral spacing is higher, therefore applying a greater depth (catch can) that is in excess of the soil moisture deficit (SMD) and which leads to deep percolation losses. For the 60-ft lateral spacing AELQ=PELQ, meaning that the system application efficiency is limited soley by the irrigation system uniformity.  If the irrigation duration is reduced to 11.5 hr from 23.5 hr, there will be no excess irrigation and hence no deep percolation losses and AELQ will change to `r round(AELQ(super.r.40[1:3,],rate=4.6,ss=30,sl=40,dur=11.5,smd=4.4,SI=FALSE))`% and `r round(AELQ(super.r.60[1:3,],rate=4.6,ss=30,sl=60,dur=11.5,smd=4.4,SI=FALSE))`% based on observations between the 5th and 6th sprinklers for the 40- and 60-ft lateral spacings respectively.  With this irrgation duration, both spacings are limited only by the irrigation system application uniformity, however, in the case of the 60 ft lateral spacing, the reduced duration will result in under-irrigation as AELQ was equal to PELQ for both irrigation durations. 
 
+##References
+Mirriam and Keller, 1978. Farm System Irrigation Evaluation: A Guide for Management.  PP 41-43.
+Utah State University, Logan, Utah. (https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf).
 
 
-Vignettes are long form documentation commonly included in packages. Because they are part of the distribution of the package, they need to be as compact as possible. The `html_vignette` output type provides a custom style sheet (and tweaks some options) to ensure that the resulting html is as small as possible. The `html_vignette` format:
-
-- Never uses retina figures
-- Has a smaller default figure size
-- Uses a custom CSS stylesheet instead of the default Twitter Bootstrap style
-
-## Vignette Info
-
-Note the various macros within the `vignette` section of the metadata block above. These are required in order to instruct R how to build the vignette. Note that you should change the `title` field and the `\VignetteIndexEntry` to match the title of your vignette.
-
-## Styles
-
-The `html_vignette` template includes a basic CSS theme. To override this theme you can specify your own CSS in the document metadata as follows:
-
-    output: 
-      rmarkdown::html_vignette:
-        css: mystyles.css
-
-## Figures
-
-The figure sizes have been customised so that you can easily put two images side-by-side. 
-
-```{r, fig.show='hold'}
-plot(1:10)
-plot(10:1)
-```
-
-You can enable figure captions by `fig_caption: yes` in YAML:
-
-    output:
-      rmarkdown::html_vignette:
-        fig_caption: yes
-
-Then you can use the chunk option `fig.cap = "Your figure caption."` in **knitr**.
-
-## More Examples
-
-You can write math expressions, e.g. $Y = X\beta + \epsilon$, footnotes^[A footnote here.], and tables, e.g. using `knitr::kable()`.
-
-```{r, echo=FALSE, results='asis'}
-knitr::kable(head(mtcars, 10))
-```
-
-Also a quote using `>`:
-
-> "He who gives up [code] safety for [code] speed deserves neither."
-([via](https://twitter.com/hadleywickham/status/504368538874703872))
