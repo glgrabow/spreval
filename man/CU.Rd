@@ -56,9 +56,6 @@ curnd<-round(xcu,2)
 xcu
 curnd
 
-
-{
-  }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory (show via RShowDoc("KEYWORDS")):

@@ -3,9 +3,8 @@ title: "lateral-move systems"
 author: "Garry Grabow"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette 
-
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{lateral-move systems}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

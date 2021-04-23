@@ -15,7 +15,7 @@ rotecdf(x,target,ylab)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{numeric array}
-  \item{target}{target, e.g., depths from catch cans.  Default is NA.}
+  \item{target}{target, a constanst, e.g., target depth of irrigation.  Default is NA.}
   \item{ylab}{label for y axis, e.g. depth applied. Default is object name of x if not supplied.}
 %%     ~~Describe \code{x} here~~
 }
