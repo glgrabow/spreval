@@ -8,6 +8,9 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
+```{r setup}
+library(spreval)
+```
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -16,6 +19,3 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup}
-library(spreval)
-```
