@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{Computes uniformity of lower half of a solid set sprinkler system
-vs. lower quarter as does DU.  Note that this computation uses the same method as low quarter, except is uses the observations of the low half rather than low quarter.  It does not use an emprirical equation that converts DU (low quarter) to DUlh (lower half) as some have proposed.
+vs. lower quarter as does DU.  Note that this computation uses the same method as low quarter, except it uses the observations of the low half rather than low quarter.  It does not use an empirical equation that converts DU (low quarter) to DUlh (lower half) as some have proposed.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
