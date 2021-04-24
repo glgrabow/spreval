@@ -6,7 +6,7 @@
 }
 \description{This function computes 3 values of sprinkler irrigation distribution uniformity -
 CU (Christiansen's coefficient of uniformity), DU (dist. unif. of low quarter), DU.lh (dist. unif. of low half)
-for traveling gun irrigation systems.  Data from a single transect of catch cans from one hard hose pull is used, and data is overlapped to account for additional contribution from adjacent traveller pulls.
+for traveling gun irrigation systems.  Data from a single transect of catch cans from one hard hose pull is used, and data is overlapped to account for additional contribution from adjacent traveler pulls.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -64,14 +64,6 @@ left<-c(0.17,0.22,0.18,0.21,0.13,0.05,0.02,0) # units are in.
 right<-c(0.16,0.2,0.21,0.2,0.21,0.13,0.06,0.02)
 ls<-165;gs<-16 # units are ft
 travunif(ls,gs,left,right)
-%%##---- Should be DIRECTLY executable !! ----
-%%##-- ==>  Define data, use random,
-%%##--	or do  help(data=index)  for the standard data sets.
-
-%## The function is currently defined as
-%function (x)
-%{
-%  }
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory (show via RShowDoc("KEYWORDS")):
