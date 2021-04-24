@@ -39,18 +39,18 @@ Utah State University, Logan, Utah. \url{https://pdf.usaid.gov/pdf_docs/PNAAG745
 
 %% ~put references to the literature/web site here ~
 }
-\author{Garry Grabow \email{glgrabow@ncsu.edu
+\author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
-}}
+}
 \note{
 %%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{\code{\link{PELQ}
+\seealso{\code{\link{AELQ}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-}}
+}
 \examples{
 #see pp 41-43 of reference document
 SI<-FALSE # use U.S. customary units
