@@ -55,7 +55,6 @@ rotecdf(x,target,ylab="depth applied (caught)")
 # generate data with mean of target amount and low varibility (uniformity)
 xx<-rnorm(25,3,0.5)
 rotecdf(xx,target)#no y axis label provided - defaults to array object name
-
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory (show via RShowDoc("KEYWORDS")):
