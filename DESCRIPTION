@@ -4,7 +4,7 @@ Title: Sprinkler Irrigation Uniformity and Efficiency
 Version: 0.1.0
 Author: Garry Grabow
 Maintainer: The package maintainer <glgrabow@ncsu.edu>
-Description: functions to evaluate sprinkler irrigation uniformity
+Description: Functions to evaluate sprinkler irrigation uniformity
     and efficiency using standard and other measures.
 License: GPL
 Encoding: UTF-8
