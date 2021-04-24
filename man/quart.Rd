@@ -50,8 +50,7 @@ named list with  following items:
 # quantiles for random normal data
 x<-rnorm(25,10,1)
 xn<-quart(x)
-
-  }
+}
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory (show via RShowDoc("KEYWORDS")):
