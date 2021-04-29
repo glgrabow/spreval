@@ -1,5 +1,5 @@
 ---
-title: "solid-set"
+title: "Solid-set Sprinkler Systems"
 author: "Garry Grabow"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -8,7 +8,7 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
-```{r setup}
+```{r setup, echo=FALSE}
 library(spreval)
 ```
 
@@ -18,4 +18,45 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 ```
+## Description
+Solid-set Sprinkler systems include both buried and surface systems that are "permanent" in that sprinkler laterals are fixed.  This is in contrast to lateral-move sprinkler systems in which one or more laterals are moved for a subsequent irrigation.  In order to reduce pump and mainline cost, solid-set systems are normally divided into zones so that the pumping requirement based on the peak use rate of the crop for the whole field matches the system requirement (flow rate) of the zone.  In this way all zones can be operated sequentially over an irrigation event before the initial zone requires a subsequent irrigation.  These systems are generally more expensive than lateral move or hose-pull traveling gun systems due to the installed infrastructure, but do allow greater flexiblity in operation.   These systems are typically found in higher value agriculture (fruit or nut trees) or in wastewater irrigation.  Residential and commercial turf irrgation systsems are similar.
 
+## Example
+Data for this example are taken from the `catchcan` dataset.  This data set contains catch can data for three types of sprinkler systems.  The dataset for our lateral move example looks like this:
+```{r, echo=TRUE,results='asis'}
+data(catchcan)
+cc.data<-catchcan$solid.set
+knitr::kable(cc.data,format="html")
+```
+This is a plan view of catch can data (in.) collected between 4 sprinklers spaced at 80 ft x 80 ft (lateral x sprinkler spacing). The catch cans are spaced at 20 ft x 20 ft.
+
+These data may be plotted along with the sprinkler locations as a contour and image plot for a better representation of uniformity using `speval::plotss`.  The upper left sprinkler is given an arbitrary location of (0,0).
+
+```{r,echo=TRUE,results='asis',fig.show='hold',fig.width = 5,fig.height = 5,fig.cap="Raw catch can data"}
+#x,y matrix 20 ft x 20 ft catch can spacing
+x<-seq(10,70,20) # x=0 is sprinkler x position
+y<-seq(-10,-70,-20) #y=0 is upper left sprinkler position
+grd<-list(x,y) # prepare list for make.surface function [fields]
+grid<-fields::make.surface.grid(grd)
+rates<-matrix(t(cc.data),ncol=1)#transpose matrix and stack rows into 1 column
+cdata<-cbind(grid[ ,1],grid[ ,2],rates) #construct required catch can data matrix
+sp.x<-c(0,0,80,80);sp.y<-c(0,-80,0,-80)# sprinkler spacing 80 x 80 ft
+sploc<-cbind(sp.x,sp.y) #construct required sprinkler location matrix
+plotss(cdata,sploc,imcol=TRUE)# call function
+text(c(3,3,77,77),c(-3,-77,-3,-77),c("s12","s22","s13","s23"),cex=0.8)# label sprinklers as in reference
+```
+In this example, there is no need to overlap test data, as with lateral-move and traveling gun system test data, to evaluate uniformity and efficiency.
+
+Now we can use some measures of apllication uniformity and efficiency, specifically Christiansen's coefficient of uniformity, distribution uniformity (of low quarter), distribution uniformity of the low half, and potential efficiency of the low quarter using the respective functions `CU`, `DU`, `DU.lh` and `PELQ`.
+```{r, echo=TRUE,results='asis'}
+ss.uni<-c(CU(cc.data),DU(cc.data),DU.lh(cc.data),PELQ(cc.data,SI=FALSE,rate=38.3,ss=80,sl=80,dur=2.25))# use U.S. cust. units
+table<-round(ss.uni,0)
+knitr::kable(t(table),col.names=c("CU","DU","DU.lh","PELQ"))#transpose array (table) for display
+
+```
+
+Note that in reference, that sprinkler discharge rate is not given, for for PELQ in this example, the rate (38.3 gpm) was simply calculated using the precipitation rate (in./hr) which is the average catch (in.) divided by the irrigation duration (2.25 hr). This would yield a higher value of PELQ as drift and evaporation losses from the sprinklers to the catch can are not accounted for.
+
+##References
+Mirriam and Keller, 1978. Farm System Irrigation Evaluation: A Guide for Management.  PP 41-43.
+Utah State University, Logan, Utah. (https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf).
