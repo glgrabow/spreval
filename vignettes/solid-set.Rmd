@@ -45,6 +45,7 @@ sploc<-cbind(sp.x,sp.y) #construct required sprinkler location matrix
 plotss(cdata,sploc,imcol=TRUE)# call function
 text(c(3,3,77,77),c(-3,-77,-3,-77),c("s12","s22","s13","s23"),cex=0.8)# label sprinklers as in reference
 ```
+
 In this example, there is no need to overlap test data, as with lateral-move and traveling gun system test data, to evaluate uniformity and efficiency.
 
 Now we can use some measures of apllication uniformity and efficiency, specifically Christiansen's coefficient of uniformity, distribution uniformity (of low quarter), distribution uniformity of the low half, and potential efficiency of the low quarter using the respective functions `CU`, `DU`, `DU.lh` and `PELQ`.
@@ -56,6 +57,40 @@ knitr::kable(t(table),col.names=c("CU","DU","DU.lh","PELQ"))#transpose array (ta
 ```
 
 Note that in reference, that sprinkler discharge rate is not given, for for PELQ in this example, the rate (38.3 gpm) was simply calculated using the precipitation rate (in./hr) which is the average catch (in.) divided by the irrigation duration (2.25 hr). This would yield a higher value of PELQ as drift and evaporation losses from the sprinklers to the catch can are not accounted for.
+
+We can also look at the distribution of catches using `spreval::eda.shape`
+
+```{r,echo=TRUE,results='asis',fig.show='hold',fig.width = 5,fig.height = 5,fig.cap="Distribution of catch can data in example"}
+eda.shape(as.vector(cc.data)) # need to convert matrix to vector
+```
+
+If a target depth is known, we can also compute percentile receiving depths lesser or greater than the target depth using sreval::adper.  This function uses both a density plot and empirical cumulative distribution function to determine the portion of catches above and below a given target depth.
+
+```{r,echo=TRUE, results='asis',fig.show='hold',fig.width = 5,fig.height = 4,fig.cap="Percentile plot with target depth for example"}
+results<-adper(cc.data,target=0.57)
+headings<-c(results[[1]][1],results[[3]][1],results[[5]][1],results[[7]][1])#extract label elements
+row.2<-c(results[[2]][1],results[[4]][1],results[[6]][1],results[[8]][1]) #extract value elements
+adper.table<-rbind(headings,round(row.2,3))
+knitr::kable(adper.table,row.names=FALSE,caption="adequacy and efficiency using density and cumulative distribution")
+```
+
+Note that for either the "density" or "ecdf" plot approaches, the adequacy and efficiency values add to 1.0.  With this function "adequacy" is simply the proportion of catches that receive depths equal to or greater than the target, while "efficiency" is defined at the proportion of catches that receive less than or equal to the target amount.  Note also that this is not the standard definition of efficiency, in that it does not consider the difference in catch depths and the target depth, but only the proportion of depths less than or equal to the target depth.  For a more traditional assessment of efficiency, we can use the function `spreval::eff`.  This function uses a density plot to account for differences in catch depths from the target:
+
+```{r, echo=TRUE,results='asis'}
+eff.table<-eff(cc.data,target=0.57)# call function
+eff.table<-round(c(eff.table$appeff,eff.table$appadeq),3)
+labels<-c("efficiency","adequacy")
+eff.table<-cbind(labels,eff.table)
+knitr::kable(eff.table)#
+```
+
+A plot of an empirical cumulative distribution step function plot that is rotated so that the surface is at the top of the plot helps to visualize the above results using `spreval::sfplot`
+
+```{r,echo=TRUE, results='asis',fig.show='hold',fig.width = 4,fig.height = 5,fig.cap="Rotated ECDF plot with target depth for example"}
+sfplot(as.vector(cc.data),target=0.57,ylab="depth caught, in.")
+```
+
+The `eff` function integrates the area bounded by the catch depths and the target depth in a density plot and thus accounts for the deviation from the target depth and not just the relative number below and above the depth as with `adper`, and thus is a better measure of efficiency in the traditional sense. 
 
 ##References
 Mirriam and Keller, 1978. Farm System Irrigation Evaluation: A Guide for Management.  PP 41-43.
