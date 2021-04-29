@@ -75,7 +75,7 @@
     excess<-sum(above.x*yfract)#multiply arrays and sum excess
     #print(excess)
     eff<-1-excess/target
-  # above and below in units of length (mm, in.) fo eff + adeq will not sum to 1.0
+  # above and below in units of length (mm, in.) for eff + adeq will not sum to 1.0 as did in adper
     below.x<-xx[xx<=target];below.x<-below.x-target# array of x - target for above target, i.e., excess irrigation
     below.y<-yy[xx <= target];tot.y<-sum(yy);yfract<-below.y/tot.y #y above target as ratio of total y
     deficit<-sum(below.x*yfract)
