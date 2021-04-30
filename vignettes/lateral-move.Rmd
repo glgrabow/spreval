@@ -15,8 +15,10 @@ library(spreval)
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  dev = "png", dev.args = list(type = "cairo-png")
 )
+#set graphics device so that pkgdown::build_site() will run, seems to default to ragg
 ```
 ## Description
 Lateral-move irrigation systems as defined here refer to sprinker lateral sytems that are not "fixed" permanantly in one position as with "solid set sytems" but rather are "periodic-move" systems.  In these systems one or more laterals is charged with flow to supply flow and pressure to sprinklers on the operating laterals.  After an irrigation "set" is complete, the lateral is moved to another location for a subsequent irrigation.  These systems reduce sysetem capital costs (and pump costs) as compared to solid-set systems by limiting the number of laterals and sprinklers. An irrigation on a tract of land is accomplished by moving the laterals in irrigation "sets" across the field such that they are returned to their original positions by the time the next irrigation cycle is required. Example types of these systems are "hand-move" and "wheel-move" systems. Normally the laterals are moved in a direction perpendicular to a lateral, but some systems use hose-fed laterals with non-overlapping sprinklers, that are pulled in the lateral direction for acheiving full coverage and overlap along the laterals in subsequent sets. 
@@ -33,9 +35,8 @@ knitr::kable(cc.data,format="html")
 
 where the columns labeled "l" show catch can collection rates (in/hr) to the left of the lateral (plan view) and those labled with "r" are right of the lateral. A better view of the data from the single lateral trial can be performed using `speval::plotss`.  
 
-```{r,echo=TRUE,results='asis',fig.show='hold',fig.width = 5,fig.height = 5,fig.cap="Raw catch can data"}
-#x,y matrix 10 ft x 10 ft catch can spacing
-x<-seq(-35,25,10) # x=0 is lateral position
+```{r,echo=TRUE,results='asis',fig.show='hold',fig.width = 4.5,fig.height = 4.5,fig.cap="Raw catch can data"}
+x<-seq(-35,25,10) # x=0 is lateral position. 10 x 10 catch can spacing
 y<-seq(55,5,-10)
 grd<-list(x,y) # prepare list for make.surface function [fields]
 grid<-fields::make.surface.grid(grd)
@@ -67,7 +68,7 @@ knitr::kable(super.l,format="html")
 knitr::kable(super.r,format="html")
 ```
 Note that superimposing from right to left or left to right makes no difference other than being a mirror image.   Either resultant matrix can be used to evaluate uniformity and other performance measures.  This overlapped data can now be processed and plotted as with the original data using `speval::plotss`.
-```{r,echo=FALSE,results='asis',fig.show='hold',fig.width = 5,fig.height = 5}
+```{r,echo=FALSE,results='asis',fig.show='hold',fig.width = 4.5,fig.height = 4.5}
 x<-seq(5,45,10) # x=0 is lateral position; look at right of test lateral
 y<-seq(55,5,-10) # start at "top" y position, as a matrix
 grd<-list(x,y) # prepare list for make.surface function [fields]
@@ -78,7 +79,7 @@ sp.x.o<-c(sp.x,rep(50,3));sp.y.o<-c(sp.y,seq(0,60,30))#add second lateral locati
 sploc.o<-cbind(sp.x.o,sp.y.o) 
 ```
 
-```{r,echo=TRUE,results='asis',fig.show='hold',fig.width = 5,fig.height = 5,fig.cap="Overlapped catch can data at 50 ft lateral spacing"}
+```{r,echo=TRUE,results='asis',fig.show='hold',fig.width = 4.5,fig.height = 4.5,fig.cap="Overlapped catch can data at 50 ft lateral spacing"}
 plotss(o.cdata,sploc.o,imcol=TRUE)# call function
 text(c(2,2,2,48,48,48),rep(c(2,30,58),2),rep(c("s4","s5","s6"),2),cex=0.8)#label sprinkler numbers as in reference
 
