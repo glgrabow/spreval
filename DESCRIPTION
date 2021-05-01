@@ -9,6 +9,7 @@ Description: Functions to evaluate sprinkler irrigation uniformity
 License: GPL
 Encoding: UTF-8
 LazyData: true
+URL: https://glgrabow.github.io/spreval/
 Imports:
     timeDate,akima, fields
 Suggests: 
