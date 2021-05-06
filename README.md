@@ -20,38 +20,34 @@ Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997a. Field calibration pr
 
 ## Installation
 
-You can install the released version of spreval from [CRAN](https://CRAN.R-project.org) with:
+You can install the released version of spreval (date TBD) from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("spreval")
 ```
 
+Note: Still in production mode.
+
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+A quick example of a couple of things this package will do is shown below. In this example, conventional statistics, e.g., `CU`, `DU`, DU low half (`DU.lh`), and `PELQ` are computed. Additionally, a cumulative distribution plot of the data are shown with a target depth (`sfplot`) to help visualize the relative area receiving less than or more than the target depth, and the deviation from the target depth is shown. For perspective, the top of the plot can be considered as the soil surface and the cumulative distribution line the depth of catch:
 
 ``` r
 library(spreval)
 ## basic example code
+data("catchcan")
+cc.data<-catchcan$solid.set #fetch solid set data
+ss.uni<-c(CU(cc.data),DU(cc.data),DU.lh(cc.data),PELQ(cc.data,SI=FALSE,rate=16.98,ss=80,sl=80,dur=2.25))# use U.S. cust. units
+table<-round(ss.uni,0)
+knitr::kable(t(table),col.names=c("CU","DU","DU.lh","PELQ"))#transpose array (table) for display
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`? You can include R chunks like so:
+|   CU|   DU|  DU.lh|  PELQ|
+|----:|----:|------:|-----:|
+|   75|   55|     76|    55|
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+sfplot(as.vector(cc.data),target=0.57,ylab="depth caught, in.")
 ```
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/master/examples>.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don't forget to commit and push the resulting figure files, so they display on GitHub and CRAN.
+<img src="man/figures/README-example-1.png" width="100%" />
