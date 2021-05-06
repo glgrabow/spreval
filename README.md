@@ -2,7 +2,6 @@
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 # spreval
 
-
 <!-- badges: start -->
 <!-- badges: end -->
 ## Brief Description of spreval package
