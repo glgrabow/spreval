@@ -26,7 +26,10 @@ You can install the released version of spreval (date TBD) from [CRAN](https://C
 install.packages("spreval")
 ```
 
-Note: Still in production mode.
+a "pre-CRAN" development package is available at:<https://github.com/glgrabow/spreval/blob/master/packages/spreval_0.1.0.tar.gz>.
+This may be installed as an archive file locally on your machine after downloading.
+
+Note: Still in production mode. A pdf file documenting all of the package functions is available at: <https://github.com/glgrabow/spreval/blob/master/docs/spreval.pdf>
 
 ## Example
 

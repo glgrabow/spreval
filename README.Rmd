@@ -44,7 +44,7 @@ You can install the released version of spreval (date TBD) from [CRAN](https://C
 ``` r
 install.packages("spreval")
 ```
-Note: Still in production mode.  
+Note: Still in production mode.  A pdf file documenting all of the package functions is available at: https://github.com/glgrabow/spreval/blob/master/docs/spreval.pdf
 
 ## Example
 
