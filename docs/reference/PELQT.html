@@ -6,8 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Compute distribution uniformity of lower half
- — DU.lh • spreval</title>
+<title>Potential application efficiency of low quarter for a traveling irrigation system.
+ — PELQT • spreval</title>
 
 
 <!-- jquery -->
@@ -40,10 +40,11 @@
 
 
 
-<meta property="og:title" content="Compute distribution uniformity of lower half
- — DU.lh" />
-<meta property="og:description" content="Computes uniformity of lower half of a solid set sprinkler system
-vs. lower quarter as does DU.  Note that this computation uses the same method as low quarter, except it uses the observations of the low half rather than low quarter.  It does not use an empirical equation that converts DU (low quarter) to DUlh (lower half) as some have proposed.
+<meta property="og:title" content="Potential application efficiency of low quarter for a traveling irrigation system.
+ — PELQT" />
+<meta property="og:description" content="This function determines PELQ as the average of the low quarter catch depths
+divided by the average catch depth of applied water.  As such is is a measure of the potential of the
+sprinkler irrigation system considering uniformity (low quarter) and any losses due to drift and evaporation (uses catch can depths overlapped at specified lane spacing).
 " />
 
 
@@ -138,36 +139,53 @@ vs. lower quarter as does DU.  Note that this computation uses the same method a
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Compute distribution uniformity of lower half
+    <h1>Potential application efficiency of low quarter for a traveling irrigation system.
 <!-- %%  ~~function to do ... ~~ --></h1>
     
-    <div class="hidden name"><code>DU.lh.Rd</code></div>
+    <div class="hidden name"><code>PELQT.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Computes uniformity of lower half of a solid set sprinkler system
-vs. lower quarter as does DU.  Note that this computation uses the same method as low quarter, except it uses the observations of the low half rather than low quarter.  It does not use an empirical equation that converts DU (low quarter) to DUlh (lower half) as some have proposed.
+    <p>This function determines PELQ as the average of the low quarter catch depths
+divided by the average catch depth of applied water.  As such is is a measure of the potential of the
+sprinkler irrigation system considering uniformity (low quarter) and any losses due to drift and evaporation (uses catch can depths overlapped at specified lane spacing).
 <!-- %%  ~~ A concise (1-5 lines) description of what the function does. ~~ --></p>
     </div>
 
-    <pre class="usage"><span class='fu'>DU.lh</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>PELQT</span><span class='op'>(</span><span class='va'>x</span>,SI<span class='op'>=</span><span class='cn'>TRUE</span>,<span class='va'>rate</span>,<span class='va'>ls</span>,<span class='va'>ts</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>x</th>
-      <td><p>a numeric array of catch depths or volumes.
-<!-- %%     ~~Describe \code{x} here~~ --></p></td>
+      <td><p>numeric array of catch can depths, overlapped.</p></td>
+    </tr>
+    <tr>
+      <th>SI</th>
+      <td><p>logical; units SI (mm, m, lpm) or US Customary (in., ft, gpm).  SI (TRUE) is default.</p></td>
+    </tr>
+    <tr>
+      <th>rate</th>
+      <td><p>sprinkler discharge rate (lps or gpm).</p></td>
+    </tr>
+    <tr>
+      <th>ls</th>
+      <td><p>lane spacing (m or ft).</p></td>
+    </tr>
+    <tr>
+      <th>ts</th>
+      <td><p>travel speed (m/min or ft/min).</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><!-- %%  ~~ If necessary, more details than the description above ~~ --></p>
+    <p>catch can depths overlapped to specified lane spacing.
+<!-- %%  ~~ If necessary, more details than the description above ~~ --></p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>DU of lower half value in percentage.
+    <p>PELQT (potential application efficiency of low quarter for traveling system, %
 <!-- %%  ~Describe the value returned -->
 <!-- %%  If it is a LIST, use -->
 <!-- %%  \item{comp1 }{Description of 'comp1'} -->
@@ -175,7 +193,12 @@ vs. lower quarter as does DU.  Note that this computation uses the same method a
 <!-- %% ... --></p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p><!-- %% ~put references to the literature/web site here ~ --></p>
+    <p>Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997b.  Field calibration procedures for animal wastewater application equipment, hard hose and cable tow traveler irrigation system. NC Cooperative Extension Service publication  AG-553-2.  Raleigh, NC
+<a href='https://p2infohouse.org/ref/32/31084/ag-553-2.pdf'>https://p2infohouse.org/ref/32/31084/ag-553-2.pdf</a></p>
+<p>Liu, Z., G.L. Grabow, R.L. Huffman, J. Osborne, and R.O. Evans. 2012.  Factors Affecting Uniformity of Irrigation-Type Manure Application Systems. Applied Eng. in Agric.  28(1):43-56.</p>
+<p>Mirriam and Keller, 1978. Farm System Irrigation Evaluation: A Guide for Management.  PP 97-107.
+Utah State University, Logan, Utah. <a href='https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf'>https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf</a></p>
+<p><!-- %% ~put references to the literature/web site here ~ --></p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Garry Grabow <a href='mailto:glgrabow@ncsu.edu'>glgrabow@ncsu.edu</a>
@@ -185,19 +208,21 @@ vs. lower quarter as does DU.  Note that this computation uses the same method a
     <p><!-- %%  ~~further notes~~ --></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='CU.html'>CU</a></code>,<code><a href='DU.html'>DU</a></code>
+    <div class='dont-index'><p><code><a href='PELQ.html'>PELQ</a>,<code><a href='travunif.html'>travunif</a></code></code>
 <!-- %% ~~objects to See Also as \code{\link{help}}, ~~~ --></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='co'># data below are volumes caught in ml.  Catch cans must be of</span>
-<span class='co'># equal surface area at top when using volume data</span>
-<span class='va'>x</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>47</span>,<span class='fl'>42</span>,<span class='fl'>45</span>,<span class='fl'>24</span>,<span class='fl'>13</span>,<span class='fl'>26</span>,<span class='fl'>33</span>,<span class='fl'>34</span>,<span class='fl'>27</span>,<span class='fl'>30</span>,<span class='fl'>40</span>,<span class='fl'>44</span>,<span class='fl'>32</span>,<span class='fl'>12</span>,<span class='fl'>12</span><span class='op'>)</span>
-<span class='va'>xdulh</span><span class='op'>&lt;-</span><span class='fu'>DU.lh</span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
-<span class='co'>#round results</span>
-<span class='va'>dulhrnd</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/Round.html'>round</a></span><span class='op'>(</span><span class='va'>xdulh</span>,<span class='fl'>2</span><span class='op'>)</span>
-<span class='va'>xdulh</span>
-</div><div class='output co'>#&gt; [1] 71.58351</div><div class='input'><span class='va'>dulhrnd</span>
-</div><div class='output co'>#&gt; [1] 71.58</div><div class='input'>
+    <pre class="examples"><div class='input'><span class='co'>#see pp 41-43 of reference document</span>
+<span class='va'>SI</span><span class='op'>&lt;-</span><span class='cn'>FALSE</span> <span class='co'># use U.S. customary units</span>
+<span class='va'>left</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.94</span>,<span class='fl'>0.80</span>,<span class='fl'>0.59</span>,<span class='fl'>0.61</span>,<span class='fl'>0.50</span>,<span class='fl'>0.42</span>,<span class='fl'>0.33</span>,<span class='fl'>0.07</span><span class='op'>)</span>
+<span class='va'>right</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.73</span>,<span class='fl'>0.81</span>,<span class='fl'>0.92</span>,<span class='fl'>0.64</span>,<span class='fl'>0.50</span>,<span class='fl'>0.27</span>,<span class='fl'>0.20</span>,<span class='fl'>0.13</span><span class='op'>)</span>
+<span class='va'>ls</span><span class='op'>&lt;-</span><span class='fl'>224</span>;<span class='va'>gs</span><span class='op'>&lt;-</span><span class='fl'>20</span>
+<span class='co'>#first call travunif to return overlapped data given gage spacing and lane spacing</span>
+<span class='va'>out</span><span class='op'>&lt;-</span><span class='fu'><a href='travunif.html'>travunif</a></span><span class='op'>(</span><span class='va'>ls</span>,<span class='va'>gs</span>,<span class='va'>left</span>,<span class='va'>right</span><span class='op'>)</span>
+</div><div class='img'><img src='PELQT-1.png' alt='' width='700' height='433' /></div><div class='img'><img src='PELQT-2.png' alt='' width='700' height='433' /></div><div class='input'><span class='va'>x</span><span class='op'>&lt;-</span><span class='va'>out</span><span class='op'>$</span><span class='va'>o.depths</span>
+<span class='va'>rate</span><span class='op'>&lt;-</span><span class='fl'>197</span> <span class='co'># 197 gpm sprinkler discharge rate (measured)</span>
+<span class='fu'>PELQT</span><span class='op'>(</span><span class='va'>x</span>,SI<span class='op'>=</span><span class='cn'>FALSE</span>,<span class='va'>rate</span>,<span class='va'>ls</span>,<span class='fl'>1.5</span><span class='op'>)</span><span class='co'>#call PELQ for traveling systems</span>
+</div><div class='output co'>#&gt; [1] 0.6521767</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

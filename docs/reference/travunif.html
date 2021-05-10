@@ -115,6 +115,9 @@ for traveling gun irrigation systems.  Data from a single transect of catch cans
     <li>
       <a href="../articles/solid-set.html">Solid-set Sprinkler Systems</a>
     </li>
+    <li>
+      <a href="../articles/traveling-sys.html">Traveling Systems</a>
+    </li>
   </ul>
 </li>
 <li>
@@ -186,6 +189,7 @@ for traveling gun irrigation systems.  Data from a single transect of catch cans
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A named list with the following items:</p>
+<dt>o.depths</dt><dd><p>collected depths as overlapped within travel lane</p></dd>
 <dt>CU</dt><dd><p>CU from catch can data with overlap from adjacent lanes</p></dd>
 <dt>DUlh</dt><dd><p>DU low half (using  function <code><a href='DU.lh.html'>DU.lh</a></code>) from catch can data with overlap from adjacent lanes</p></dd>
 <dt>DU</dt><dd><p>DU from catch can data with overlap from adjacent lanes</p></dd>
@@ -221,7 +225,11 @@ for traveling gun irrigation systems.  Data from a single transect of catch cans
 <span class='va'>right</span><span class='op'>&lt;-</span><span class='fu'><a href='https://rdrr.io/pkg/timeDate/man/base-c.html'>c</a></span><span class='op'>(</span><span class='fl'>0.16</span>,<span class='fl'>0.2</span>,<span class='fl'>0.21</span>,<span class='fl'>0.2</span>,<span class='fl'>0.21</span>,<span class='fl'>0.13</span>,<span class='fl'>0.06</span>,<span class='fl'>0.02</span><span class='op'>)</span>
 <span class='va'>ls</span><span class='op'>&lt;-</span><span class='fl'>165</span>;<span class='va'>gs</span><span class='op'>&lt;-</span><span class='fl'>16</span> <span class='co'># units are ft</span>
 <span class='fu'>travunif</span><span class='op'>(</span><span class='va'>ls</span>,<span class='va'>gs</span>,<span class='va'>left</span>,<span class='va'>right</span><span class='op'>)</span>
-</div><div class='img'><img src='travunif-1.png' alt='' width='700' height='433' /></div><div class='img'><img src='travunif-2.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt; $CU
+</div><div class='img'><img src='travunif-1.png' alt='' width='700' height='433' /></div><div class='img'><img src='travunif-2.png' alt='' width='700' height='433' /></div><div class='output co'>#&gt; $o.depths
+#&gt;  [1] 0.170000 0.220000 0.200000 0.257500 0.238125 0.160000 0.200000 0.210000
+#&gt;  [9] 0.213750 0.250625
+#&gt; 
+#&gt; $CU
 #&gt; [1] 88.67925
 #&gt; 
 #&gt; $DUlh
