@@ -137,6 +137,6 @@
     legend("topright",leg.names,col=leg.colors,lty=leg.lines,pch=leg.pch,cex=leg.cex)
 
   }
-  uniList<-list("CU"=CU.curr,"DUlh"=DUlh.curr,"DU"=DU.curr)
+  uniList<-list("o.depths"=use.depths,"CU"=CU.curr,"DUlh"=DUlh.curr,"DU"=DU.curr)
   return(uniList)
 }

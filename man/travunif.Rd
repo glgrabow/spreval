@@ -27,6 +27,7 @@ travunif(ls,cs,lcdata,rcdata,site="",plot=T)
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{A named list with the following items:
+\item{o.depths}{collected depths as overlapped within travel lane}
 \item{CU}{CU from catch can data with overlap from adjacent lanes}
 \item{DUlh}{DU low half (using  function \code{\link{DU.lh}}) from catch can data with overlap from adjacent lanes}
 \item{DU}{DU from catch can data with overlap from adjacent lanes}

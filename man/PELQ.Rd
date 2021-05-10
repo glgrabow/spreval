@@ -48,7 +48,7 @@ Utah State University, Logan, Utah. \url{https://pdf.usaid.gov/pdf_docs/PNAAG745
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{\code{\link{AELQ}}
+\seealso{\code{\link{PELQT}},\code{\link{AELQ}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{

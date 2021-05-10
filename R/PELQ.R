@@ -7,9 +7,20 @@
   #get subarray of low quarter
   x<-sort(x)
   end<-round(length(x)/4,digits=0)
-  #use applied depth rather than caught depth for denominator
+  #use applied rate rather than caught rate for denominator
   #SI use mm for depth, meters for spacing, lpm for sprinkler flow rate, hr duration
   #US Customary use in. for depth, feet for spacing, gpm for sprinkler flow rate, hr duration
  if(SI){(mean(x[1:end])/dur)/((rate/1000/(ss*sl)*60*dur)*1000)*100}
   else{(mean(x[1:end])/dur)/(96.3*rate/(ss*sl))*100}
+}
+
+## PELQ for traveling system
+#use applied depth rather than caught depth for denominator}
+#SI x=mm,rate=lps, ls=m, ts=m/s - note lps for rate not lpm as in stationary
+#US x=in., rate=gpm,ls=ft, ts= ft/min
+"PELQT"=function(x,SI=TRUE,rate,ls,ts)
+{ x<-sort(x)
+end<-round(length(x)/4,digits=0)
+if(SI){mean(x[1:end])/(60*rate/(ls*ts))}
+else{mean(x[1:end])/(1.604*rate/(ls*ts))}
 }
