@@ -1,12 +1,11 @@
 \name{sfplot}
 \alias{sfplot}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Create step function plot.
+\title{Create step function plot (of catch can depths).
 %%  ~~function to do ... ~~
 }
 \description{Uses an ecdf object to plot a step function plot
-with cumulative frequency on x axis and input array on y axis with y-axis reversed
-(min(y)= 0 at top of y-axis).
+with cumulative frequency on x axis and input array (catch can depths) on y axis with y-axis reversed (min(y)= 0 at top of y-axis). Top of plot represents soil surface.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{

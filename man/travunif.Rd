@@ -53,7 +53,7 @@ Liu, Z., G.L. Grabow, R.L. Huffman, J. Osborne, and R.O. Evans. 2012.  Factors A
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{\code{\link{PELQT}}
+\seealso{\code{\link{PELQT}}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 
 \examples{
