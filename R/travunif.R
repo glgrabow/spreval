@@ -1,6 +1,11 @@
 "travunif"=function(ls,cs,lcdata,rcdata,site=NA,plot=T)
 {
-  no.gages<-length(lcdata)*2
+  # Set lcdata or rcdata to maximum of either.  Need to fill "empty cans of shorter array
+  # setting shorter array to max array length will fill shorter arrays with NA for missing values
+ no.gages<-max(length(lcdata),length(rcdata))*2
+ length(lcdata)<-no.gages/2;length(rcdata)<-no.gages/2
+  lcdata[is.na(lcdata)]<-0 #set NAs to 0 for later summing of overlap
+  rcdata[is.na(rcdata)]<-0
   depths<-c(lcdata,rcdata)#concatenate left and right of pull catch can data.  Order is increasing from hose outward,
   #e.g., can 1 is closest to hose (middle of pull) for both left and right of hose.
   if(plot){
