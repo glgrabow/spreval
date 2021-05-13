@@ -6,7 +6,7 @@
 }
 \description{This function computes 3 values of sprinkler irrigation distribution uniformity -
 CU (Christiansen's coefficient of uniformity), DU (dist. unif. of low quarter), DU.lh (dist. unif. of low half)
-for traveling gun irrigation systems.  Data from a single transect of catch cans from one hard hose pull is used, and data is overlapped to account for additional contribution from adjacent traveler pulls.
+for traveling gun irrigation systems.  Data from a single transect of catch cans from one hard hose pull is used, and data is overlapped to account for additional contribution from adjacent traveler pulls.  Overlapped catch depths are also returned.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -25,6 +25,7 @@ travunif(ls,cs,lcdata,rcdata,site="",plot=T)
 
 \details{
 %%  ~~ If necessary, more details than the description above ~~
+It is not necessary that lcdata and rcdata be of equal length.  This might occur if windy conditions prevail and the wetted width of one side is greater than antother, and data is not entered for empty cans.  The function will automatically assign 0 depths to the "missing" catch cans if not explicity done. While using volume instead of depth data will result in the same unformity values, depth is more intuitive and will be required if the `o.depths` output will be used to compute `PELQT`.
 }
 \value{A named list with the following items:
 \item{o.depths}{collected depths as overlapped within travel lane}
@@ -52,9 +53,9 @@ Liu, Z., G.L. Grabow, R.L. Huffman, J. Osborne, and R.O. Evans. 2012.  Factors A
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
+\seealso{\code{\link{PELQT}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
-}
+
 \examples{
 # units can be SI or US Customary, e.g.
 # SI - mm for catch can data and m for lane and catch
