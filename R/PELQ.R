@@ -21,6 +21,6 @@
 "PELQT"=function(x,SI=TRUE,rate,ls,ts)
 { x<-sort(x)
 end<-round(length(x)/4,digits=0)
-if(SI){mean(x[1:end])/(60*rate/(ls*ts))}
-else{mean(x[1:end])/(1.604*rate/(ls*ts))}
+if(SI){mean(x[1:end])/(60*rate/(ls*ts))*100}
+else{mean(x[1:end])/(1.604*rate/(ls*ts))*100}
 }
