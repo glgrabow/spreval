@@ -1,7 +1,7 @@
 Package: spreval
 Type: Package
 Title: Sprinkler Irrigation Uniformity and Efficiency
-Version: 0.1.0
+Version: 0.1.0.900
 Author: Garry Grabow
 Maintainer: Garry Grabow <glgrabow@ncsu.edu>
 Description: Functions to evaluate sprinkler irrigation uniformity
