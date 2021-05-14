@@ -30,7 +30,9 @@ a "pre-CRAN" development package is available at: [package in github](https://gi
 
 Note: Still in production mode. A pdf file documenting all of the package functions is available at: [here](https://github.com/glgrabow/spreval/blob/master/docs/spreval.pdf)
 
-Check the change log tab for updates on version history. \#\# Example
+Check the changelog tab for updates on version history.
+
+## Example
 
 A quick example of a couple of things this package will do is shown below. In this example, conventional statistics, e.g., `CU`, `DU`, DU low half (`DU.lh`), and `PELQ` are computed. Additionally, a cumulative distribution plot of the data are shown with a target depth (`sfplot`) to help visualize the relative area receiving less than or more than the target depth, and the deviation from the target depth is shown. For perspective, the top of the plot can be considered as the soil surface and the cumulative distribution line the depth of catch:
 
