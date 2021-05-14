@@ -26,12 +26,11 @@ You can install the released version of spreval (date TBD) from [CRAN](https://C
 install.packages("spreval")
 ```
 
-a "pre-CRAN" development package is available at:<https://github.com/glgrabow/spreval/blob/master/packages/spreval_0.1.0.tar.gz>.
-This may be installed as an archive file locally on your machine after downloading.
+a "pre-CRAN" development package is available at: [package in github](https://github.com/glgrabow/spreval/blob/master/packages/spreval_0.1.0.900.tar.gz) This may be installed as an archive file locally on your machine after downloading.
 
-Note: Still in production mode. A pdf file documenting all of the package functions is available at: <https://github.com/glgrabow/spreval/blob/master/docs/spreval.pdf>
+Note: Still in production mode. A pdf file documenting all of the package functions is available at: [here](https://github.com/glgrabow/spreval/blob/master/docs/spreval.pdf)
 
-## Example
+Check the change log tab for updates on version history. \#\# Example
 
 A quick example of a couple of things this package will do is shown below. In this example, conventional statistics, e.g., `CU`, `DU`, DU low half (`DU.lh`), and `PELQ` are computed. Additionally, a cumulative distribution plot of the data are shown with a target depth (`sfplot`) to help visualize the relative area receiving less than or more than the target depth, and the deviation from the target depth is shown. For perspective, the top of the plot can be considered as the soil surface and the cumulative distribution line the depth of catch:
 
