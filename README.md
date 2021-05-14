@@ -30,11 +30,7 @@ a "pre-CRAN" development package is available at: [package in github](https://gi
 
 Note: Still in production mode. A pdf file documenting all of the package functions is available at: [here](https://github.com/glgrabow/spreval/blob/master/docs/spreval.pdf)
 
-<<<<<<< HEAD
 Check the changelog tab for updates on version history.
-=======
-Check the change log tab for updates on version history.
->>>>>>> master
 
 ## Example
 
