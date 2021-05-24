@@ -1,7 +1,7 @@
 \name{catchcan}
 \alias{catchcan}
 \docType{data}
-\title{catchcan data
+\title{catch can data
 %%   ~~ data name/kind ... ~~
 }
 \description{Three catch can data sets, one each for lateral, hose pull, and solid set sprinkler systems.

@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{plots points generated from an ecdf object with x and y axis swapped
-(x is cummulative freqency) and with y axis reversed so that min(y)=0 is at top.  Plots points
+(x is cumulative frequency) and with y axis reversed so that min(y)=0 is at top.  Plots points
 without step function lines.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
@@ -15,7 +15,7 @@ rotecdf(x,target,ylab)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{numeric array}
-  \item{target}{target, a constanst, e.g., target depth of irrigation.  Default is NA.}
+  \item{target}{target, a constant, e.g., target depth of irrigation.  Default is NA.}
   \item{ylab}{label for y axis, e.g. depth applied. Default is object name of x if not supplied.}
 %%     ~~Describe \code{x} here~~
 }
