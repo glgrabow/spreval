@@ -13,7 +13,7 @@ overlap(sl,sc,lcdata,rcdata)
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{sl}{lateral spacing.}
-  \item{sc}{catch can spacing perpindicular to lateral.}
+  \item{sc}{catch can spacing perpendicular to lateral.}
   \item{lcdata}{data from cans left of lateral; order is proximate to distal of lateral.}
   \item{rcdata}{data from cans right of lateral; order as in lcdata.}
 %%     ~~Describe \code{x} here~~

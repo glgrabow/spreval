@@ -25,7 +25,7 @@ travunif(ls,cs,lcdata,rcdata,site="",plot=T)
 
 \details{
 %%  ~~ If necessary, more details than the description above ~~
-It is not necessary that lcdata and rcdata be of equal length.  This might occur if windy conditions prevail and the wetted width of one side is greater than antother, and data is not entered for empty cans.  The function will automatically assign 0 depths to the "missing" catch cans if not explicity done. While using volume instead of depth data will result in the same unformity values, depth is more intuitive and will be required if the `o.depths` output will be used to compute `PELQT`.
+It is not necessary that lcdata and rcdata be of equal length.  This might occur if windy conditions prevail and the wetted width of one side is greater than another, and data is not entered for empty cans.  The function will automatically assign 0 depths to the "missing" catch cans if not explicitly done. While using volume instead of depth data will result in the same uniformity values, depth is more intuitive and will be required if the `o.depths` output will be used to compute `PELQT`.
 }
 \value{A named list with the following items:
 \item{o.depths}{collected depths as overlapped within travel lane}

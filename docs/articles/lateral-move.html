@@ -90,7 +90,7 @@
       <h1 data-toc-skip>lateral-move systems</h1>
                         <h4 class="author">Garry Grabow</h4>
             
-            <h4 class="date">2021-05-14</h4>
+            <h4 class="date">2021-05-23</h4>
       
       
       <div class="hidden name"><code>lateral-move.Rmd</code></div>
@@ -102,8 +102,8 @@
 <div id="description" class="section level2">
 <h2 class="hasAnchor">
 <a href="#description" class="anchor"></a>Description</h2>
-<p>Lateral-move irrigation systems as defined here refer to sprinker lateral sytems that are not "fixed" permanantly in one position as with "solid set sytems" but rather are "periodic-move" systems. In these systems one or more laterals is charged with flow to supply flow and pressure to sprinklers on the operating laterals. After an irrigation "set" is complete, the lateral is moved to another location for a subsequent irrigation. These systems reduce sysetem capital costs (and pump costs) as compared to solid-set systems by limiting the number of laterals and sprinklers. An irrigation on a tract of land is accomplished by moving the laterals in irrigation "sets" across the field such that they are returned to their original positions by the time the next irrigation cycle is required. Example types of these systems are "hand-move" and "wheel-move" systems. Normally the laterals are moved in a direction perpendicular to a lateral, but some systems use hose-fed laterals with non-overlapping sprinklers, that are pulled in the lateral direction for acheiving full coverage and overlap along the laterals in subsequent sets.</p>
-<p>Because of their unique layout, lateral-move irrigation systems are evaluted for performance and uniformity in a slightly different manner than with a solid set, or hose-pull irrigation system.</p>
+<p>Lateral-move irrigation systems as defined here refer to sprinkler systems with laterals that are not "fixed" permanently in one position as with "solid set systems" but rather are "periodic-move" systems. In these systems one or more laterals is charged with flow to supply flow and pressure to sprinklers on the operating laterals. After an irrigation "set" is complete, the lateral is moved to another location for a subsequent irrigation. These systems reduce system capital costs (and pump costs) as compared to solid-set systems by limiting the number of laterals and sprinklers. An irrigation on a tract of land is accomplished by moving the laterals in irrigation "sets" across the field such that they are returned to their original positions by the time the next irrigation cycle is required. Example types of these systems are "hand-move" and "wheel-move" systems. Normally the laterals are moved in a direction perpendicular to a lateral, but some systems use hose-fed laterals with non-overlapping sprinklers, that are pulled in the lateral direction for achieving full coverage and overlap along the laterals in subsequent sets.</p>
+<p>Because of their unique layout, lateral-move irrigation systems are evaluated for performance and uniformity in a slightly different manner than with a solid set, or hose-pull irrigation system.</p>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
@@ -298,7 +298,7 @@ r6
 </tr>
 </tbody>
 </table>
-<p>where the columns labeled "l" show catch can collection rates (in/hr) to the left of the lateral (plan view) and those labled with "r" are right of the lateral. A better view of the data from the single lateral trial can be performed using <code>speval::plotss</code>.</p>
+<p>where the columns labeled "l" show catch can collection rates (in/hr) to the left of the lateral (plan view) and those labeled with "r" are right of the lateral. A better view of the data from the single lateral trial can be performed using <code>speval::plotss</code>.</p>
 <div class="sourceCode"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">x</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">35</span>,<span class="fl">25</span>,<span class="fl">10</span><span class="op">)</span> <span class="co"># x=0 is lateral position. 10 x 10 catch can spacing</span>
 <span class="va">y</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">55</span>,<span class="fl">5</span>,<span class="op">-</span><span class="fl">10</span><span class="op">)</span>
@@ -316,7 +316,7 @@ Raw catch can data
 </p>
 </div>
 <p>In the figure above, the solid black dots at the upper, middle, and lower part of the plot at x=0 are the sprinkler locations along the single lateral, so in this test, data is from 3 sprinklers contributing to the catch cans indicated by open circle symbols. The 4 columns of catch cans to the left of the lateral, and only 3 to the right, are indicative of a prevailing wind from the upper right of the figure.</p>
-<p>To evaluate sprinkler system uniformity, it is necessary to take account for operation of the lateral adjacent to the lateral operated for the test. This is done by overlaping, or superimposing the data from the one operating lateral as if an adjacent lateral was operating, or in the case of a periodic-move system, what would be expected from the next irrigation set with the lateral moved to a new position. The function <code>speval::overlap</code> is useful for superimposing the test data to simulate adjacent lateral operation for subsequent evaluation. <code>speval::overlap</code> operates using one "row" of can data from both left and right of the lateral; so overlap will need to be called for each row of catch can data. In this first case, a 50 ft lateral spacing will be used in the overlap process.</p>
+<p>To evaluate sprinkler system uniformity, it is necessary to take account for operation of the lateral adjacent to the lateral operated for the test. This is done by overlapping, or superimposing the data from the one operating lateral as if an adjacent lateral was operating, or in the case of a periodic-move system, what would be expected from the next irrigation set with the lateral moved to a new position. The function <code>speval::overlap</code> is useful for superimposing the test data to simulate adjacent lateral operation for subsequent evaluation. <code>speval::overlap</code> operates using one "row" of can data from both left and right of the lateral; so overlap will need to be called for each row of catch can data. In this first case, a 50 ft lateral spacing will be used in the overlap process.</p>
 <div class="sourceCode"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sl</span><span class="op">&lt;-</span><span class="fl">50</span> <span class="co"># 50 ft lateral spacing (pass to overlap)</span>
 <span class="va">sc</span><span class="op">&lt;-</span><span class="fl">10</span> <span class="co"># 10 ft catch can spacing perpindicular to lateral (pass to overlap)</span>
@@ -550,7 +550,7 @@ Overlapped catch can data at 50 ft lateral spacing
 </p>
 </div>
 <p>Note that the uniformity is improved by accounting for overlap of adjacent laterals.</p>
-<p>Now we can use some measures of apllication uniformity and efficiency, specifically Christiansen's coefficient of uniformity, distribution uniformity (of low quarter), distribution uniformity of the low half, and potential efficiency of the low quarter using the respective functions <code>CU</code>, <code>DU</code>, <code>DU.lh</code> and <code>PELQ</code>. We will divide the overlapped data set into 2 portions: the catch can data between sprinklers 4 and 5 (lower), and those between 5 and 6 (upper).</p>
+<p>Now we can use some measures of application uniformity and efficiency, specifically Christiansen's coefficient of uniformity, distribution uniformity (of low quarter), distribution uniformity of the low half, and potential efficiency of the low quarter using the respective functions <code>CU</code>, <code>DU</code>, <code>DU.lh</code> and <code>PELQ</code>. We will divide the overlapped data set into 2 portions: the catch can data between sprinklers 4 and 5 (lower), and those between 5 and 6 (upper).</p>
 <div class="sourceCode"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lower</span><span class="op">&lt;-</span><span class="va">super.r</span><span class="op">[</span><span class="fl">4</span><span class="op">:</span><span class="fl">6</span>,<span class="op">]</span>;<span class="va">upper</span><span class="op">&lt;-</span><span class="va">super.r</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>,<span class="op">]</span><span class="co">#use superimposed data</span>
 <span class="va">upper.uni</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="fu"><a href="../reference/CU.html">CU</a></span><span class="op">(</span><span class="va">upper</span><span class="op">)</span>,<span class="fu"><a href="../reference/DU.html">DU</a></span><span class="op">(</span><span class="va">upper</span><span class="op">)</span>,<span class="fu"><a href="../reference/DU.lh.html">DU.lh</a></span><span class="op">(</span><span class="va">upper</span><span class="op">)</span>,<span class="fu"><a href="../reference/PELQ.html">PELQ</a></span><span class="op">(</span><span class="va">upper</span>,SI<span class="op">=</span><span class="cn">FALSE</span>,rate<span class="op">=</span><span class="fl">4.6</span>,ss<span class="op">=</span><span class="fl">30</span>,sl<span class="op">=</span><span class="fl">50</span>,dur<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="co"># use U.S. cust. units</span>
@@ -802,7 +802,7 @@ Overlapped catch can data at 50 ft lateral spacing
 </tr>
 </tbody>
 </table>
-<p>The measures of application uniformity and efficiency can now be computed for thise alternate lateral spacings:</p>
+<p>The measures of application uniformity and efficiency can now be computed for these alternate lateral spacings:</p>
 <table class="table">
 <caption>40 ft lateral spacing</caption>
 <thead><tr class="header">
@@ -855,7 +855,7 @@ Overlapped catch can data at 50 ft lateral spacing
 </tr>
 </tbody>
 </table>
-<p>and the AELQ for the 40- and 60-ft lateral spacings are 51% and 55% respectively. Note that the AELQ, that measures efficiency, is lower for the lesser 40 ft lateral spacing, in contrast to the better application uniformity for the 40 ft spacing. This is because the application rate at the closer lateral spacing is higher, therefore applying a greater depth (catch can) that is in excess of the soil moisture deficit (SMD) and which leads to deep percolation losses. For the 60-ft lateral spacing AELQ=PELQ, meaning that the system application efficiency is limited soley by the irrigation system uniformity. If the irrigation duration is reduced to 11.5 hr from 23.5 hr, there will be no excess irrigation and hence no deep percolation losses and AELQ will change to 72% and 55% based on observations between the 5th and 6th sprinklers for the 40- and 60-ft lateral spacings respectively. With this irrgation duration, both spacings are limited only by the irrigation system application uniformity, however, in the case of the 60 ft lateral spacing, the reduced duration will result in under-irrigation as AELQ was equal to PELQ for both irrigation durations.</p>
+<p>and the AELQ for the 40- and 60-ft lateral spacings are 51% and 55% respectively. Note that the AELQ, that measures efficiency, is lower for the lesser 40 ft lateral spacing, in contrast to the better application uniformity for the 40 ft spacing. This is because the application rate at the closer lateral spacing is higher, therefore applying a greater depth (catch can) that is in excess of the soil moisture deficit (SMD) and which leads to deep percolation losses. For the 60-ft lateral spacing AELQ=PELQ, meaning that the system application efficiency is limited solely by the irrigation system uniformity. If the irrigation duration is reduced to 11.5 hr from 23.5 hr, there will be no excess irrigation and hence no deep percolation losses and AELQ will change to 72% and 55% based on observations between the 5th and 6th sprinklers for the 40- and 60-ft lateral spacings respectively. With this irrigation duration, both spacings are limited only by the irrigation system application uniformity, however, in the case of the 60 ft lateral spacing, the reduced duration will result in under-irrigation as AELQ was equal to PELQ for both irrigation durations.</p>
 </div>
 <div id="references" class="section level2">
 <h2 class="hasAnchor">

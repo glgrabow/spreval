@@ -90,7 +90,7 @@
       <h1 data-toc-skip>Solid-set Sprinkler Systems</h1>
                         <h4 class="author">Garry Grabow</h4>
             
-            <h4 class="date">2021-05-14</h4>
+            <h4 class="date">2021-05-23</h4>
       
       
       <div class="hidden name"><code>solid-set.Rmd</code></div>
@@ -102,7 +102,7 @@
 <div id="description" class="section level2">
 <h2 class="hasAnchor">
 <a href="#description" class="anchor"></a>Description</h2>
-<p>Solid-set Sprinkler systems include both buried and surface systems that are "permanent" in that sprinkler laterals are fixed. This is in contrast to lateral-move sprinkler systems in which one or more laterals are moved for a subsequent irrigation. In order to reduce pump and mainline cost, solid-set systems are normally divided into zones so that the pumping requirement based on the peak use rate of the crop for the whole field matches the system requirement (flow rate) of the zone. In this way all zones can be operated sequentially over an irrigation event before the initial zone requires a subsequent irrigation. These systems are generally more expensive than lateral move or hose-pull traveling gun systems due to the installed infrastructure, but do allow greater flexiblity in operation. These systems are typically found in higher value agriculture (fruit or nut trees) or in wastewater irrigation. Residential and commercial turf irrgation systsems are similar, and the functions in <code>spreval</code> can be used for either application.</p>
+<p>Solid-set Sprinkler systems include both buried and surface systems that are "permanent" in that sprinkler laterals are fixed. This is in contrast to lateral-move sprinkler systems in which one or more laterals are moved for a subsequent irrigation. In order to reduce pump and mainline cost, solid-set systems are normally divided into zones so that the pumping requirement based on the peak use rate of the crop for the whole field matches the system requirement (flow rate) of the zone. In this way all zones can be operated sequentially over an irrigation event before the initial zone requires a subsequent irrigation. These systems are generally more expensive than lateral move or hose-pull traveling gun systems due to the installed infrastructure, but do allow greater flexibility in operation. These systems are typically found in higher value agriculture (fruit or nut trees) or in wastewater irrigation. Residential and commercial turf irrigation systems are similar, and the functions in <code>spreval</code> can be used for either application.</p>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
@@ -220,7 +220,7 @@ Raw catch can data
 </p>
 </div>
 <p>In this example, there is no need to overlap test data, as with lateral-move and traveling gun system test data, to evaluate uniformity and efficiency.</p>
-<p>Now we can use some measures of apllication uniformity and efficiency, specifically Christiansen's coefficient of uniformity, distribution uniformity (of low quarter), distribution uniformity of the low half, and potential efficiency of the low quarter using the respective functions <code>CU</code>, <code>DU</code>, <code>DU.lh</code> and <code>PELQ</code>.</p>
+<p>Now we can use some measures of application uniformity and efficiency, specifically Christiansen's coefficient of uniformity, distribution uniformity (of low quarter), distribution uniformity of the low half, and potential efficiency of the low quarter using the respective functions <code>CU</code>, <code>DU</code>, <code>DU.lh</code> and <code>PELQ</code>.</p>
 <div class="sourceCode"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ss.uni</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="fu"><a href="../reference/CU.html">CU</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,<span class="fu"><a href="../reference/DU.html">DU</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,<span class="fu"><a href="../reference/DU.lh.html">DU.lh</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,<span class="fu"><a href="../reference/PELQ.html">PELQ</a></span><span class="op">(</span><span class="va">cc.data</span>,SI<span class="op">=</span><span class="cn">FALSE</span>,rate<span class="op">=</span><span class="fl">16.98</span>,ss<span class="op">=</span><span class="fl">80</span>,sl<span class="op">=</span><span class="fl">80</span>,dur<span class="op">=</span><span class="fl">2.25</span><span class="op">)</span><span class="op">)</span><span class="co"># use U.S. cust. units</span>
 <span class="va">table</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-round.html">round</a></span><span class="op">(</span><span class="va">ss.uni</span>,<span class="fl">0</span><span class="op">)</span>
@@ -239,7 +239,7 @@ Raw catch can data
 <td align="right">55</td>
 </tr></tbody>
 </table>
-<p>Note that in the reference, the sprinkler discharge rate (which is a required parameter in <code>PELQ</code>)is not given. In this example, the sprinkler discharge rate (16.98 gpm) was simply calculated using the precipitation rate (in./hr) which is the average catch (in.) divided by the irrigation duration (2.25 hr), and the sprinkler and lateral spacing (80 ft x 80 ft). By using the average catch rate to obtain the precipitation rate, the PELQ exactly matches DU. The actual sprinkler discharge would be slightly greate, as drift and evaporation losses from the sprinklers to the catch cans would not be accounted for, and the PELQ would therefore be lower than in this example.</p>
+<p>Note that in the reference, the sprinkler discharge rate (which is a required parameter in <code>PELQ</code>)is not given. In this example, the sprinkler discharge rate (16.98 gpm) was simply calculated using the precipitation rate (in./hr) which is the average catch (in.) divided by the irrigation duration (2.25 hr), and the sprinkler and lateral spacing (80 ft x 80 ft). By using the average catch rate to obtain the precipitation rate, the PELQ exactly matches DU. The actual sprinkler discharge would be slightly greater, as drift and evaporation losses from the sprinklers to the catch cans would not be accounted for, and the PELQ would therefore be lower than in this example.</p>
 <p>We can also look at the distribution of catch can depths using <code><a href="../reference/eda.shape.html">spreval::eda.shape</a></code></p>
 <div class="sourceCode"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/eda.shape.html">eda.shape</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span><span class="op">)</span> <span class="co"># need to convert matrix to vector</span>

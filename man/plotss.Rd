@@ -19,8 +19,8 @@ imcol=FALSE,edastat=FALSE)
   \item{xlab}{label for x axis of plot}
   \item{ylab}{label for y axis of plot}
   \item{title}{main title for plot, default is FALSE (no title)}
-  \item{labelpoints}{logial; plot amounts at can locations? Default is TRUE.}
-  \item{imcol}{logical; color densigram?  Default is FALSE for grey-scale.}
+  \item{labelpoints}{logical; plot amounts at can locations? Default is TRUE.}
+  \item{imcol}{logical; color densigram?  Default is FALSE for gray-scale.}
   \item{edastat}{call eda.stat function for stats on catch depths? Default is FALSE.}
 %%     ~~Describe \code{x} here~~
 }

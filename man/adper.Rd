@@ -27,7 +27,7 @@ adper(x,target,plot=TRUE)
 
 \details{results are given as determined by both a density function and empirical cumulative
 distribution function (ecdf). if target is equal to soil moisture depletion, then 1- efficiency is
-the percentile of area that loses water to deep perolation (not held in root zone). Adequacy and efficiency percentiles should add to approximatley 1.0. Note that definitions of adequacy and efficiency here based only on percentiles is not a standard definition as deviation from target depth is not considered.  See \code{\link{eff} for a more traditional approach.}
+the percentile of area that loses water to deep percolation (not held in root zone). Adequacy and efficiency percentiles should add to approximately 1.0. Note that definitions of adequacy and efficiency here based only on percentiles is not a standard definition as deviation from target depth is not considered.  See \code{\link{eff} for a more traditional approach.}
 }
 %%  ~~ If necessary, more details than the description above ~~
 

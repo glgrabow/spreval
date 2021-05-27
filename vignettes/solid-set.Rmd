@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 )
 ```
 ## Description
-Solid-set Sprinkler systems include both buried and surface systems that are "permanent" in that sprinkler laterals are fixed.  This is in contrast to lateral-move sprinkler systems in which one or more laterals are moved for a subsequent irrigation.  In order to reduce pump and mainline cost, solid-set systems are normally divided into zones so that the pumping requirement based on the peak use rate of the crop for the whole field matches the system requirement (flow rate) of the zone.  In this way all zones can be operated sequentially over an irrigation event before the initial zone requires a subsequent irrigation.  These systems are generally more expensive than lateral move or hose-pull traveling gun systems due to the installed infrastructure, but do allow greater flexiblity in operation.   These systems are typically found in higher value agriculture (fruit or nut trees) or in wastewater irrigation.  Residential and commercial turf irrgation systsems are similar, and the functions in `spreval` can be used for either application.
+Solid-set Sprinkler systems include both buried and surface systems that are "permanent" in that sprinkler laterals are fixed.  This is in contrast to lateral-move sprinkler systems in which one or more laterals are moved for a subsequent irrigation.  In order to reduce pump and mainline cost, solid-set systems are normally divided into zones so that the pumping requirement based on the peak use rate of the crop for the whole field matches the system requirement (flow rate) of the zone.  In this way all zones can be operated sequentially over an irrigation event before the initial zone requires a subsequent irrigation.  These systems are generally more expensive than lateral move or hose-pull traveling gun systems due to the installed infrastructure, but do allow greater flexibility in operation.   These systems are typically found in higher value agriculture (fruit or nut trees) or in wastewater irrigation.  Residential and commercial turf irrigation systems are similar, and the functions in `spreval` can be used for either application.
 
 ## Example
 Data for this example are taken from the `catchcan` dataset.  This data set contains catch can data for three types of sprinkler systems.  The dataset for our lateral move example looks like this:
@@ -49,7 +49,7 @@ text(c(3,3,77,77),c(-3,-77,-3,-77),c("s12","s22","s13","s23"),cex=0.8)# label sp
 
 In this example, there is no need to overlap test data, as with lateral-move and traveling gun system test data, to evaluate uniformity and efficiency.
 
-Now we can use some measures of apllication uniformity and efficiency, specifically Christiansen's coefficient of uniformity, distribution uniformity (of low quarter), distribution uniformity of the low half, and potential efficiency of the low quarter using the respective functions `CU`, `DU`, `DU.lh` and `PELQ`.
+Now we can use some measures of application uniformity and efficiency, specifically Christiansen's coefficient of uniformity, distribution uniformity (of low quarter), distribution uniformity of the low half, and potential efficiency of the low quarter using the respective functions `CU`, `DU`, `DU.lh` and `PELQ`.
 ```{r, echo=TRUE,results='asis'}
 ss.uni<-c(CU(cc.data),DU(cc.data),DU.lh(cc.data),PELQ(cc.data,SI=FALSE,rate=16.98,ss=80,sl=80,dur=2.25))# use U.S. cust. units
 table<-round(ss.uni,0)
@@ -57,7 +57,7 @@ knitr::kable(t(table),col.names=c("CU","DU","DU.lh","PELQ"))#transpose array (ta
 
 ```
 
-Note that in the reference, the sprinkler discharge rate (which is a required parameter in `PELQ`)is not given. In this example, the sprinkler discharge rate (16.98 gpm) was simply calculated using the precipitation rate (in./hr) which is the average catch (in.) divided by the irrigation duration (2.25 hr), and the sprinkler and lateral spacing (80 ft x 80 ft). By using the average catch rate to obtain the precipitation rate, the PELQ exactly matches DU. The actual sprinkler discharge would be slightly greate, as drift and evaporation losses from the sprinklers to the catch cans would not be accounted for, and the PELQ would therefore be lower than in this example.
+Note that in the reference, the sprinkler discharge rate (which is a required parameter in `PELQ`)is not given. In this example, the sprinkler discharge rate (16.98 gpm) was simply calculated using the precipitation rate (in./hr) which is the average catch (in.) divided by the irrigation duration (2.25 hr), and the sprinkler and lateral spacing (80 ft x 80 ft). By using the average catch rate to obtain the precipitation rate, the PELQ exactly matches DU. The actual sprinkler discharge would be slightly greater, as drift and evaporation losses from the sprinklers to the catch cans would not be accounted for, and the PELQ would therefore be lower than in this example.
 
 We can also look at the distribution of catch can depths using `spreval::eda.shape`
 
