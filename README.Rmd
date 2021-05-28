@@ -13,6 +13,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+![logo](/Volumes/Research/R_stuff/Packages/spreval/pkgdown/favicon/apple-touch-icon-120x120.png)
+
 # spreval
 
 <!-- badges: start -->

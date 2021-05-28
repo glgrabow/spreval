@@ -1,5 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+![logo](/Volumes/Research/R_stuff/Packages/spreval/pkgdown/favicon/apple-touch-icon-120x120.png)
+
 # spreval
 
 <!-- badges: start -->
