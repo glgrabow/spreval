@@ -1,5 +1,5 @@
 
-# spreval <img src="/Volumes/Research/R_stuff/Packages/spreval/pkgdown/favicon/apple-touch-icon-120x120.png" align="right" />
+# spreval <img src="/Volumes/Research/R_stuff/Packages/spreval/docs/apple-touch-icon-120x120.png" align="right" />
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 # Evaluation of Sprinkler Irrigation Uniformity and Efficiency
