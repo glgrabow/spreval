@@ -1,3 +1,5 @@
+# spreval <img src="/Volumes/Research/R_stuff/Packages/spreval/pkgdown/favicon/apple-touch-icon-120x120.png" align="right" />
+
 ---
 output: github_document
 ---
@@ -13,9 +15,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-![logo](/Volumes/Research/R_stuff/Packages/spreval/pkgdown/favicon/apple-touch-icon-120x120.png)
-
-# spreval
+# Evaluation of Sprinkler Irrigation Uniformity and Efficiency
 
 <!-- badges: start -->
 <!-- badges: end -->
