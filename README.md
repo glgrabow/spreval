@@ -56,4 +56,4 @@ knitr::kable(t(table),col.names=c("CU","DU","DU.lh","PELQ"))#transpose array (ta
 sfplot(as.vector(cc.data),target=0.57,ylab="depth caught, in.")
 ```
 
-<img src="man/figures/example-example-1.png" width="100%" />
+<img src="man/figures/README-example-1.png" width="100%" />
