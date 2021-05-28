@@ -1,5 +1,5 @@
 
-# spreval <img src="/Volumes/Research/R_stuff/Packages/spreval/docs/apple-touch-icon-120x120.png" align="right" />
+# spreval <img src="man/figures/apple-touch-icon-120x120.png" align="right" />
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 # Evaluation of Sprinkler Irrigation Uniformity and Efficiency
@@ -56,4 +56,4 @@ knitr::kable(t(table),col.names=c("CU","DU","DU.lh","PELQ"))#transpose array (ta
 sfplot(as.vector(cc.data),target=0.57,ylab="depth caught, in.")
 ```
 
-<img src="man/figures/README-example-1.png" width="100%" />
+<img src="man/figures/example-1.png" width="100%" />
