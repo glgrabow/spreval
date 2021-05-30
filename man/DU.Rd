@@ -4,7 +4,7 @@
 \title{DU of sprinkler irrigation system
 %%  ~~function to do ... ~~
 }
-\description{Computes DU (distribution uniformity of low half) for sprinkler systems using catch can data.
+\description{Computes DU (distribution uniformity of low quarter) for sprinkler systems using catch can data.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -19,7 +19,7 @@ DU(x)
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
-\value{
+\value{\item{DU}{Distribution Uniformity (of low quarter) in percentage }
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}

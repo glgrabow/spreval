@@ -81,7 +81,14 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/glgrabow/spreval/">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -91,15 +98,15 @@
 
       
 
-      </header><div class="row">
+      </header><script src="solid-set_files/header-attrs-2.8/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Solid-set Sprinkler Systems</h1>
                         <h4 class="author">Garry Grabow</h4>
             
-            <h4 class="date">2021-05-28</h4>
+            <h4 class="date">2021-05-30</h4>
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/glgrabow/spreval/blob/master/vignettes/solid-set.Rmd"><code>vignettes/solid-set.Rmd</code></a></small>
       <div class="hidden name"><code>solid-set.Rmd</code></div>
 
     </div>
@@ -109,13 +116,13 @@
 <div id="description" class="section level2">
 <h2 class="hasAnchor">
 <a href="#description" class="anchor"></a>Description</h2>
-<p>Solid-set Sprinkler systems include both buried and surface systems that are "permanent" in that sprinkler laterals are fixed. This is in contrast to lateral-move sprinkler systems in which one or more laterals are moved for a subsequent irrigation. In order to reduce pump and mainline cost, solid-set systems are normally divided into zones so that the pumping requirement based on the peak use rate of the crop for the whole field matches the system requirement (flow rate) of the zone. In this way all zones can be operated sequentially over an irrigation event before the initial zone requires a subsequent irrigation. These systems are generally more expensive than lateral move or hose-pull traveling gun systems due to the installed infrastructure, but do allow greater flexibility in operation. These systems are typically found in higher value agriculture (fruit or nut trees) or in wastewater irrigation. Residential and commercial turf irrigation systems are similar, and the functions in <code>spreval</code> can be used for either application.</p>
+<p>Solid-set Sprinkler systems include both buried and surface systems that are “permanent” in that sprinkler laterals are fixed. This is in contrast to lateral-move sprinkler systems in which one or more laterals are moved for a subsequent irrigation. In order to reduce pump and mainline cost, solid-set systems are normally divided into zones so that the pumping requirement based on the peak use rate of the crop for the whole field matches the system requirement (flow rate) of the zone. In this way all zones can be operated sequentially over an irrigation event before the initial zone requires a subsequent irrigation. These systems are generally more expensive than lateral move or hose-pull traveling gun systems due to the installed infrastructure, but do allow greater flexibility in operation. These systems are typically found in higher value agriculture (fruit or nut trees) or in wastewater irrigation. Residential and commercial turf irrigation systems are similar, and the functions in <code>spreval</code> can be used for either application.</p>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Data for this example are taken from the <code>catchcan</code> dataset. This data set contains catch can data for three types of sprinkler systems. The dataset for our lateral move example looks like this:</p>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">catchcan</span><span class="op">)</span>
 <span class="va">cc.data</span><span class="op">&lt;-</span><span class="va">catchcan</span><span class="op">$</span><span class="va">solid.set</span>
 <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">cc.data</span>,format<span class="op">=</span><span class="st">"html"</span><span class="op">)</span></code></pre></div>
@@ -209,7 +216,7 @@ r4
 </table>
 <p>This is a plan view of catch can data (in.) collected between 4 sprinklers spaced at a 80 ft x 80 ft (lateral x sprinkler) spacing. The catch cans are spaced at 20 ft x 20 ft.</p>
 <p>These data may be plotted along with the sprinkler locations as a contour and image plot for a better representation of application uniformity using <code>speval::plotss</code>. Here, the upper left sprinkler is given an arbitrary location of (0,0).</p>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#x,y matrix 20 ft x 20 ft catch can spacing</span>
 <span class="va">x</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">10</span>,<span class="fl">70</span>,<span class="fl">20</span><span class="op">)</span> <span class="co"># catch can x coordinates. </span>
 <span class="va">y</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">10</span>,<span class="op">-</span><span class="fl">70</span>,<span class="op">-</span><span class="fl">20</span><span class="op">)</span> <span class="co">#catch can y coordinates. </span>
@@ -227,8 +234,8 @@ Raw catch can data
 </p>
 </div>
 <p>In this example, there is no need to overlap test data, as with lateral-move and traveling gun system test data, to evaluate uniformity and efficiency.</p>
-<p>Now we can use some measures of application uniformity and efficiency, specifically Christiansen's coefficient of uniformity, distribution uniformity (of low quarter), distribution uniformity of the low half, and potential efficiency of the low quarter using the respective functions <code>CU</code>, <code>DU</code>, <code>DU.lh</code> and <code>PELQ</code>.</p>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<p>Now we can use some measures of application uniformity and efficiency, specifically Christiansen’s coefficient of uniformity, distribution uniformity (of low quarter), distribution uniformity of the low half, and potential efficiency of the low quarter using the respective functions <code>CU</code>, <code>DU</code>, <code>DU.lh</code> and <code>PELQ</code>.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">ss.uni</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="fu"><a href="../reference/CU.html">CU</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,<span class="fu"><a href="../reference/DU.html">DU</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,<span class="fu"><a href="../reference/DU.lh.html">DU.lh</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,<span class="fu"><a href="../reference/PELQ.html">PELQ</a></span><span class="op">(</span><span class="va">cc.data</span>,SI<span class="op">=</span><span class="cn">FALSE</span>,rate<span class="op">=</span><span class="fl">16.98</span>,ss<span class="op">=</span><span class="fl">80</span>,sl<span class="op">=</span><span class="fl">80</span>,dur<span class="op">=</span><span class="fl">2.25</span><span class="op">)</span><span class="op">)</span><span class="co"># use U.S. cust. units</span>
 <span class="va">table</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-round.html">round</a></span><span class="op">(</span><span class="va">ss.uni</span>,<span class="fl">0</span><span class="op">)</span>
 <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span><span class="op">(</span><span class="va">table</span><span class="op">)</span>,col.names<span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="st">"CU"</span>,<span class="st">"DU"</span>,<span class="st">"DU.lh"</span>,<span class="st">"PELQ"</span><span class="op">)</span><span class="op">)</span><span class="co">#transpose array (table) for display</span></code></pre></div>
@@ -248,17 +255,17 @@ Raw catch can data
 </table>
 <p>Note that in the reference, the sprinkler discharge rate (which is a required parameter in <code>PELQ</code>)is not given. In this example, the sprinkler discharge rate (16.98 gpm) was simply calculated using the precipitation rate (in./hr) which is the average catch (in.) divided by the irrigation duration (2.25 hr), and the sprinkler and lateral spacing (80 ft x 80 ft). By using the average catch rate to obtain the precipitation rate, the PELQ exactly matches DU. The actual sprinkler discharge would be slightly greater, as drift and evaporation losses from the sprinklers to the catch cans would not be accounted for, and the PELQ would therefore be lower than in this example.</p>
 <p>We can also look at the distribution of catch can depths using <code><a href="../reference/eda.shape.html">spreval::eda.shape</a></code></p>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/eda.shape.html">eda.shape</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span><span class="op">)</span> <span class="co"># need to convert matrix to vector</span>
-<span class="co">#&gt; Warning in bxp(list(stats = structure(c(0.26, 0.445, 0.61, 0.67, 0.86), .Dim =</span>
-<span class="co">#&gt; c(5L, : some notches went outside hinges ('box'): maybe set notch=FALSE</span></code></pre></div>
+<span class="co">#&gt; Warning in (function (z, notch = FALSE, width = NULL, varwidth = FALSE, : some</span>
+<span class="co">#&gt; notches went outside hinges ('box'): maybe set notch=FALSE</span></code></pre></div>
 <div class="figure">
 <img src="solid-set_files/figure-html/unnamed-chunk-5-1.png" alt="Distribution of catch can data in example" width="480"><p class="caption">
 Distribution of catch can data in example
 </p>
 </div>
 <p>If a target depth is known, we can also compute percentile receiving depths lesser or greater than the target depth using speval::adper. This function uses both a density plot and empirical cumulative distribution function to determine the portion of catches above and below a given target depth.</p>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">results</span><span class="op">&lt;-</span><span class="fu"><a href="../reference/adper.html">adper</a></span><span class="op">(</span><span class="va">cc.data</span>,target<span class="op">=</span><span class="fl">0.57</span><span class="op">)</span>
 <span class="va">headings</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="va">results</span><span class="op">[[</span><span class="fl">1</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">results</span><span class="op">[[</span><span class="fl">3</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">results</span><span class="op">[[</span><span class="fl">5</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">results</span><span class="op">[[</span><span class="fl">7</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span><span class="co">#extract label elements</span>
 <span class="va">row.2</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="va">results</span><span class="op">[[</span><span class="fl">2</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">results</span><span class="op">[[</span><span class="fl">4</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">results</span><span class="op">[[</span><span class="fl">6</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span>,<span class="va">results</span><span class="op">[[</span><span class="fl">8</span><span class="op">]</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span> <span class="co">#extract value elements</span>
@@ -286,8 +293,8 @@ Distribution of catch can data in example
 Percentile plot with target depth for example
 </p>
 </div>
-<p>Note that for either the "density" or "ecdf" plot approaches, the adequacy and efficiency values add to 1.0. With this function "adequacy" is simply the proportion of catches that receive depths equal to or greater than the target, while "efficiency" is defined at the proportion of catches that receive less than or equal to the target amount. Note also that this is not the standard definition of efficiency, in that it does not consider the difference in catch depths and the target depth, but only the proportion of depths less than or equal to the target depth. For a more traditional assessment of efficiency, we can use the function <code><a href="../reference/eff.html">spreval::eff</a></code>. This function uses a density plot to account for differences in catch depths from the target:</p>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<p>Note that for either the “density” or “ecdf” plot approaches, the adequacy and efficiency values add to 1.0. With this function “adequacy” is simply the proportion of catches that receive depths equal to or greater than the target, while “efficiency” is defined at the proportion of catches that receive less than or equal to the target amount. Note also that this is not the standard definition of efficiency, in that it does not consider the difference in catch depths and the target depth, but only the proportion of depths less than or equal to the target depth. For a more traditional assessment of efficiency, we can use the function <code><a href="../reference/eff.html">spreval::eff</a></code>. This function uses a density plot to account for differences in catch depths from the target:</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">eff.table</span><span class="op">&lt;-</span><span class="fu"><a href="../reference/eff.html">eff</a></span><span class="op">(</span><span class="va">cc.data</span>,target<span class="op">=</span><span class="fl">0.57</span><span class="op">)</span><span class="co"># call function</span>
 <span class="va">eff.table</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-round.html">round</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="va">eff.table</span><span class="op">$</span><span class="va">appeff</span>,<span class="va">eff.table</span><span class="op">$</span><span class="va">appadeq</span><span class="op">)</span>,<span class="fl">3</span><span class="op">)</span>
 <span class="va">labels</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="st">"efficiency"</span>,<span class="st">"adequacy"</span><span class="op">)</span>
@@ -310,7 +317,7 @@ Percentile plot with target depth for example
 </tbody>
 </table>
 <p>A plot of an empirical cumulative distribution step function plot that is rotated so that the soil surface is represented at the top of the plot helps to visualize the above results. To do this, the function <code><a href="../reference/sfplot.html">spreval::sfplot</a></code> may be used.</p>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/sfplot.html">sfplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,target<span class="op">=</span><span class="fl">0.57</span>,ylab<span class="op">=</span><span class="st">"depth caught, in."</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="solid-set_files/figure-html/unnamed-chunk-8-1.png" alt="Rotated ECDF plot with target depth for example" width="384"><p class="caption">
@@ -346,11 +353,7 @@ Rotated ECDF plot with target depth for example
 </tbody>
 </table>
 <p>Notice how efficiency increases with increasing target depth, for this example irrigation that applied an average of 5.7 in (catch can average). Efficiency can approach 100% with deficit irrigation, but with greater efficiency comes reduced adequacy as can be seen in the table above.</p>
-</div>
-<div id="references" class="section level2">
-<h2 class="hasAnchor">
-<a href="#references" class="anchor"></a>References</h2>
-<p>Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997a. Field calibration procedures for animal wastewater application equipment, stationary sprinkler irrigation system. NC Cooperative Extension Service publication AG 553-1. Raleigh, NC. (<a href="https://irrigation.wordpress.ncsu.edu/files/2017/01/ag-553-1-stationary-sprinkler.pdf" class="uri">https://irrigation.wordpress.ncsu.edu/files/2017/01/ag-553-1-stationary-sprinkler.pdf</a>).</p>
+<p>##References Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997a. Field calibration procedures for animal wastewater application equipment, stationary sprinkler irrigation system. NC Cooperative Extension Service publication AG 553-1. Raleigh, NC. (<a href="https://irrigation.wordpress.ncsu.edu/files/2017/01/ag-553-1-stationary-sprinkler.pdf" class="uri">https://irrigation.wordpress.ncsu.edu/files/2017/01/ag-553-1-stationary-sprinkler.pdf</a>).</p>
 <p>Mirriam and Keller, 1978. Farm System Irrigation Evaluation: A Guide for Management. PP 41-43. Utah State University, Logan, Utah. (<a href="https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf" class="uri">https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf</a>).</p>
 </div>
   </div>

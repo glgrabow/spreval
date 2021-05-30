@@ -81,7 +81,14 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/glgrabow/spreval/">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -91,15 +98,15 @@
 
       
 
-      </header><div class="row">
+      </header><script src="traveling-sys_files/header-attrs-2.8/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Traveling Systems</h1>
                         <h4 class="author">Garry Grabow</h4>
             
-            <h4 class="date">2021-05-28</h4>
+            <h4 class="date">2021-05-30</h4>
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/glgrabow/spreval/blob/master/vignettes/traveling-sys.Rmd"><code>vignettes/traveling-sys.Rmd</code></a></small>
       <div class="hidden name"><code>traveling-sys.Rmd</code></div>
 
     </div>
@@ -109,13 +116,13 @@
 <div id="description" class="section level2">
 <h2 class="hasAnchor">
 <a href="#description" class="anchor"></a>Description</h2>
-<p>Traveling systems use a single large sprinkler (typically called a "gun-type" sprinkler) attached to a cart that is pulled either by a cable or by the supply hose along a straight line for a distance as far as the length of the supply hose. Cable systems pull the cart by winding in the cable attached to the gun cart, while hose-pull systems use the hose to pull the cart and gun towards the reel from which the hose is wound. Hose-type systems are far more common than cable-tow systems. To achieve overlap and thus acceptable uniformity, "travel lanes" are established such that adjacent pulls result in application overlap. Evaluation of uniformity for such systems differs from linear-move or solid-set systems in that a single row (transect) of catch containers are used rather than a grid. The catch can transect is aligned perpendicular to the gun travel direction. During an evaluation test, the sprinkler is moved through the catch can transect beginning with the sprinkler gun positioned beyond the transect, so that it throws short of the catch can transect, until it no longer contributes to the catch cans on the other side of the transect. Overlap for the test is then achieved by superimposing the catch data according to the adjacent travel lane distances (adjacent pulls).</p>
+<p>Traveling systems use a single large sprinkler (typically called a “gun-type” sprinkler) attached to a cart that is pulled either by a cable or by the supply hose along a straight line for a distance as far as the length of the supply hose. Cable systems pull the cart by winding in the cable attached to the gun cart, while hose-pull systems use the hose to pull the cart and gun towards the reel from which the hose is wound. Hose-type systems are far more common than cable-tow systems. To achieve overlap and thus acceptable uniformity, “travel lanes” are established such that adjacent pulls result in application overlap. Evaluation of uniformity for such systems differs from linear-move or solid-set systems in that a single row (transect) of catch containers are used rather than a grid. The catch can transect is aligned perpendicular to the gun travel direction. During an evaluation test, the sprinkler is moved through the catch can transect beginning with the sprinkler gun positioned beyond the transect, so that it throws short of the catch can transect, until it no longer contributes to the catch cans on the other side of the transect. Overlap for the test is then achieved by superimposing the catch data according to the adjacent travel lane distances (adjacent pulls).</p>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Data for this example are taken from the <code>catchcan</code> dataset. The raw data and stationing, and a plot of the raw data are given below:</p>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">catchcan</span><span class="op">)</span>
 <span class="va">cc.data</span><span class="op">&lt;-</span><span class="va">catchcan</span><span class="op">$</span><span class="va">traveler</span>
 <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,format<span class="op">=</span><span class="st">"html"</span>,caption<span class="op">=</span><span class="st">"Raw data"</span><span class="op">)</span></code></pre></div>
@@ -284,15 +291,15 @@ depth
 </tr>
 </tbody>
 </table>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html">plot</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span></code></pre></div>
 <div class="figure">
 <img src="traveling-sys_files/figure-html/unnamed-chunk-3-1.png" alt="Catch can collected depths with station" width="384"><p class="caption">
 Catch can collected depths with station
 </p>
 </div>
-<p>We now can use the <code>travunif</code> function to both overlap the data and return uniformity measures. This function in turn calls <code>CU</code>, <code>DU</code>, and <code>DU.lh</code> to return those measures of uniformity. Two plots, a plan view of the catch can data, and a plot of the overlapped depths will also be generated (unless plot="F").</p>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<p>We now can use the <code>travunif</code> function to both overlap the data and return uniformity measures. This function in turn calls <code>CU</code>, <code>DU</code>, and <code>DU.lh</code> to return those measures of uniformity. Two plots, a plan view of the catch can data, and a plot of the overlapped depths will also be generated (unless plot=“F”).</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lcdata</span><span class="op">&lt;-</span><span class="va">cc.data</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">8</span>,<span class="fl">2</span><span class="op">]</span> <span class="co">#left data is first 8 observations</span>
 <span class="va">rcdata</span><span class="op">&lt;-</span><span class="va">cc.data</span><span class="op">[</span><span class="fl">9</span><span class="op">:</span><span class="fl">16</span>,<span class="fl">2</span><span class="op">]</span><span class="co">#right data is last 8 observations</span>
 <span class="va">out</span><span class="op">&lt;-</span><span class="fu"><a href="../reference/travunif.html">travunif</a></span><span class="op">(</span>ls<span class="op">=</span><span class="fl">224</span>,cs<span class="op">=</span><span class="fl">20</span>,<span class="va">lcdata</span>,<span class="va">rcdata</span><span class="op">)</span><span class="co">#omit site name, and allow plot</span></code></pre></div>
@@ -325,8 +332,8 @@ DU
 </td>
 </tr></tbody>
 </table>
-<p>We can also determine PELQ using the catch can data and the applied depth of water. We'll use the overlapped catch data returned from <code>travunif</code></p>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<p>We can also determine PELQ using the catch can data and the applied depth of water. We’ll use the overlapped catch data returned from <code>travunif</code></p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co">#overlapped depths are first in list returned from</span>
 <span class="co">#`travunif` </span>
 <span class="fu"><a href="../reference/PELQT.html">PELQT</a></span><span class="op">(</span><span class="va">out</span><span class="op">$</span><span class="va">o.depths</span>,SI<span class="op">=</span><span class="cn">FALSE</span>,rate<span class="op">=</span><span class="fl">197</span>,ls<span class="op">=</span><span class="fl">224</span>,ts<span class="op">=</span><span class="fl">1.75</span><span class="op">)</span></code></pre></div>
