@@ -81,7 +81,14 @@
   <a href="../news/index.html">Changelog</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/glgrabow/spreval/">
+    <span class="fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -91,15 +98,15 @@
 
       
 
-      </header><div class="row">
+      </header><script src="lateral-move_files/header-attrs-2.8/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>lateral-move systems</h1>
                         <h4 class="author">Garry Grabow</h4>
             
-            <h4 class="date">2021-05-28</h4>
+            <h4 class="date">2021-05-30</h4>
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/glgrabow/spreval/blob/master/vignettes/lateral-move.Rmd"><code>vignettes/lateral-move.Rmd</code></a></small>
       <div class="hidden name"><code>lateral-move.Rmd</code></div>
 
     </div>
@@ -109,14 +116,14 @@
 <div id="description" class="section level2">
 <h2 class="hasAnchor">
 <a href="#description" class="anchor"></a>Description</h2>
-<p>Lateral-move irrigation systems as defined here refer to sprinkler systems with laterals that are not "fixed" permanently in one position as with "solid set systems" but rather are "periodic-move" systems. In these systems one or more laterals is charged with flow to supply flow and pressure to sprinklers on the operating laterals. After an irrigation "set" is complete, the lateral is moved to another location for a subsequent irrigation. These systems reduce system capital costs (and pump costs) as compared to solid-set systems by limiting the number of laterals and sprinklers. An irrigation on a tract of land is accomplished by moving the laterals in irrigation "sets" across the field such that they are returned to their original positions by the time the next irrigation cycle is required. Example types of these systems are "hand-move" and "wheel-move" systems. Normally the laterals are moved in a direction perpendicular to a lateral, but some systems use hose-fed laterals with non-overlapping sprinklers, that are pulled in the lateral direction for achieving full coverage and overlap along the laterals in subsequent sets.</p>
+<p>Lateral-move irrigation systems as defined here refer to sprinkler systems with laterals that are not “fixed” permanently in one position as with “solid set systems” but rather are “periodic-move” systems. In these systems one or more laterals is charged with flow to supply flow and pressure to sprinklers on the operating laterals. After an irrigation “set” is complete, the lateral is moved to another location for a subsequent irrigation. These systems reduce system capital costs (and pump costs) as compared to solid-set systems by limiting the number of laterals and sprinklers. An irrigation on a tract of land is accomplished by moving the laterals in irrigation “sets” across the field such that they are returned to their original positions by the time the next irrigation cycle is required. Example types of these systems are “hand-move” and “wheel-move” systems. Normally the laterals are moved in a direction perpendicular to a lateral, but some systems use hose-fed laterals with non-overlapping sprinklers, that are pulled in the lateral direction for achieving full coverage and overlap along the laterals in subsequent sets.</p>
 <p>Because of their unique layout, lateral-move irrigation systems are evaluated for performance and uniformity in a slightly different manner than with a solid set, or hose-pull irrigation system.</p>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>Data for this example are taken from the <code>catchcan</code> dataset. This data set contains catch can data for three types of sprinkler systems. The dataset for our lateral move example looks like this:</p>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="va">catchcan</span><span class="op">)</span>
 <span class="va">cc.data</span><span class="op">&lt;-</span><span class="va">catchcan</span><span class="op">$</span><span class="va">lateral</span>
 <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">cc.data</span>,format<span class="op">=</span><span class="st">"html"</span><span class="op">)</span></code></pre></div>
@@ -305,8 +312,8 @@ r6
 </tr>
 </tbody>
 </table>
-<p>where the columns labeled "l" show catch can collection rates (in/hr) to the left of the lateral (plan view) and those labeled with "r" are right of the lateral. A better view of the data from the single lateral trial can be performed using <code>speval::plotss</code>.</p>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<p>where the columns labeled “l” show catch can collection rates (in/hr) to the left of the lateral (plan view) and those labeled with “r” are right of the lateral. A better view of the data from the single lateral trial can be performed using <code>speval::plotss</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">x</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="op">-</span><span class="fl">35</span>,<span class="fl">25</span>,<span class="fl">10</span><span class="op">)</span> <span class="co"># x=0 is lateral position. 10 x 10 catch can spacing</span>
 <span class="va">y</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">55</span>,<span class="fl">5</span>,<span class="op">-</span><span class="fl">10</span><span class="op">)</span>
 <span class="va">grd</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span><span class="va">x</span>,<span class="va">y</span><span class="op">)</span> <span class="co"># prepare list for make.surface function [fields]</span>
@@ -323,8 +330,8 @@ Raw catch can data
 </p>
 </div>
 <p>In the figure above, the solid black dots at the upper, middle, and lower part of the plot at x=0 are the sprinkler locations along the single lateral, so in this test, data is from 3 sprinklers contributing to the catch cans indicated by open circle symbols. The 4 columns of catch cans to the left of the lateral, and only 3 to the right, are indicative of a prevailing wind from the upper right of the figure.</p>
-<p>To evaluate sprinkler system uniformity, it is necessary to take account for operation of the lateral adjacent to the lateral operated for the test. This is done by overlapping, or superimposing the data from the one operating lateral as if an adjacent lateral was operating, or in the case of a periodic-move system, what would be expected from the next irrigation set with the lateral moved to a new position. The function <code>speval::overlap</code> is useful for superimposing the test data to simulate adjacent lateral operation for subsequent evaluation. <code>speval::overlap</code> operates using one "row" of can data from both left and right of the lateral; so overlap will need to be called for each row of catch can data. In this first case, a 50 ft lateral spacing will be used in the overlap process.</p>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<p>To evaluate sprinkler system uniformity, it is necessary to take account for operation of the lateral adjacent to the lateral operated for the test. This is done by overlapping, or superimposing the data from the one operating lateral as if an adjacent lateral was operating, or in the case of a periodic-move system, what would be expected from the next irrigation set with the lateral moved to a new position. The function <code>speval::overlap</code> is useful for superimposing the test data to simulate adjacent lateral operation for subsequent evaluation. <code>speval::overlap</code> operates using one “row” of can data from both left and right of the lateral; so overlap will need to be called for each row of catch can data. In this first case, a 50 ft lateral spacing will be used in the overlap process.</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sl</span><span class="op">&lt;-</span><span class="fl">50</span> <span class="co"># 50 ft lateral spacing (pass to overlap)</span>
 <span class="va">sc</span><span class="op">&lt;-</span><span class="fl">10</span> <span class="co"># 10 ft catch can spacing perpindicular to lateral (pass to overlap)</span>
 <span class="co">#split data into left and right of lateral</span>
@@ -441,7 +448,7 @@ Raw catch can data
 </td>
 </tr>
 </tbody></table>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">super.r</span>,format<span class="op">=</span><span class="st">"html"</span><span class="op">)</span></code></pre></div>
 <table class="table"><tbody>
 <tr>
@@ -548,7 +555,7 @@ Raw catch can data
 </tr>
 </tbody></table>
 <p>Note that superimposing from right to left or left to right makes no difference other than being a mirror image. Either resultant matrix can be used to evaluate uniformity and other performance measures. This overlapped data can now be processed and plotted as with the original data using <code>speval::plotss</code>.</p>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/plotss.html">plotss</a></span><span class="op">(</span><span class="va">o.cdata</span>,<span class="va">sploc.o</span>,imcol<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="co"># call function</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/text.html">text</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">2</span>,<span class="fl">2</span>,<span class="fl">48</span>,<span class="fl">48</span>,<span class="fl">48</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">30</span>,<span class="fl">58</span><span class="op">)</span>,<span class="fl">2</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-rep.html">rep</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="st">"s4"</span>,<span class="st">"s5"</span>,<span class="st">"s6"</span><span class="op">)</span>,<span class="fl">2</span><span class="op">)</span>,cex<span class="op">=</span><span class="fl">0.8</span><span class="op">)</span><span class="co">#label sprinkler numbers as in reference</span></code></pre></div>
 <div class="figure">
@@ -557,8 +564,8 @@ Overlapped catch can data at 50 ft lateral spacing
 </p>
 </div>
 <p>Note that the uniformity is improved by accounting for overlap of adjacent laterals.</p>
-<p>Now we can use some measures of application uniformity and efficiency, specifically Christiansen's coefficient of uniformity, distribution uniformity (of low quarter), distribution uniformity of the low half, and potential efficiency of the low quarter using the respective functions <code>CU</code>, <code>DU</code>, <code>DU.lh</code> and <code>PELQ</code>. We will divide the overlapped data set into 2 portions: the catch can data between sprinklers 4 and 5 (lower), and those between 5 and 6 (upper).</p>
-<div class="sourceCode"><pre class="downlit sourceCode r">
+<p>Now we can use some measures of application uniformity and efficiency, specifically Christiansen’s coefficient of uniformity, distribution uniformity (of low quarter), distribution uniformity of the low half, and potential efficiency of the low quarter using the respective functions <code>CU</code>, <code>DU</code>, <code>DU.lh</code> and <code>PELQ</code>. We will divide the overlapped data set into 2 portions: the catch can data between sprinklers 4 and 5 (lower), and those between 5 and 6 (upper).</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">lower</span><span class="op">&lt;-</span><span class="va">super.r</span><span class="op">[</span><span class="fl">4</span><span class="op">:</span><span class="fl">6</span>,<span class="op">]</span>;<span class="va">upper</span><span class="op">&lt;-</span><span class="va">super.r</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">3</span>,<span class="op">]</span><span class="co">#use superimposed data</span>
 <span class="va">upper.uni</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="fu"><a href="../reference/CU.html">CU</a></span><span class="op">(</span><span class="va">upper</span><span class="op">)</span>,<span class="fu"><a href="../reference/DU.html">DU</a></span><span class="op">(</span><span class="va">upper</span><span class="op">)</span>,<span class="fu"><a href="../reference/DU.lh.html">DU.lh</a></span><span class="op">(</span><span class="va">upper</span><span class="op">)</span>,<span class="fu"><a href="../reference/PELQ.html">PELQ</a></span><span class="op">(</span><span class="va">upper</span>,SI<span class="op">=</span><span class="cn">FALSE</span>,rate<span class="op">=</span><span class="fl">4.6</span>,ss<span class="op">=</span><span class="fl">30</span>,sl<span class="op">=</span><span class="fl">50</span>,dur<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span><span class="co"># use U.S. cust. units</span>
 <span class="va">lower.uni</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="fu"><a href="../reference/CU.html">CU</a></span><span class="op">(</span><span class="va">lower</span><span class="op">)</span>,<span class="fu"><a href="../reference/DU.html">DU</a></span><span class="op">(</span><span class="va">lower</span><span class="op">)</span>,<span class="fu"><a href="../reference/DU.lh.html">DU.lh</a></span><span class="op">(</span><span class="va">lower</span><span class="op">)</span>,<span class="fu"><a href="../reference/PELQ.html">PELQ</a></span><span class="op">(</span><span class="va">lower</span>,SI<span class="op">=</span><span class="cn">FALSE</span>,rate<span class="op">=</span><span class="fl">4.6</span>,ss<span class="op">=</span><span class="fl">30</span>,sl<span class="op">=</span><span class="fl">50</span>,dur<span class="op">=</span><span class="fl">1</span><span class="op">)</span><span class="op">)</span>
@@ -566,7 +573,7 @@ Overlapped catch can data at 50 ft lateral spacing
 <span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="va">table</span>,row.names<span class="op">=</span><span class="cn">TRUE</span>,col.names<span class="op">=</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="st">"CU"</span>,<span class="st">"DU"</span>,<span class="st">"DU.lh"</span>,<span class="st">"PELQ"</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">CU</th>
 <th align="right">DU</th>
 <th align="right">DU.lh</th>
@@ -574,14 +581,14 @@ Overlapped catch can data at 50 ft lateral spacing
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>upper.uni</td>
+<td align="left">upper.uni</td>
 <td align="right">87</td>
 <td align="right">82</td>
 <td align="right">88</td>
 <td align="right">74</td>
 </tr>
 <tr class="even">
-<td>lower.uni</td>
+<td align="left">lower.uni</td>
 <td align="right">86</td>
 <td align="right">75</td>
 <td align="right">87</td>
@@ -813,7 +820,7 @@ Overlapped catch can data at 50 ft lateral spacing
 <table class="table">
 <caption>40 ft lateral spacing</caption>
 <thead><tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">CU</th>
 <th align="right">DU</th>
 <th align="right">DU.lh</th>
@@ -821,14 +828,14 @@ Overlapped catch can data at 50 ft lateral spacing
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>upper.uni</td>
+<td align="left">upper.uni</td>
 <td align="right">85</td>
 <td align="right">81</td>
 <td align="right">86</td>
 <td align="right">72</td>
 </tr>
 <tr class="even">
-<td>lower.uni</td>
+<td align="left">lower.uni</td>
 <td align="right">86</td>
 <td align="right">79</td>
 <td align="right">86</td>
@@ -839,7 +846,7 @@ Overlapped catch can data at 50 ft lateral spacing
 <table class="table">
 <caption>60 ft lateral spacing</caption>
 <thead><tr class="header">
-<th></th>
+<th align="left"></th>
 <th align="right">CU</th>
 <th align="right">DU</th>
 <th align="right">DU.lh</th>
@@ -847,14 +854,14 @@ Overlapped catch can data at 50 ft lateral spacing
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>upper.uni</td>
+<td align="left">upper.uni</td>
 <td align="right">75</td>
 <td align="right">61</td>
 <td align="right">75</td>
 <td align="right">55</td>
 </tr>
 <tr class="even">
-<td>lower.uni</td>
+<td align="left">lower.uni</td>
 <td align="right">69</td>
 <td align="right">51</td>
 <td align="right">69</td>
@@ -863,11 +870,7 @@ Overlapped catch can data at 50 ft lateral spacing
 </tbody>
 </table>
 <p>and the AELQ for the 40- and 60-ft lateral spacings are 51% and 55% respectively. Note that the AELQ, that measures efficiency, is lower for the lesser 40 ft lateral spacing, in contrast to the better application uniformity for the 40 ft spacing. This is because the application rate at the closer lateral spacing is higher, therefore applying a greater depth (catch can) that is in excess of the soil moisture deficit (SMD) and which leads to deep percolation losses. For the 60-ft lateral spacing AELQ=PELQ, meaning that the system application efficiency is limited solely by the irrigation system uniformity. If the irrigation duration is reduced to 11.5 hr from 23.5 hr, there will be no excess irrigation and hence no deep percolation losses and AELQ will change to 72% and 55% based on observations between the 5th and 6th sprinklers for the 40- and 60-ft lateral spacings respectively. With this irrigation duration, both spacings are limited only by the irrigation system application uniformity, however, in the case of the 60 ft lateral spacing, the reduced duration will result in under-irrigation as AELQ was equal to PELQ for both irrigation durations.</p>
-</div>
-<div id="references" class="section level2">
-<h2 class="hasAnchor">
-<a href="#references" class="anchor"></a>References</h2>
-<p>Mirriam and Keller, 1978. Farm System Irrigation Evaluation: A Guide for Management. PP 41-43. Utah State University, Logan, Utah. (<a href="https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf" class="uri">https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf</a>).</p>
+<p>##References Mirriam and Keller, 1978. Farm System Irrigation Evaluation: A Guide for Management. PP 41-43. Utah State University, Logan, Utah. (<a href="https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf" class="uri">https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf</a>).</p>
 </div>
   </div>
 
