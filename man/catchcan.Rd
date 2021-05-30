@@ -41,7 +41,7 @@ Form II-1, item 10, p.29.
 Utah State University, Logan, Utah. \url{https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf}
 
 Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997b.  Field calibration procedures for animal wastewater application equipment, hard hose and cable tow traveler irrigation system. NC Cooperative Extension Service publication  AG-553-2.  Raleigh, NC.
-\url{https://content.ces.ncsu.edu/hard-hose-and-cable-tow-traveler-irrigation-systems}
+\url{https://p2infohouse.org/ref/32/31084/ag-553-2.pdf}
 
 Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997a.  Field calibration procedures for animal wastewater application equipment, stationary sprinkler irrigation system. NC Cooperative Extension Service publication AG 553-1.  Raleigh, NC.
 \url{https://irrigation.wordpress.ncsu.edu/files/2017/01/ag-553-1-stationary-sprinkler.pdf}
