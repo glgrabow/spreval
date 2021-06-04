@@ -23,9 +23,6 @@
      }
      }
 
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
 \source{(lateral)Form II-1, item 10, p.29.
 Utah State University, Logan, Utah. \url{https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf}
 %%  ~~ reference to a publication or URL from which the data were obtained ~~

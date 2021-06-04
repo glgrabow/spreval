@@ -34,9 +34,6 @@ eda.shape(x,title="",qq=T)
 \author{Garry Grabow \email{glgrabow@ncsu.edu
 }
 }
-\note{
-%%  ~~further notes~~
-}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 

@@ -25,9 +25,6 @@ imcol=FALSE,edastat=FALSE)
 %%     ~~Describe \code{x} here~~
 }
 
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{densigram (from \code{\link[akima]{interp}} with optional contour plot overlay) and optional summary catch can statistics.}
 %%  ~Describe the value returned
 %%  If it is a LIST, use
@@ -35,9 +32,6 @@ imcol=FALSE,edastat=FALSE)
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
 }
