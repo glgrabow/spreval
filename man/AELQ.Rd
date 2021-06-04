@@ -23,10 +23,6 @@ AELQ(x, rate,ss,sl,dur,smd,SI=TRUE)
 %%     ~~Describe \code{x} here~~
 x will be used to determine mode of AELQ computation by determining if the low quarter catch rate (and depth) is less than or greater than the SMD.
 }
-
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
 \value{AELQ (application efficiency of low quarter, \%)
 %%  ~Describe the value returned
 %%  If it is a LIST, use
@@ -42,9 +38,6 @@ Utah State University, Logan, Utah. \url{https://pdf.usaid.gov/pdf_docs/PNAAG745
 }
 \author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
