@@ -38,7 +38,7 @@ water applied in excess of the target amount.
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{\code{\link{sfplot}},\code{\link[stats]{sfplot}}
+\seealso{\code{\link{sfplot}},\code{\link[stats]{ecdf}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
