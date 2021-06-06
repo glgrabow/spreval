@@ -18,7 +18,7 @@ DU.lh(x)
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+mean of lower half of ranked data divided by overall mean x 100. %%  ~~ If necessary, more details than the description above ~~
 }
 \value{DU of lower half value in percentage.
 %%  ~Describe the value returned
@@ -27,14 +27,9 @@ DU.lh(x)
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~

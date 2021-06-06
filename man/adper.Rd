@@ -26,16 +26,16 @@ adper(x,target,plot=TRUE)
 %%     ~~Describe \code{x} here~~
 
 \details{results are given as determined by both a density function and empirical cumulative
-distribution function (ecdf). if target is equal to soil moisture depletion, then 1- efficiency is
-the percentile of area that loses water to deep percolation (not held in root zone). Adequacy and efficiency percentiles should add to approximately 1.0. Note that definitions of adequacy and efficiency here based only on percentiles is not a standard definition as deviation from target depth is not considered.  See \code{\link{eff} for a more traditional approach.}
+distribution function (ecdf). If target is equal to soil moisture depletion, then 1- efficiency is
+the percentile of area that loses water to deep percolation (not held in root zone). Adequacy and efficiency (eff) percentiles should add to approximately 1.0. Note that definitions of adequacy and efficiency here based only on percentiles is not a standard definition as deviation from target depth is not considered.  See \code{\link{eff} for a more traditional approach.}
 }
 %%  ~~ If necessary, more details than the description above ~~
 
 \value{named list, including;
  \item{adequacy.density}{percentile receiving >= target amount determined from density curve}
  \item{eff.density}{percentile receiving <=target amount as determined from density curve}
- \item{adequacy.ecdf}{same as adequacy.density but as determined from ecdf function}
- \item{eff.ecdf}{same as eff.density but as determined from ecdf function}
+ \item{adequacy.ecdf}{same as adequacy.density but as determined from \code{\link[stats]{ecdf}} function}
+ \item{eff.ecdf}{same as eff.density but as determined from \code{\link[stats]{ecdf}} function}
  }
 %%  ~Describe the value returned
 %%  If it is a LIST, use
@@ -43,21 +43,16 @@ the percentile of area that loses water to deep percolation (not held in root zo
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 
-\references{
-%% ~put references to the literature/web site here ~
-}
 \author{Garry Grabow \email{glgrabow@ncsu.edu}}
 %%  ~~who you are~~
 
-\note{
-%%  ~~further notes~~
-}
-
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{\code{\link{eff}},\code{\link[stats]{density}},\code{\link[stats]{ecdf}}
+\seealso{\code{\link{eff}},
+\code{\link[stats]{density}},\code{\link[stats]{ecdf}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
+
 \examples{
 #data from same exercise as PELQ example
 x<-c(.23,.31,.24,.24,.28,.31,.27,.22,.26,.31,

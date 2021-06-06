@@ -27,9 +27,7 @@ multiple rows of catch cans between laterals, to normally include all rows of ca
   \item{sum.left}{numeric array of summed overlap catch can data between tested lateral and simulated lateral to the left.}
   \item{sum.right}{numeric array of summed overlap catch can data between tested lateral and simulated lateral to the right.}
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
 }
@@ -39,9 +37,6 @@ multiple rows of catch cans between laterals, to normally include all rows of ca
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \examples{
 sl<-60 #lateral spacing. Units are feet
 sc<-10 #catch cans spacing along single "row". Units are feet

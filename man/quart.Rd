@@ -16,7 +16,7 @@ quart(x)
 %%     ~~Describe \code{x} here~~
 }
 }
-\details{
+\details{Uses `stats::quantile`
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
@@ -29,20 +29,15 @@ named list with  following items:
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{Garry Grabow \email{glgrabow@ncsu.edu}
 
 %%  ~~who you are~~
 }
-\note{
-%%  ~~further notes~~
-}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{\code{\link{eda.stats}}
+\seealso{\code{\link[stats]{quantile}},\code{\link{eda.stats}}
 
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }

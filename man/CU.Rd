@@ -5,7 +5,7 @@
 %%  ~~function to do ... ~~
 }
 \description{Compute Christiansen Coefficient of Uniformity (CU or UC).
-Coefficient is based upon the deviations from the mean value.
+Coefficient is based upon the average deviation from the mean value and the mean value.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -19,6 +19,8 @@ CU(x)
 }
 \details{
 %%  ~~ If necessary, more details than the description above ~~
+\deqn{CU=100(1.0-\sum X/(nm))}
+where \eqn{X=|z-m|}; absolute deviation of catch \eqn{z} from average catch \eqn{m} based on \eqn{n} observations (catches).
 }
 \value{CU value in percentage.  Note that CU can take on a negative value if the
 average deviation from the mean is greater than the mean.
@@ -35,9 +37,6 @@ Keller, J., and R. D. Bliesner. 2000. Sprinkler and Trickle Irrigation. Caldwell
 }
 \author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~

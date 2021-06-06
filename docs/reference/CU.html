@@ -50,7 +50,7 @@
 <meta property="og:title" content="Compute CU for Sprinkler Irrigation Systems
  — CU" />
 <meta property="og:description" content="Compute Christiansen Coefficient of Uniformity (CU or UC).
-Coefficient is based upon the deviations from the mean value.
+Coefficient is based upon the average deviation from the mean value and the mean value.
 " />
 <meta property="og:image" content="https://glgrabow.github.io/spreval/logo.png" />
 
@@ -159,7 +159,7 @@ Coefficient is based upon the deviations from the mean value.
 
     <div class="ref-description">
     <p>Compute Christiansen Coefficient of Uniformity (CU or UC).
-Coefficient is based upon the deviations from the mean value.
+Coefficient is based upon the average deviation from the mean value and the mean value.
 <!-- %%  ~~ A concise (1-5 lines) description of what the function does. ~~ --></p>
     </div>
 
@@ -176,7 +176,9 @@ Coefficient is based upon the deviations from the mean value.
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><!-- %%  ~~ If necessary, more details than the description above ~~ --></p>
+    <p><!-- %%  ~~ If necessary, more details than the description above ~~ -->
+$$CU=100(1.0-\sum X/(nm))$$
+where \(X=|z-m|\); absolute deviation of catch \(z\) from average catch \(m\) based on \(n\) observations (catches).</p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>CU value in percentage.  Note that CU can take on a negative value if the
@@ -195,9 +197,6 @@ average deviation from the mean is greater than the mean.
 
     <p>Garry Grabow <a href='mailto:glgrabow@ncsu.edu'>glgrabow@ncsu.edu</a>
 <!-- %%  ~~who you are~~ --></p>
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
-
-    <p><!-- %%  ~~further notes~~ --></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p><code><a href='DU.html'>DU</a></code>,<code><a href='DU.lh.html'>DU.lh</a></code></p>

@@ -191,28 +191,23 @@ more of the target (adequacy) and less than or equal to target (efficiency).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>results are given as determined by both a density function and empirical cumulative
-distribution function (ecdf). if target is equal to soil moisture depletion, then 1- efficiency is
-the percentile of area that loses water to deep percolation (not held in root zone). Adequacy and efficiency percentiles should add to approximately 1.0. Note that definitions of adequacy and efficiency here based only on percentiles is not a standard definition as deviation from target depth is not considered.  See <code><a href='eff.html'>eff</a> for a more traditional approach.</code></p>
+distribution function (ecdf). If target is equal to soil moisture depletion, then 1- efficiency is
+the percentile of area that loses water to deep percolation (not held in root zone). Adequacy and efficiency (eff) percentiles should add to approximately 1.0. Note that definitions of adequacy and efficiency here based only on percentiles is not a standard definition as deviation from target depth is not considered.  See <code><a href='eff.html'>eff</a> for a more traditional approach.</code></p>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>named list, including;</p>
 <dt>adequacy.density</dt><dd><p>percentile receiving &gt;= target amount determined from density curve</p></dd>
  <dt>eff.density</dt><dd><p>percentile receiving &lt;=target amount as determined from density curve</p></dd>
- <dt>adequacy.ecdf</dt><dd><p>same as adequacy.density but as determined from ecdf function</p></dd>
- <dt>eff.ecdf</dt><dd><p>same as eff.density but as determined from ecdf function</p></dd>
+ <dt>adequacy.ecdf</dt><dd><p>same as adequacy.density but as determined from <code><a href='https://rdrr.io/r/stats/ecdf.html'>ecdf</a></code> function</p></dd>
+ <dt>eff.ecdf</dt><dd><p>same as eff.density but as determined from <code><a href='https://rdrr.io/r/stats/ecdf.html'>ecdf</a></code> function</p></dd>
  
-    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
-
-    <p><!-- %% ~put references to the literature/web site here ~ --></p>
     <h2 class="hasAnchor" id="author"><a class="anchor" href="#author"></a>Author</h2>
 
     <p>Garry Grabow <a href='mailto:glgrabow@ncsu.edu'>glgrabow@ncsu.edu</a></p>
-    <h2 class="hasAnchor" id="note"><a class="anchor" href="#note"></a>Note</h2>
-
-    <p><!-- %%  ~~further notes~~ --></p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='eff.html'>eff</a></code>,<code><a href='https://rdrr.io/r/stats/density.html'>density</a></code>,<code><a href='https://rdrr.io/r/stats/ecdf.html'>ecdf</a></code>
+    <div class='dont-index'><p><code><a href='eff.html'>eff</a></code>,
+<code><a href='https://rdrr.io/r/stats/density.html'>density</a></code>,<code><a href='https://rdrr.io/r/stats/ecdf.html'>ecdf</a></code>
 <!-- %% ~~objects to See Also as \code{\link{help}}, ~~~ --></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>

@@ -17,24 +17,16 @@ DU(x)
 }
 }
 \details{
-%%  ~~ If necessary, more details than the description above ~~
+mean of lowest quarter of observations divided by overall mean X 100
 }
-\value{\item{DU}{Distribution Uniformity (of low quarter) in percentage }
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
-}
+\value{Distribution Uniformity (of low quarter) in percentage}
+
 \references{
 Keller, J., and R. D. Bliesner. 2000. Sprinkler and Trickle Irrigation. Caldwell, N.J.: Blackburn Press
 %% ~put references to the literature/web site here ~
 }
 \author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~

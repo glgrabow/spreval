@@ -4,9 +4,8 @@
 \title{Swap axis of ecdf plot and reverse y axis
 %%  ~~function to do ... ~~
 }
-\description{plots points generated from an ecdf object with x and y axis swapped
-(x is cumulative frequency) and with y axis reversed so that min(y)=0 is at top.  Plots points
-without step function lines.
+\description{plots points generated from an `stats::ecdf` object with x and y axis swapped
+(x is cumulative frequency) and with y axis reversed so that min(y)=0 is at top.  Plots points without step function lines.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -32,19 +31,14 @@ water applied in excess of the target amount.
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{\code{\link{sfplot}}
+\seealso{\code{\link{sfplot}},\code{\link[stats]{ecdf}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{

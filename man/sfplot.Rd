@@ -4,7 +4,7 @@
 \title{Create step function plot (of catch can depths).
 %%  ~~function to do ... ~~
 }
-\description{Uses an ecdf object to plot a step function plot
+\description{Uses an `stats::ecdf` object to plot a step function plot
 with cumulative frequency on x axis and input array (catch can depths) on y axis with y-axis reversed (min(y)= 0 at top of y-axis). Top of plot represents soil surface.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
@@ -30,19 +30,14 @@ sfplot(x,target,ylab)
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
-}
-\note{
-%%  ~~further notes~~
 }
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{\code{\link{rotecdf}},\code{\link[stats]{stepfun}}
+\seealso{\code{\link{rotecdf}},\code{\link[stats]{stepfun}},\code{\link[stats]{ecdf}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
