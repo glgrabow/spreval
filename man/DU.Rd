@@ -19,9 +19,7 @@ DU(x)
 \details{
 mean of lowest quarter of observations divided by overall mean X 100
 }
-\value{
-\item{DU}{Distribution Uniformity (of low quarter) in percentage}
-}
+\value{Distribution Uniformity (of low quarter) in percentage}
 
 \references{
 Keller, J., and R. D. Bliesner. 2000. Sprinkler and Trickle Irrigation. Caldwell, N.J.: Blackburn Press
