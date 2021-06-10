@@ -5,3 +5,4 @@ importFrom("grDevices", "gray.colors", "hcl.colors")
                 "text")
      importFrom("stats", "approx", "density", "ecdf", "qqline", "qqnorm",
                 "quantile", "stepfun")
+     importFrom("fields","make.surface.grid")
