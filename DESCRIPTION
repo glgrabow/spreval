@@ -1,7 +1,7 @@
 Package: spreval
 Type: Package
 Title: Evaluation of Sprinkler Irrigation Uniformity and Efficiency
-Version: 0.1.0.900
+Version: 1.0.0
 Authors@R: person(given="Garry", family="Grabow", email="glgrabow@ncsu.edu", role=c("aut", "cre"),comment=c(ORCID= "0000-0002-9616-2615"))
 Maintainer: Garry Grabow <glgrabow@ncsu.edu>
 Description: Functions to evaluate sprinkler irrigation uniformity
@@ -12,7 +12,7 @@ LazyData: true
 URL: https://glgrabow.github.io/spreval/
 BugReports: https://github.com/glgrabow/spreval/issues
 Imports:
-    timeDate,akima, fields
+    timeDate,akima,fields
 Suggests: 
     knitr,
     rmarkdown,
