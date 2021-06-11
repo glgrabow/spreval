@@ -14,7 +14,7 @@ overlap(sl,sc,lcdata,rcdata)
 \arguments{
   \item{sl}{lateral spacing.}
   \item{sc}{catch can spacing perpendicular to lateral.}
-  \item{lcdata}{data from cans left of lateral; order is proximate to distal of lateral.}
+  \item{lcdata}{data from cans left of lateral; order is proximal to distal of lateral.}
   \item{rcdata}{data from cans right of lateral; order as in lcdata.}
 %%     ~~Describe \code{x} here~~
 }
