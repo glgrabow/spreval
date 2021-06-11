@@ -1,0 +1,10 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^README\.Rmd$
+^_pkgdown\.yaml$
+^pkgdown\.yml$
+^docs/*\.*$
+^packages/*\.*$
+^pkgdown/*\.*$
+^stylesheets/*\.*$
+^cran-comments\.md$
