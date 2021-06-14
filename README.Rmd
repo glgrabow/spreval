@@ -50,7 +50,7 @@ a "pre-CRAN" development package is available  at:
 [package in github](https://github.com/glgrabow/spreval/blob/master/packages/spreval_0.1.0.900.tar.gz)
 This may be installed as an archive file locally on your machine after downloading.
 
-Note: Still in production mode.  A pdf file documenting all of the package functions is available at: [here](https://github.com/glgrabow/spreval/blob/master/docs/spreval.pdf)
+A pdf file documenting all of the package functions is available at: [here](https://github.com/glgrabow/spreval/blob/master/docs/spreval.pdf)
 
 Check the changelog tab for updates on version history.
 

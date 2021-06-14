@@ -13,7 +13,7 @@ par(pty="s")#set square plotting area for 1:1 aspect ratio. Prevents issues with
 sprinklerx<-sploc[ ,1];sprinklery<-sploc[ ,2]
 cx<-cdata[ ,1];cy<-cdata[ ,2]
 depth<-cdata[ ,3]
-densigram<-akima::interp(cx,cy,depth)
+densigram<-interp::interp(cx,cy,depth)
 col<-gray.colors(12, start = 0.9, end = 0.3, gamma = 2.2, alpha = NULL, rev = FALSE)#default image color is b/w
 if(imcol){col = hcl.colors(12, "YlOrRd", rev = TRUE)} #color image which is normal default for image function
 # set range of plot to either maximum space of sprinklers (extrnal to cans) or to catch can range, e.g., 1 lateral
