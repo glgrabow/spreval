@@ -12,9 +12,9 @@ LazyData: true
 URL: https://glgrabow.github.io/spreval/
 BugReports: https://github.com/glgrabow/spreval/issues
 Imports:
-    timeDate,akima,fields
+    timeDate,interp
 Suggests: 
-    knitr,
+    fields,knitr,
     rmarkdown,
 VignetteBuilder: knitr
 RoxygenNote: 7.1.1

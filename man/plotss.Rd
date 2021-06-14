@@ -25,7 +25,7 @@ imcol=FALSE,edastat=FALSE)
 %%     ~~Describe \code{x} here~~
 }
 
-\value{densigram (from \code{\link[akima]{interp}} with optional contour plot overlay) and optional summary catch can statistics.}
+\value{densigram (from \code{\link[interp]{interp}} with optional contour plot overlay) and optional summary catch can statistics.}
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
@@ -35,13 +35,13 @@ imcol=FALSE,edastat=FALSE)
 \author{Garry Grabow \email{glgrabow@ncsu.edu}
 %%  ~~who you are~~
 }
-\note{requires akima package}
+\note{requires interp package}
 %%  ~~further notes~~
 
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
-\seealso{\code{\link[akima]{interp}}
+\seealso{\code{\link[interp]{interp}}
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{

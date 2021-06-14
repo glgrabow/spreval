@@ -3,37 +3,58 @@
 * ubuntu 16.04 (on travis-ci), R 4.1.0
 * win-builder (devel)
 
+## change since first submission
+* replaced akima package with interp package
+interp is a FOSS package to avoid ACM license issue of akima
+* moved "fields" library to "suggests" list as it is only used in examples and vignettes
+
 ## R CMD check results
 
 0 errors | 0 warnings | 1 note
 
 * This is a new release.
 ## Test environments
+- R-hub debian-clang-devel (r-devel)
+
+## R CMD check results
+> On debian-clang-devel (r-devel)
+  checking CRAN incoming feasibility ... NOTE
+  Maintainer: 'Garry Grabow <glgrabow@ncsu.edu>'
+  
+  New submission
+
+0 errors ✓ | 0 warnings ✓ | 1 note x
+
+## Test environments
+- R-hub fedora-clang-devel (r-devel)
+
+## R CMD check results
+> On fedora-clang-devel (r-devel)
+  checking CRAN incoming feasibility ... NOTE
+  Maintainer: ‘Garry Grabow <glgrabow@ncsu.edu>’
+  
+  New submission
+
+0 errors ✓ | 0 warnings ✓ | 1 note x
+
+## R CMD check results
+> On windows-x86_64-release (r-release)
+  checking CRAN incoming feasibility ... NOTE
+  
+  Maintainer: 'Garry Grabow <glgrabow@ncsu.edu>'
+  New submission
+
+0 errors ✓ | 0 warnings ✓ | 1 note x
+
+## Test environments (rhub::check_on_windows())
 - R-hub windows-x86_64-release (r-release)
 
 ## R CMD check results
 0 errors ✓ | 0 warnings ✓ | 0 notes ✓
 
-## Test environments
-- R-hub fedora-clang-devel (r-devel)
-- R-hub ubuntu-gcc-release (r-release)
-
-## R CMD check results
-> On fedora-clang-devel (r-devel), ubuntu-gcc-release (r-release)
-  checking CRAN incoming feasibility ... NOTE
-  Maintainer: ‘Garry Grabow <glgrabow@ncsu.edu>’
-  
-  New submission
-  
-  Package has a FOSS license but eventually depends on the following
-  package which restricts use:
-    akima
-
-0 errors ✓ | 0 warnings ✓ | 1 note x
-
-## Win-builder
+## rhub::check_win_dev()
 * using log directory 'd:/RCompile/CRANguest/R-devel/spreval.Rcheck'
-* using R Under development (unstable) (2021-06-07 r80458)
+* using R Under development (unstable) (2021-06-11 r80486)
 * using platform: x86_64-w64-mingw32 (64-bit)
 * using session charset: ISO8859-1
 * checking for file 'spreval/DESCRIPTION' ... OK
@@ -44,10 +65,6 @@
 Maintainer: 'Garry Grabow <glgrabow@ncsu.edu>'
 
 New submission
-
-Package has a FOSS license but eventually depends on the following
-package which restricts use:
-  akima
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -77,7 +94,7 @@ package which restricts use:
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... [13s] OK
+* checking R code for possible problems ... [5s] OK
 * checking Rd files ... [1s] OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
@@ -93,10 +110,10 @@ package which restricts use:
 * checking data for ASCII and uncompressed saves ... OK
 * checking installed files from 'inst/doc' ... OK
 * checking files in 'vignettes' ... OK
-* checking examples ... [6s] OK
+* checking examples ... [3s] OK
 * checking for unstated dependencies in vignettes ... OK
 * checking package vignettes in 'inst/doc' ... OK
-* checking re-building of vignette outputs ... [6s] OK
+* checking re-building of vignette outputs ... [4s] OK
 * checking PDF version of manual ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
