@@ -9,6 +9,8 @@ plotss=function(cdata,sploc,con=TRUE,xlab="",ylab="",title="",labelpoints=TRUE,i
 size<-min(par("din")[1],par("din")[2])  # get minimum length of plot height and width by starting with device size
 size<-size-par("mai")[1]# now subtract space for labels location 1 "x-axis" has greatest default space
 #par(pin=c(size,size))#set for square aspect ratio.  asp overides xlim and ylim so need this alternative
+oldpar<-par(no.readonly = TRUE) #get current plot parameters
+on.exit(par(oldpar)) # at exit return to originating plot par on device
 par(pty="s")#set square plotting area for 1:1 aspect ratio. Prevents issues with asp option.
 sprinklerx<-sploc[ ,1];sprinklery<-sploc[ ,2]
 cx<-cdata[ ,1];cy<-cdata[ ,2]
@@ -23,9 +25,9 @@ image(densigram, col=col,xlim=c(xmin,xmax),ylim=c(ymin,ymax),
       xaxs="i",yaxs="i")
 points(sprinklerx,sprinklery,pch=16)
 title(main=title,xlab=xlab,ylab=ylab)
-#image.legend(densigram,30,80,size=c(1.5,.10),hor=T,lab=c(5,0,7),cex=0.75,nint=25)
+#image.legend(densigram,30,80,size=c(1.5,.10),hor=TRUE,lab=c(5,0,7),cex=0.75,nint=25)
 if(con){
-contour(densigram, add=T, plotit=T,labex=0.6)
+contour(densigram, add=TRUE, plotit=TRUE,labex=0.6)
 }
 points(cx,cy,pch=1,col=1)#plot rain gages -plan view
 if(labelpoints){

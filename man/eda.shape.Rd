@@ -14,7 +14,7 @@ eda.shape(x,title="",qq=T)
 \arguments{
   \item{x}{numeric array}
   \item{title}{character; optional title for plots}
-  \item{qq}{logical; for plotting quartile plot, default=T}
+  \item{qq}{logical; for plotting quartile plot, default=TRUE}
 %%     ~~Describe \code{x} here~~
 }
 

@@ -1,23 +1,24 @@
 #function to do exploratory data analysis of object array
 #histogram, boxplot, density and quartile plots constructed
 
-"eda.shape" = function(x,title="",qq=T)
+"eda.shape" = function(x,title="",qq=TRUE)
 {
+  oldpar<-par(no.readonly = TRUE) #get current plot parameters
+  on.exit(par(oldpar))
   par(mfrow = c(2, 2))
   #extract name of array
   nm <-deparse(substitute(x))
   hist(x, xlab = nm, ylab = "no. observations",main=title)
-  boxplot(x, plot = T, notch = T, col = NULL,border=1,
+  boxplot(x, plot = TRUE, notch = TRUE, col = NULL,border=1,
           staplelty = 1, staplewex = 1,
-          staplehex = 1, outchar = T, outpch = NA, outline = T, outwex
+          staplehex = 1, outchar = TRUE, outpch = NA, outline = TRUE, outwex
           = 1, main=title,ylab=nm)
   iqd <- summary(x)[5] - summary(x)[2]
-  plot(density(x, width = 2 * iqd, na.rm = T), xlab = nm, ylab = "",
+  plot(density(x, width = 2 * iqd, na.rm = TRUE), xlab = nm, ylab = "",
        type = "l",main=title)
   if(qq){qqnorm(x, main=title,pch = 1)}
   if(qq){qqline(x)}
   invisible()
-  par(mfrow=c(1,1))#set back to one plot per page
 
 }
 

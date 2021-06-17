@@ -1,4 +1,4 @@
-"travunif"=function(ls,cs,lcdata,rcdata,site=NA,plot=T)
+"travunif"=function(ls,cs,lcdata,rcdata,site=NA,plot=TRUE)
 {
   # Set lcdata or rcdata to maximum of either.  Need to fill "empty cans of shorter array
   # setting shorter array to max array length will fill shorter arrays with NA for missing values
