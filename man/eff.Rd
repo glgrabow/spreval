@@ -21,7 +21,8 @@ eff(x, target)
 }
 
 \details{computes efficiency and adequacy as amount of catch equal or less than
-target depth (efficiency is applied water retained in root zone divide by total water applied), and amount of catch equal or exceeding target depth (adequacy). Amounts obtained using results of a density (frequency) plot and normalized to target depth and reported in decimal (not percent) form.
+target depth. Efficiency is defined and calculated as the applied (catch can caught) water retained in root zone divided
+by the total water applied when the target depth is set equal to the soil moisture deficit (SMD). Adequacy is the amount of catch equal or exceeding the target depth (adequacy). Amounts within the rootzone and below the rootzone are obtained using the results of `stats::density` using piecewise integration and normalized to target depth (normally SMD).  Both efficiency and adequacy are reported in decimal (not percent) form.
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{A named list with the following items:

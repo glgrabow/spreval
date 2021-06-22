@@ -2,10 +2,28 @@ Package: spreval
 Type: Package
 Title: Evaluation of Sprinkler Irrigation Uniformity and Efficiency
 Version: 1.0.0
-Authors@R: person(given="Garry", family="Grabow", email="glgrabow@ncsu.edu", role=c("aut", "cre"),comment=c(ORCID= "0000-0002-9616-2615"))
+Authors@R: person(given="Garry", family="Grabow", email="glgrabow@ncsu.edu", role=c("aut", "cre", "cph"),comment=c(ORCID= "0000-0002-9616-2615"))
 Maintainer: Garry Grabow <glgrabow@ncsu.edu>
-Description: Functions to evaluate sprinkler irrigation uniformity
-    and efficiency using standard and other measures.
+Description: This package provides functions to evaluate sprinkler irrigation uniformity and efficiency using
+    standard and other measures. Standard measures include the Christiansen coefficient
+    of uniformity (CU) as found in Christiansen, J.E.(1942, ISBN:0138779295,
+    "Irrigation by Sprinkling"); and distrubtion uniformity (DU), potential
+    efficiency of the low quarter (PELQ), and application efficiency of the low quarter (AELQ)
+    are implementations of measures of the same notation in Keller, J. and Merriam, 
+    J.L. (1978) "Farm Irrigation System Evaluation: A Guide for Management"
+    <https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf>. "DUlh" is similar to DU but is
+    the distribution uniformity of the low half instead of low quarter as in DU.
+    "PELQT" is PELQ adapted for traveling systems instead of lateral move or
+    solid-set sprinkler systems. The function "eff is analogous to the method used
+    to compute application efficiency for furrow irrigation presented in Walker, W.
+    and Skogerboe, G.V. (1987,ISBN:0138779295, "Surface Irrigation: Theory and Practice")
+    that uses piecewise integration of infiltrated depth compared against soil-moisture
+    deficit (SMD), when the argument "target" is set equal to SMD.  The other functions
+    contained in the package provide graphical representation of sprinkler system
+    uniformity, and other standard univariate parametric and non-parametric
+    statistical measures as applied to sprinkler system catch depths.
+    A sample data set of field test data "catchcan" (catch depths) is provided and
+    is used in examples and vignettes.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

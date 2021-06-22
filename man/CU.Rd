@@ -32,7 +32,7 @@ average deviation from the mean is greater than the mean.
 }
 \references{Christiansen, J. E. 1942. Irrigation by sprinkling. California Agricultural Experiment Station Bulletin 670. Berkeley, Cal.: University of California.
 
-Keller, J., and R. D. Bliesner. 2000. Sprinkler and Trickle Irrigation. Caldwell, N.J.: Blackburn Press
+Keller, J., and R. D. Bliesner. 2000. Sprinkler and Trickle Irrigation. Caldwell, N.J.: Blackburn Press.  ISBN 1-930665-19-9.
 %% ~put references to the literature/web site here ~
 }
 \author{Garry Grabow \email{glgrabow@ncsu.edu}
