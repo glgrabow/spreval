@@ -15,12 +15,14 @@ irrigation sprinkler system application uniformity and efficiency. Use
 of the functions allow for assessment of lateral-move, solid-set, and
 hose pull (big gun) irrigation systems.
 
-`spreval::catchcan` is a data file included in this package. Data used
-in the vignettes are taken from the references below:
+`spreval::catchcan` is a data file included in this package. Methods
+implemented in this package and data used in the vignettes are taken
+from the references below:
 
-\#\#References {Mirriam and Keller, 1978. Farm System Irrigation
-Evaluation: A Guide for Management. Form II-1, item 10, p.29. Utah State
-University, Logan, Utah. (<https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf>)
+## References
+
+Christiansen, J.D. 1942. Irrigation by Sprinkling. California
+Agricultural Experiment Station Bulletin 670. <ISBN:0138779295>
 
 Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997b. Field
 calibration procedures for animal wastewater application equipment, hard
@@ -33,6 +35,10 @@ calibration procedures for animal wastewater application equipment,
 stationary sprinkler irrigation system. NC Cooperative Extension Service
 publication AG 553-1. Raleigh, NC.
 (<https://irrigation.wordpress.ncsu.edu/files/2017/01/ag-553-1-stationary-sprinkler.pdf>)
+
+Mirriam and Keller, 1978. Farm System Irrigation Evaluation: A Guide for
+Management. Form II-1, item 10, p.29. Utah State University, Logan,
+Utah. (<https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf>)
 
 ## Installation
 
