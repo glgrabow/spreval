@@ -22,7 +22,7 @@ mean of lowest quarter of observations divided by overall mean X 100
 \value{Distribution Uniformity (of low quarter) in percentage}
 
 \references{
-Keller, J., and R. D. Bliesner. 2000. Sprinkler and Trickle Irrigation. Caldwell, N.J.: Blackburn Press
+Keller, J., and R. D. Bliesner. 2000. Sprinkler and Trickle Irrigation. Caldwell, N.J.: Blackburn Press. ISBN 1-930665-19-9.
 %% ~put references to the literature/web site here ~
 }
 \author{Garry Grabow \email{glgrabow@ncsu.edu}

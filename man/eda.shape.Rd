@@ -8,13 +8,13 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-eda.shape(x,title="",qq=T)
+eda.shape(x,title="",qq=TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{numeric array}
   \item{title}{character; optional title for plots}
-  \item{qq}{logical; for plotting quartile plot, default=T}
+  \item{qq}{logical; for plotting quartile plot, default=TRUE}
 %%     ~~Describe \code{x} here~~
 }
 
@@ -28,7 +28,7 @@ eda.shape(x,title="",qq=T)
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
-\references{TIBCO Spotfire S+ 8.2 2010. Guide to Statistics, v0l. 1, p.124ff
+\references{TIBCO Spotfire S+ 8.2 2010. Guide to Statistics, vol. 1, p.124ff.
 %% ~put references to the literature/web site here ~
 }
 \author{Garry Grabow \email{glgrabow@ncsu.edu

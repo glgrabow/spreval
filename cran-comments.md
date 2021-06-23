@@ -3,58 +3,94 @@
 * ubuntu 16.04 (on travis-ci), R 4.1.0
 * win-builder (devel)
 
+## change since second submission
+* added par(no.readonly-TRUE) and on.exit commands to retain user set graphics
+* added verbiage to better describe purpose and function of the package
+and added references from which implemented methods came.  
+* Notes from rhub checks concerning possible misspellings in description file
+are either an author name or function names that are explicitly listed to the stated references
+
 ## change since first submission
 * replaced akima package with interp package
 interp is a FOSS package to avoid ACM license issue of akima
 * moved "fields" library to "suggests" list as it is only used in examples and vignettes
 
-## R CMD check results
+## R CMD check results (local)
+── R CMD check results ───── spreval 1.0.0 ────
+Duration: 45.6s
 
-0 errors | 0 warnings | 1 note
+0 errors ✓ | 0 warnings ✓ | 0 notes ✓
 
-* This is a new release.
-## Test environments
-- R-hub debian-clang-devel (r-devel)
+R CMD check succeeded
 
-## R CMD check results
+## R CMD check results (debian)
 > On debian-clang-devel (r-devel)
   checking CRAN incoming feasibility ... NOTE
   Maintainer: 'Garry Grabow <glgrabow@ncsu.edu>'
   
   New submission
+  
+  Possibly mis-spelled words in DESCRIPTION:
+    AELQ (12:90)
+    catchcan (26:82)
+    Christiansen (9:64, 10:36)
+    DUlh (15:61)
+    PELQ (12:36, 17:45)
+    PELQT (17:14)
+    Skogerboe (20:33)
+    SMD (22:51, 23:21)
+    spreval (15:52, 15:80, 17:5, 17:36, 18:70, 26:73)
 
 0 errors ✓ | 0 warnings ✓ | 1 note x
-
-## Test environments
+## Test environments (fedora)
 - R-hub fedora-clang-devel (r-devel)
 
-## R CMD check results
-> On fedora-clang-devel (r-devel)
+## R CMD check results (fedora)
+On fedora-clang-devel (r-devel)
   checking CRAN incoming feasibility ... NOTE
   Maintainer: ‘Garry Grabow <glgrabow@ncsu.edu>’
   
   New submission
-
-0 errors ✓ | 0 warnings ✓ | 1 note x
-
-## R CMD check results
-> On windows-x86_64-release (r-release)
-  checking CRAN incoming feasibility ... NOTE
   
-  Maintainer: 'Garry Grabow <glgrabow@ncsu.edu>'
-  New submission
+  Possibly mis-spelled words in DESCRIPTION:
+    AELQ (12:90)
+    Christiansen (9:64, 10:36)
+    DUlh (15:61)
+    PELQ (12:36, 17:45)
+    PELQT (17:14)
+    SMD (22:51, 23:21)
+    Skogerboe (20:33)
+    catchcan (26:82)
+    spreval (15:52, 15:80, 17:5, 17:36, 18:70, 26:73)
 
 0 errors ✓ | 0 warnings ✓ | 1 note x
+
 
 ## Test environments (rhub::check_on_windows())
 - R-hub windows-x86_64-release (r-release)
 
 ## R CMD check results
-0 errors ✓ | 0 warnings ✓ | 0 notes ✓
+checking CRAN incoming feasibility ... NOTE
+  
+  New submission
+  
+  Possibly mis-spelled words in DESCRIPTION:
+    AELQ (12:90)
+    Christiansen (9:64, 10:36)
+    DUlh (15:61)
+    PELQ (12:36, 17:45)
+    PELQT (17:14)
+    SMD (22:51, 23:21)
+    Skogerboe (20:33)
+    catchcan (26:82)
+    spreval (15:52, 15:80, 17:5, 17:36, 18:70, 26:73)
+  Maintainer: 'Garry Grabow <glgrabow@ncsu.edu>'
+
+0 errors ✓ | 0 warnings ✓ | 1 note x
 
 ## rhub::check_win_dev()
 * using log directory 'd:/RCompile/CRANguest/R-devel/spreval.Rcheck'
-* using R Under development (unstable) (2021-06-11 r80486)
+* using R Under development (unstable) (2021-06-22 r80544)
 * using platform: x86_64-w64-mingw32 (64-bit)
 * using session charset: ISO8859-1
 * checking for file 'spreval/DESCRIPTION' ... OK
@@ -65,6 +101,17 @@ interp is a FOSS package to avoid ACM license issue of akima
 Maintainer: 'Garry Grabow <glgrabow@ncsu.edu>'
 
 New submission
+
+Possibly mis-spelled words in DESCRIPTION:
+  AELQ (12:90)
+  Christiansen (9:64, 10:36)
+  DUlh (15:61)
+  PELQ (12:36, 17:45)
+  PELQT (17:14)
+  SMD (22:51, 23:21)
+  Skogerboe (20:33)
+  catchcan (26:82)
+  spreval (15:52, 15:80, 17:5, 17:36, 18:70, 26:73)
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -94,7 +141,7 @@ New submission
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... [5s] OK
+* checking R code for possible problems ... [6s] OK
 * checking Rd files ... [1s] OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
@@ -110,10 +157,10 @@ New submission
 * checking data for ASCII and uncompressed saves ... OK
 * checking installed files from 'inst/doc' ... OK
 * checking files in 'vignettes' ... OK
-* checking examples ... [3s] OK
+* checking examples ... [5s] OK
 * checking for unstated dependencies in vignettes ... OK
 * checking package vignettes in 'inst/doc' ... OK
-* checking re-building of vignette outputs ... [4s] OK
+* checking re-building of vignette outputs ... [6s] OK
 * checking PDF version of manual ... OK
 * checking for detritus in the temp directory ... OK
 * DONE

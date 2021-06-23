@@ -1,4 +1,4 @@
-"travunif"=function(ls,cs,lcdata,rcdata,site=NA,plot=T)
+"travunif"=function(ls,cs,lcdata,rcdata,site=NA,plot=TRUE)
 {
   # Set lcdata or rcdata to maximum of either.  Need to fill "empty cans of shorter array
   # setting shorter array to max array length will fill shorter arrays with NA for missing values
@@ -9,6 +9,8 @@
   depths<-c(lcdata,rcdata)#concatenate left and right of pull catch can data.  Order is increasing from hose outward,
   #e.g., can 1 is closest to hose (middle of pull) for both left and right of hose.
   if(plot){
+    oldpar<-par(no.readonly = TRUE) #get current plot parameters
+    on.exit(par(oldpar)) # at exit return to originating plot par on device
     leg.colors<-c(1,3,1);leg.pch<-c(1,1,NA);leg.cex<-0.7;leg.lines<-c(0,0,2)
     leg.names<-c("catch cans", "ovelap cans","lane spacing")
   lane.space<-ls
