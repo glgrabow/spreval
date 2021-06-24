@@ -22,7 +22,7 @@ from the references below:
 ## References
 
 Christiansen, J.D. 1942. Irrigation by Sprinkling. California
-Agricultural Experiment Station Bulletin 670. <ISBN:0138779295>
+Agricultural Experiment Station Bulletin 670.
 
 Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997b. Field
 calibration procedures for animal wastewater application equipment, hard

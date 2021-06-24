@@ -27,7 +27,7 @@ The `spreval` package contains a number of functions to assess irrigation sprink
 `spreval::catchcan` is a data file included in this package. Methods implemented in this package and data used in the vignettes are taken from the references below:
 
 ## References
-Christiansen, J.D. 1942.  Irrigation by Sprinkling.  California Agricultural Experiment Station Bulletin 670. ISBN:0138779295
+Christiansen, J.D. 1942.  Irrigation by Sprinkling.  California Agricultural Experiment Station Bulletin 670. 
 
 Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997b.  Field calibration procedures for animal wastewater application equipment, hard hose and cable tow traveler irrigation system. NC Cooperative Extension Service publication  AG-553-2.  Raleigh, NC.
 (https://content.ces.ncsu.edu/hard-hose-and-cable-tow-traveler-irrigation-systems)
