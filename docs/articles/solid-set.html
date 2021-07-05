@@ -98,13 +98,13 @@
 
       
 
-      </header><script src="solid-set_files/header-attrs-2.8/header-attrs.js"></script><div class="row">
+      </header><script src="solid-set_files/header-attrs-2.9/header-attrs.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>Solid-set Sprinkler Systems</h1>
                         <h4 class="author">Garry Grabow</h4>
             
-            <h4 class="date">2021-06-23</h4>
+            <h4 class="date">2021-07-04</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/glgrabow/spreval/blob/master/vignettes/solid-set.Rmd"><code>vignettes/solid-set.Rmd</code></a></small>
       <div class="hidden name"><code>solid-set.Rmd</code></div>
@@ -226,8 +226,8 @@ r4
 <span class="va">cdata</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">grid</span><span class="op">[</span> ,<span class="fl">1</span><span class="op">]</span>,<span class="va">grid</span><span class="op">[</span> ,<span class="fl">2</span><span class="op">]</span>,<span class="va">depths</span><span class="op">)</span> <span class="co">#construct required catch can data matrix (x,y, depth)</span>
 <span class="va">sp.x</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="fl">0</span>,<span class="fl">80</span>,<span class="fl">80</span><span class="op">)</span>;<span class="va">sp.y</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="fl">0</span>,<span class="op">-</span><span class="fl">80</span>,<span class="fl">0</span>,<span class="op">-</span><span class="fl">80</span><span class="op">)</span><span class="co"># sprinkler spacing 80 x 80 ft</span>
 <span class="va">sploc</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/cbind.html">cbind</a></span><span class="op">(</span><span class="va">sp.x</span>,<span class="va">sp.y</span><span class="op">)</span> <span class="co">#construct required sprinkler location matrix</span>
-<span class="fu"><a href="../reference/plotss.html">plotss</a></span><span class="op">(</span><span class="va">cdata</span>,<span class="va">sploc</span>,imcol<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span><span class="co"># call function</span>
-<span class="fu"><a href="https://rdrr.io/r/graphics/text.html">text</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="fl">3</span>,<span class="fl">3</span>,<span class="fl">77</span>,<span class="fl">77</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">3</span>,<span class="op">-</span><span class="fl">77</span>,<span class="op">-</span><span class="fl">3</span>,<span class="op">-</span><span class="fl">77</span><span class="op">)</span>,<span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="st">"s12"</span>,<span class="st">"s22"</span>,<span class="st">"s13"</span>,<span class="st">"s23"</span><span class="op">)</span>,cex<span class="op">=</span><span class="fl">0.8</span><span class="op">)</span><span class="co"># label sprinklers as in reference</span></code></pre></div>
+<span class="va">spr.lab</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html">c</a></span><span class="op">(</span><span class="st">"s12"</span>,<span class="st">"s22"</span>,<span class="st">"s13"</span>,<span class="st">"s23"</span><span class="op">)</span><span class="co"># label sprinklers as in reference</span>
+<span class="fu"><a href="../reference/plotss.html">plotss</a></span><span class="op">(</span><span class="va">cdata</span>,<span class="va">sploc</span>,imcol<span class="op">=</span><span class="cn">TRUE</span>,spklab<span class="op">=</span><span class="va">spr.lab</span><span class="op">)</span><span class="co"># call function</span></code></pre></div>
 <div class="figure">
 <img src="solid-set_files/figure-html/unnamed-chunk-3-1.png" alt="Raw catch can data" width="480"><p class="caption">
 Raw catch can data
@@ -316,7 +316,7 @@ Percentile plot with target depth for example
 </tr>
 </tbody>
 </table>
-<p>A plot of an empirical cumulative distribution step function plot that is rotated so that the soil surface is represented at the top of the plot helps to visualize the above results. To do this, the function <code><a href="../reference/sfplot.html">spreval::sfplot</a></code> may be used.</p>
+<p>A plot of an empirical cumulative distribution step function, rotated so that the soil surface is represented at the top of the plot, helps to visualize the above results. To do this, the function <code><a href="../reference/sfplot.html">spreval::sfplot</a></code> may be used.</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/sfplot.html">sfplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,target<span class="op">=</span><span class="fl">0.57</span>,ylab<span class="op">=</span><span class="st">"depth caught, in."</span><span class="op">)</span></code></pre></div>
 <div class="figure">
@@ -352,8 +352,12 @@ Rotated ECDF plot with target depth for example
 </tr>
 </tbody>
 </table>
-<p>Notice how efficiency increases with increasing target depth, for this example irrigation that applied an average of 5.7 in (catch can average). Efficiency can approach 100% with deficit irrigation, but with greater efficiency comes reduced adequacy as can be seen in the table above.</p>
-<p>##References Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997a. Field calibration procedures for animal wastewater application equipment, stationary sprinkler irrigation system. NC Cooperative Extension Service publication AG 553-1. Raleigh, NC. (<a href="https://irrigation.wordpress.ncsu.edu/files/2017/01/ag-553-1-stationary-sprinkler.pdf" class="uri">https://irrigation.wordpress.ncsu.edu/files/2017/01/ag-553-1-stationary-sprinkler.pdf</a>).</p>
+<p>Notice how efficiency increases with increasing target depth (e.g., SMD) for this example irrigation that applied an average of 5.7 in (catch can average). Efficiency can approach 100% with deficit irrigation, but with greater efficiency comes reduced adequacy as can be seen in the table above.</p>
+</div>
+<div id="references" class="section level2">
+<h2 class="hasAnchor">
+<a href="#references" class="anchor"></a>References</h2>
+<p>Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997a. Field calibration procedures for animal wastewater application equipment, stationary sprinkler irrigation system. NC Cooperative Extension Service publication AG 553-1. Raleigh, NC. (<a href="https://irrigation.wordpress.ncsu.edu/files/2017/01/ag-553-1-stationary-sprinkler.pdf" class="uri">https://irrigation.wordpress.ncsu.edu/files/2017/01/ag-553-1-stationary-sprinkler.pdf</a>).</p>
 <p>Mirriam and Keller, 1978. Farm System Irrigation Evaluation: A Guide for Management. PP 41-43. Utah State University, Logan, Utah. (<a href="https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf" class="uri">https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf</a>).</p>
 </div>
   </div>

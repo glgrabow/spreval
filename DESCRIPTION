@@ -12,7 +12,7 @@ Description: Processing and analysis of field collected or simulated sprinkler
     efficiency of the low quarter (PELQ), and application efficiency of the low quarter (AELQ)
     that are implementations of measures of the same notation in Keller, J. and Merriam, 
     J.L. (1978) "Farm Irrigation System Evaluation: A Guide for Management"
-    <https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf>. spreval::DUlh is similar to spreval::DU
+    <https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf>. spreval::DU.lh is similar to spreval::DU
     but is the distribution uniformity of the low half instead of low quarter as in DU.
     spreval::PELQT is a version of spreval::PELQ adapted for traveling systems instead
     of lateral move or     solid-set sprinkler systems. The function spreval::eff is

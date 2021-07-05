@@ -10,7 +10,7 @@ for traveling gun irrigation systems.  Data from a single transect of catch cans
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-travunif(ls,cs,lcdata,rcdata,site="",plot=TRUE)
+travunif(ls,cs,lcdata,rcdata,site=NULL,plot=TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

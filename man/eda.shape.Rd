@@ -8,12 +8,12 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-eda.shape(x,title="",qq=TRUE)
+eda.shape(x,title=NULL,qq=TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{x}{numeric array}
-  \item{title}{character; optional title for plots}
+  \item{title}{character; optional title for plots, default is NULL (no title).}
   \item{qq}{logical; for plotting quartile plot, default=TRUE}
 %%     ~~Describe \code{x} here~~
 }

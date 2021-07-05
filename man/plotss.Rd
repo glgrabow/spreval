@@ -8,18 +8,19 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-plotss(cdata,sploc,con=TRUE, xlab="",ylab="",title="",labelpoints=TRUE,
-imcol=FALSE,edastat=FALSE)
+plotss(cdata,sploc,con=TRUE, xlab=NULL,ylab=NULL,title=NULL,labelpoints=TRUE,
+spklab=NULL,imcol=FALSE,edastat=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{cdata}{n x 3 matrix of catch can data; 1st column x, 2nd column y can locations, 3rd column catch depths}
   \item{sploc}{n x 2 matrix of sprinkler location data; 1st column xi, second column yi.  i=4 for 4 sprinklers with cans in-between.}
   \item{con}{Logical; TRUE to overlay contour plot on densigram, default is TRUE}
-  \item{xlab}{label for x axis of plot}
-  \item{ylab}{label for y axis of plot}
-  \item{title}{main title for plot, default is FALSE (no title)}
+  \item{xlab}{label for x axis of plot,default is NULL (no xlab)}
+  \item{ylab}{label for y axis of plot, default is NULL (no ylab)}
+  \item{title}{main title for plot, default is NULL (no title)}
   \item{labelpoints}{logical; plot amounts at can locations? Default is TRUE.}
+  \item{spklab}{character vector of labels for sprinklers.  Default is NULL (empty).}
   \item{imcol}{logical; color densigram?  Default is FALSE for gray-scale.}
   \item{edastat}{call eda.stat function for stats on catch depths? Default is FALSE.}
 %%     ~~Describe \code{x} here~~
@@ -58,7 +59,6 @@ depth<-c(0.3,0.32,0.26,0.26,0.16,0.32,0.14,0.41,
 cdata<-cbind(x,y,depth)
 plotss(cdata,sploc,xlab="ft",ylab="ft")
 }
-
 
 
 
