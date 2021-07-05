@@ -3,6 +3,12 @@
 * ubuntu 16.04 (on travis-ci), R 4.1.0
 * win-builder (devel)
 
+## change since third submission
+* provided URL for Christiansen reference (build_site had generated an
+incorrect URL based on ISBN no.). This had triggered a "fix" request.
+* changed default function parameters related to graphics titles to NULL
+from "" (empty string) for cleaner and more conventional programming
+
 ## change since second submission
 * added par(no.readonly-TRUE) and on.exit commands to retain user set graphics
 * added verbiage to better describe purpose and function of the package
@@ -16,15 +22,15 @@ interp is a FOSS package to avoid ACM license issue of akima
 * moved "fields" library to "suggests" list as it is only used in examples and vignettes
 
 ## R CMD check results (local)
-── R CMD check results ───── spreval 1.0.0 ────
-Duration: 45.6s
+── R CMD check results ───────────── spreval 1.0.0 ────
+Duration: 46s
 
 0 errors ✓ | 0 warnings ✓ | 0 notes ✓
 
 R CMD check succeeded
 
 ## R CMD check results (debian)
-> On debian-clang-devel (r-devel)
+On debian-clang-devel (r-devel)
   checking CRAN incoming feasibility ... NOTE
   Maintainer: 'Garry Grabow <glgrabow@ncsu.edu>'
   
@@ -34,19 +40,19 @@ R CMD check succeeded
     AELQ (12:90)
     catchcan (26:82)
     Christiansen (9:64, 10:36)
-    DUlh (15:61)
+    lh (15:64)
     PELQ (12:36, 17:45)
     PELQT (17:14)
     Skogerboe (20:33)
     SMD (22:51, 23:21)
-    spreval (15:52, 15:80, 17:5, 17:36, 18:70, 26:73)
+    spreval (15:52, 15:81, 17:5, 17:36, 18:70, 26:73)
 
-0 errors ✓ | 0 warnings ✓ | 1 note x
 ## Test environments (fedora)
+
 - R-hub fedora-clang-devel (r-devel)
 
-## R CMD check results (fedora)
-On fedora-clang-devel (r-devel)
+## R CMD check results
+> On fedora-clang-devel (r-devel)
   checking CRAN incoming feasibility ... NOTE
   Maintainer: ‘Garry Grabow <glgrabow@ncsu.edu>’
   
@@ -55,13 +61,13 @@ On fedora-clang-devel (r-devel)
   Possibly mis-spelled words in DESCRIPTION:
     AELQ (12:90)
     Christiansen (9:64, 10:36)
-    DUlh (15:61)
     PELQ (12:36, 17:45)
     PELQT (17:14)
     SMD (22:51, 23:21)
     Skogerboe (20:33)
     catchcan (26:82)
-    spreval (15:52, 15:80, 17:5, 17:36, 18:70, 26:73)
+    lh (15:64)
+    spreval (15:52, 15:81, 17:5, 17:36, 18:70, 26:73)
 
 0 errors ✓ | 0 warnings ✓ | 1 note x
 
@@ -70,27 +76,11 @@ On fedora-clang-devel (r-devel)
 - R-hub windows-x86_64-release (r-release)
 
 ## R CMD check results
-checking CRAN incoming feasibility ... NOTE
-  
-  New submission
-  
-  Possibly mis-spelled words in DESCRIPTION:
-    AELQ (12:90)
-    Christiansen (9:64, 10:36)
-    DUlh (15:61)
-    PELQ (12:36, 17:45)
-    PELQT (17:14)
-    SMD (22:51, 23:21)
-    Skogerboe (20:33)
-    catchcan (26:82)
-    spreval (15:52, 15:80, 17:5, 17:36, 18:70, 26:73)
-  Maintainer: 'Garry Grabow <glgrabow@ncsu.edu>'
-
-0 errors ✓ | 0 warnings ✓ | 1 note x
+0 errors ✓ | 0 warnings ✓ | 0 notes ✓
 
 ## rhub::check_win_dev()
 * using log directory 'd:/RCompile/CRANguest/R-devel/spreval.Rcheck'
-* using R Under development (unstable) (2021-06-22 r80544)
+* using R Under development (unstable) (2021-07-03 r80596)
 * using platform: x86_64-w64-mingw32 (64-bit)
 * using session charset: ISO8859-1
 * checking for file 'spreval/DESCRIPTION' ... OK
@@ -105,13 +95,13 @@ New submission
 Possibly mis-spelled words in DESCRIPTION:
   AELQ (12:90)
   Christiansen (9:64, 10:36)
-  DUlh (15:61)
   PELQ (12:36, 17:45)
   PELQT (17:14)
   SMD (22:51, 23:21)
   Skogerboe (20:33)
   catchcan (26:82)
-  spreval (15:52, 15:80, 17:5, 17:36, 18:70, 26:73)
+  lh (15:64)
+  spreval (15:52, 15:81, 17:5, 17:36, 18:70, 26:73)
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -141,7 +131,7 @@ Possibly mis-spelled words in DESCRIPTION:
 * checking S3 generic/method consistency ... OK
 * checking replacement functions ... OK
 * checking foreign function calls ... OK
-* checking R code for possible problems ... [6s] OK
+* checking R code for possible problems ... [7s] OK
 * checking Rd files ... [1s] OK
 * checking Rd metadata ... OK
 * checking Rd line widths ... OK
