@@ -8,7 +8,7 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-plotss(cdata,sploc,con=TRUE, xlab=NULL,ylab=NUll,title=NULL,labelpoints=TRUE,
+plotss(cdata,sploc,con=TRUE, xlab=NULL,ylab=NULL,title=NULL,labelpoints=TRUE,
 spklab=NULL,imcol=FALSE,edastat=FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
