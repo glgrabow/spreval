@@ -1,7 +1,7 @@
 #function to do exploratory data analysis of object array
 #histogram, boxplot, density and quartile plots constructed
 
-"eda.shape" = function(x,title="",qq=TRUE)
+"eda.shape" = function(x,title=NULL,qq=TRUE)
 {
   oldpar<-par(no.readonly = TRUE) #get current plot parameters
   on.exit(par(oldpar))
@@ -14,7 +14,8 @@
           staplehex = 1, outchar = TRUE, outpch = NA, outline = TRUE, outwex
           = 1, main=title,ylab=nm)
   iqd <- summary(x)[5] - summary(x)[2]
-  plot(density(x, width = 2 * iqd, na.rm = TRUE), xlab = nm, ylab = "",
+  if(is.null(title)){title=""}
+  plot(density(x, width = 2 * iqd, na.rm = TRUE), xlab = nm, ylab = NULL,
        type = "l",main=title)
   if(qq){qqnorm(x, main=title,pch = 1)}
   if(qq){qqline(x)}

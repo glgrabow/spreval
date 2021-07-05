@@ -23,6 +23,7 @@ from the references below:
 
 Christiansen, J.D. 1942. Irrigation by Sprinkling. California
 Agricultural Experiment Station Bulletin 670.
+(<https://archive.org/details/irrigationbyspri670chri/page/n3/mode/2up>)
 
 Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997b. Field
 calibration procedures for animal wastewater application equipment, hard
@@ -50,7 +51,7 @@ install.packages("spreval")
 ```
 
 a “pre-CRAN” development package is available at: [package in
-github](https://github.com/glgrabow/spreval/blob/master/packages/spreval_0.1.0.900.tar.gz)
+github](https://github.com/glgrabow/spreval/blob/master/packages/spreval_1.0.0.tar.gz)
 This may be installed as an archive file locally on your machine after
 downloading.
 

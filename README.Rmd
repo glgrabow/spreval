@@ -27,7 +27,8 @@ The `spreval` package contains a number of functions to assess irrigation sprink
 `spreval::catchcan` is a data file included in this package. Methods implemented in this package and data used in the vignettes are taken from the references below:
 
 ## References
-Christiansen, J.D. 1942.  Irrigation by Sprinkling.  California Agricultural Experiment Station Bulletin 670. 
+Christiansen, J.D. 1942.  Irrigation by Sprinkling.  California Agricultural Experiment Station Bulletin 670.
+(https://archive.org/details/irrigationbyspri670chri/page/n3/mode/2up)
 
 Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997b.  Field calibration procedures for animal wastewater application equipment, hard hose and cable tow traveler irrigation system. NC Cooperative Extension Service publication  AG-553-2.  Raleigh, NC.
 (https://content.ces.ncsu.edu/hard-hose-and-cable-tow-traveler-irrigation-systems)
@@ -51,7 +52,7 @@ You can install the released version of spreval (date TBD) from [CRAN](https://C
 install.packages("spreval")
 ```
 a "pre-CRAN" development package is available  at:
-[package in github](https://github.com/glgrabow/spreval/blob/master/packages/spreval_0.1.0.900.tar.gz)
+[package in github](https://github.com/glgrabow/spreval/blob/master/packages/spreval_1.0.0.tar.gz)
 This may be installed as an archive file locally on your machine after downloading.
 
 A pdf file documenting all of the package functions is available at: [here](https://github.com/glgrabow/spreval/blob/master/docs/spreval.pdf)

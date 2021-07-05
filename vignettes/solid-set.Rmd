@@ -43,8 +43,8 @@ depths<-matrix(t(cc.data),ncol=1)#transpose matrix and stack rows into 1 column
 cdata<-cbind(grid[ ,1],grid[ ,2],depths) #construct required catch can data matrix (x,y, depth)
 sp.x<-c(0,0,80,80);sp.y<-c(0,-80,0,-80)# sprinkler spacing 80 x 80 ft
 sploc<-cbind(sp.x,sp.y) #construct required sprinkler location matrix
-plotss(cdata,sploc,imcol=TRUE)# call function
-text(c(3,3,77,77),c(-3,-77,-3,-77),c("s12","s22","s13","s23"),cex=0.8)# label sprinklers as in reference
+spr.lab<-c("s12","s22","s13","s23")# label sprinklers as in reference
+plotss(cdata,sploc,imcol=TRUE,spklab=spr.lab)# call function
 ```
 
 In this example, there is no need to overlap test data, as with lateral-move and traveling gun system test data, to evaluate uniformity and efficiency.
@@ -85,7 +85,7 @@ eff.table<-cbind(labels,eff.table)
 knitr::kable(eff.table)#
 ```
 
-A plot of an empirical cumulative distribution step function plot that is rotated so that the soil surface is represented at the top of the plot helps to visualize the above results. To do this, the function `spreval::sfplot` may be used.
+A plot of an empirical cumulative distribution step function, rotated so that the soil surface is represented at the top of the plot, helps to visualize the above results. To do this, the function `spreval::sfplot` may be used.
 
 ```{r,echo=TRUE, results='asis',fig.show='hold',fig.width = 4,fig.height = 5,fig.cap="Rotated ECDF plot with target depth for example"}
 sfplot(as.vector(cc.data),target=0.57,ylab="depth caught, in.")
@@ -109,9 +109,9 @@ knitr::kable(body,digits=2,caption="Efficiency and adequacy for various target d
 
 ```
 
-Notice how efficiency increases with increasing target depth, for this example irrigation that applied an average of 5.7 in (catch can average). Efficiency can approach 100% with deficit irrigation, but with greater efficiency comes reduced adequacy as can be seen in the table above.  
+Notice how efficiency increases with increasing target depth (e.g., SMD) for this example irrigation that applied an average of 5.7 in (catch can average). Efficiency can approach 100% with deficit irrigation, but with greater efficiency comes reduced adequacy as can be seen in the table above.  
 
-##References
+## References
 Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997a.  Field calibration procedures for animal wastewater application equipment, stationary sprinkler irrigation system. NC Cooperative Extension Service publication AG 553-1.  Raleigh, NC.
 (https://irrigation.wordpress.ncsu.edu/files/2017/01/ag-553-1-stationary-sprinkler.pdf).
 

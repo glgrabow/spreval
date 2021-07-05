@@ -1,4 +1,4 @@
-"travunif"=function(ls,cs,lcdata,rcdata,site=NA,plot=TRUE)
+"travunif"=function(ls,cs,lcdata,rcdata,site=NULL,plot=TRUE)
 {
   # Set lcdata or rcdata to maximum of either.  Need to fill "empty cans of shorter array
   # setting shorter array to max array length will fill shorter arrays with NA for missing values
@@ -46,7 +46,7 @@
   text(right.pull,y.right.pull+3,gage.labels,cex=0.5,col=1)
  # segments(-lane.space/2,10,-lane.space/2,10+10,lty=2)#R requires explicit x1,y1,x2,y2
  # segments(lane.space/2,10,lane.space/2,10+10,lty=2)#R requires explicit x1,y1,x2,y2
-  text(0,100,site) #plot site on plan view plot
+  if(!is.null(site)){text(0,100,site)} #plot site on plan view plot if provided
   leg.x<-far.gage/2
   legend("topright",leg.names,col=leg.colors,lty=leg.lines,pch=leg.pch,cex=leg.cex)
   }
