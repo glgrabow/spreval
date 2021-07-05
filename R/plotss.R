@@ -1,4 +1,4 @@
-plotss=function(cdata,sploc,con=TRUE,xlab=NULL,ylab=NULL,title="",labelpoints=TRUE,spklab=NULL,imcol=FALSE,edastat=FALSE)
+plotss=function(cdata,sploc,con=TRUE,xlab=NULL,ylab=NULL,title=NULL,labelpoints=TRUE,spklab=NULL,imcol=FALSE,edastat=FALSE)
 {
 #cdata is n x 3 matrix of catch can data; 1st column x, 2nd column y can locations, 3rd column catch depths
 #sploc is n x 2 matrix of 1st column x, second column y sprinkler location.  x=4, y = 4 for 4 sprinklers
