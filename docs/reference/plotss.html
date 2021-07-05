@@ -161,8 +161,8 @@
 <!-- %%  ~~ A concise (1-5 lines) description of what the function does. ~~ --></p>
     </div>
 
-    <pre class="usage"><span class='fu'>plotss</span><span class='op'>(</span><span class='va'>cdata</span>,<span class='va'>sploc</span>,con<span class='op'>=</span><span class='cn'>TRUE</span>, xlab<span class='op'>=</span><span class='st'>""</span>,ylab<span class='op'>=</span><span class='st'>""</span>,title<span class='op'>=</span><span class='st'>""</span>,labelpoints<span class='op'>=</span><span class='cn'>TRUE</span>,
-imcol<span class='op'>=</span><span class='cn'>FALSE</span>,edastat<span class='op'>=</span><span class='cn'>FALSE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>plotss</span><span class='op'>(</span><span class='va'>cdata</span>,<span class='va'>sploc</span>,con<span class='op'>=</span><span class='cn'>TRUE</span>, xlab<span class='op'>=</span><span class='cn'>NULL</span>,ylab<span class='op'>=</span><span class='cn'>NULL</span>,title<span class='op'>=</span><span class='cn'>NULL</span>,labelpoints<span class='op'>=</span><span class='cn'>TRUE</span>,
+spklab<span class='op'>=</span><span class='cn'>NULL</span>,imcol<span class='op'>=</span><span class='cn'>FALSE</span>,edastat<span class='op'>=</span><span class='cn'>FALSE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -181,19 +181,23 @@ imcol<span class='op'>=</span><span class='cn'>FALSE</span>,edastat<span class='
     </tr>
     <tr>
       <th>xlab</th>
-      <td><p>label for x axis of plot</p></td>
+      <td><p>label for x axis of plot,default is NULL (no xlab)</p></td>
     </tr>
     <tr>
       <th>ylab</th>
-      <td><p>label for y axis of plot</p></td>
+      <td><p>label for y axis of plot, default is NULL (no ylab)</p></td>
     </tr>
     <tr>
       <th>title</th>
-      <td><p>main title for plot, default is FALSE (no title)</p></td>
+      <td><p>main title for plot, default is NULL (no title)</p></td>
     </tr>
     <tr>
       <th>labelpoints</th>
       <td><p>logical; plot amounts at can locations? Default is TRUE.</p></td>
+    </tr>
+    <tr>
+      <th>spklab</th>
+      <td><p>character vector of labels for sprinklers.  Default is NULL (empty).</p></td>
     </tr>
     <tr>
       <th>imcol</th>
