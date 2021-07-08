@@ -1,3 +1,11 @@
+# Deveopment version for bugs fixes or added features
+* v.1.0.0.800
+---
+
+# Initial released version in CRAN (2021-07-05)
+* v.1.0.0
+---
+
 # spreval 1.0.0
 * version to submit to CRAN
 [package in github](https://github.com/glgrabow/spreval/blob/master/packages/spreval_1.0.0.tar.gz)
