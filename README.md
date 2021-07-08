@@ -13,7 +13,10 @@
 The `spreval` package contains a number of functions to assess
 irrigation sprinkler system application uniformity and efficiency. Use
 of the functions allow for assessment of lateral-move, solid-set, and
-hose pull (big gun) irrigation systems.
+hose pull (big gun) irrigation systems. The description at the top of
+the [package’s CRAN
+page](http://cloud.r-project.org/web/packages/spreval/index.html)
+provides more detail and background.
 
 `spreval::catchcan` is a data file included in this package. Methods
 implemented in this package and data used in the vignettes are taken
