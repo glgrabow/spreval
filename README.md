@@ -43,17 +43,16 @@ Utah. (<https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf>)
 
 ## Installation
 
-You can install the released version of spreval (date TBD) from
-[CRAN](https://CRAN.R-project.org) with:
+You can install the released version of spreval (release data
+20210-07-08) from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("spreval")
 ```
 
-a “pre-CRAN” development package is available at: [package in
-github](https://github.com/glgrabow/spreval/blob/master/packages/spreval_1.0.0.tar.gz)
-This may be installed as an archive file locally on your machine after
-downloading.
+or you may navigate to the [github repository
+page](https://github.com/glgrabow/spreval) and click under “releases” to
+download the source code and install locally.
 
 A pdf file documenting all of the package functions is available at:
 [here](https://github.com/glgrabow/spreval/blob/master/docs/spreval.pdf)
