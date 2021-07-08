@@ -51,8 +51,7 @@ You can install the released version of spreval (release data 20210-07-08) from 
 ``` r
 install.packages("spreval")
 ```
-or you may navigate to the [github repository page](https://github.com/glgrabow/spreval) and click under 
-"releases" to download the source code and install locally.  
+or you may access from the "Links" listing on this page, or navigate to the [github repository page](https://github.com/glgrabow/spreval) and click under "releases" to download the source code and install locally.  
 
 A pdf file documenting all of the package functions is available at: [here](https://github.com/glgrabow/spreval/blob/master/docs/spreval.pdf)
 
