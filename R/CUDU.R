@@ -5,6 +5,7 @@
 
 "CU" = function(x)
 {
+  x<-na.exclude(x)
   ((mean(x) - (sum(abs(x - mean(x)))/length(x)))/mean(x)) * 100
 }
 
@@ -12,6 +13,7 @@
 #of low-quarter
 "DU"=function(x)
 {
+  x<-na.exclude(x) # guard against padded data e.g., for created square/rectangular region from irregular area
   #get subarray of low quarter
   x<-sort(x)
   end<-round(length(x)/4,digits=0)
@@ -21,6 +23,7 @@
 #function to compute Distribution uniformity of low half
 "DU.lh"=function(x)
 {
+  x<-na.exclude(x)
   x<-sort(x)
   end<-round(length(x)/2,digits=0)
   mean(x[1:end])/mean(x)*100
