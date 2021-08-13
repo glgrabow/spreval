@@ -30,7 +30,10 @@
              staplehex = 1, outchar = TRUE, outpch = NA, outline = TRUE, outwex
              = 1,...)
   iqd <- summary(x)[5] - summary(x)[2] #interquartile range ... not used
-  lplot(density(x,na.rm = TRUE),main=main,xlab=xlab,...)
+  if(missing(xlab))
+   lplot(density(x,na.rm = TRUE),main=main,xlab=nm,...)
+  else
+    lplot(density(x,na.rm = TRUE),main=main,xlab=xlab,...)
   if(qq){lqqnorm(x,main=main,...)}
   if(qq){qqline(x)}
   invisible()
