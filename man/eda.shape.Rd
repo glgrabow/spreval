@@ -8,17 +8,19 @@
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-eda.shape(x,title=NULL,qq=TRUE)
+eda.shape(x,qq=TRUE,main=NULL,xlab,...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{numeric array}
-  \item{title}{character; optional title for plots, default is NULL (no title).}
-  \item{qq}{logical; for plotting quartile plot, default=TRUE}
+  \item{x}{numeric array.}
+  \item{qq}{logical; for plotting quartile plot, default=TRUE.}
+  \item{main}{character; main title for plots. Default of NULL yields no title.}
+  \item{xlab}{x axis label for histogram and density plots, y axis label for boxplot. If not provided, will default to name of object x.}
+  \item{...} additional graphical parameters to pass to the plot functions called withing function.
 %%     ~~Describe \code{x} here~~
 }
 
-\details{This function is modified from the SPlus version of the same name, see references.
+\details{This function is modified from the SPlus version of the same name, see references. Additional graphical parameters passed to `eda.shape` are ignored if not applicable/accepted by all internally called plot functions to prevent warning messages and/or null plots. To suppress axis labeling pass ann=FALSE as additional argument.
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{Four plots on one page [mfrow = c(2, 2)]- histogram, boxplot, density, and quartile.

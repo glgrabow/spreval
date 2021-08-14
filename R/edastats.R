@@ -1,7 +1,7 @@
 #function to do exploratory data analysis of object array
 #histogram, boxplot, density and quartile plots constructed
 
-"eda.shape" = function(x,qq=TRUE,main,xlab,...)
+"eda.shape" = function(x,qq=TRUE,main=NULL,xlab,...)
 {
   oldpar<-par(no.readonly = TRUE) #get current plot parameters
   on.exit(par(oldpar))
@@ -10,7 +10,7 @@
   #ann=FALSE will suppress labels in boxplot
   nm<- deparse(substitute(x))
   # to suppress main, x, y label defaults pass ann=FALSE at call
-  if(missing(main))main=""# to prevent default main titles, explicitly provide null string
+  if(is.null(main))main=""# to prevent default main titles, explicitly provide null string
   lhist<-function(...,notch,axes,log,ylab,ylim,cex.label) hist(...)
   lboxplot<-function(...,axes,log,xlab,xlim,cex.label) boxplot(...)
   lplot<-function(...,notch,axes,ylab,cex.label) plot(...)
@@ -20,12 +20,12 @@
   else
     lhist(x,main=main,xlab=xlab,...)
   if(missing(xlab))
-    lboxplot(x, ylab=nm,plot = TRUE,border=1,
+    lboxplot(x, main=main,ylab=nm,plot = TRUE,border=1,
              staplelty = 1, staplewex = 1,
              staplehex = 1, outchar = TRUE, outpch = NA, outline = TRUE, outwex
              = 1,...)
   else
-    lboxplot(x,ylab=xlab,plot = TRUE,border=1,
+    lboxplot(x,main=main,ylab=xlab,plot = TRUE,border=1,
              staplelty = 1, staplewex = 1,
              staplehex = 1, outchar = TRUE, outpch = NA, outline = TRUE, outwex
              = 1,...)
