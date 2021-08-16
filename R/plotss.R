@@ -1,4 +1,5 @@
-plotss=function(cdata,sploc,con=TRUE,xlab=NULL,ylab=NULL,title=NULL,labelpoints=TRUE,spklab=NULL,imcol=FALSE,edastat=FALSE)
+plotss2=function(cdata,sploc,con=TRUE,xlab=NULL,ylab=NULL,xlim=NULL,ylim=NULL,main=NULL,labelpoints=TRUE,pos=NULL,spklab=NULL,
+asp=NULL,pch=16,cex=0.8,edastat=FALSE,...)
 {
 #cdata is n x 3 matrix of catch can data; 1st column x, 2nd column y can locations, 3rd column catch depths
 #sploc is n x 2 matrix of 1st column x, second column y sprinkler location.  x=4, y = 4 for 4 sprinklers
@@ -6,44 +7,49 @@ plotss=function(cdata,sploc,con=TRUE,xlab=NULL,ylab=NULL,title=NULL,labelpoints=
 # xlab and ylab for plan view plot of sprinklers and catch cans, provide units too if wish
 #setup plotting space
 #plot.new()
+#user input of pch other than default of 16 changes only sprinkler location symbols, catch cans are fixed at pch=1.
+#col as other graphical parameter imput only applies to image plot. See wrapper functions for exclusions.
 oldpar<-par(no.readonly = TRUE) #get current plot parameters
-#on.exit(par(oldpar)) # at exit return to originating plot par on device
-#size<-min(par("din")[1],par("din")[2])  # get minimum length of plot height and width by starting with device size
-#size<-size-par("mai")[1]# now subtract space for labels location 1 "x-axis" has greatest default space
-#par(pin=c(size,size))#set for square aspect ratio.  asp overides xlim and ylim so need this alternative
-par(pty="s")#set square plotting area for 1:1 aspect ratio. Prevents issues with asp option.
+on.exit(par(oldpar)) # at exit return to originating plot par on device. Should not need this as no par() set.
+#write wrappers for plot and plot related functions
+limage<-function(...,xaxs,yaxs,axes,log,labcex,pos) image(...)
+lcontour<-function(...,xlim,ylim,col,pos) contour(...) # can pass 'labcex' in contour for line label (not 'cex.lab')
+lpoints<-function(...,log, axes, frame.plot, panel.first, panel.last,labcex,pos,lty,col) points(...)
+ltext<-function(...,log, axes, frame.plot, panel.first, panel.last,labcex,col,lty) text(...)
 sprinklerx<-sploc[ ,1];sprinklery<-sploc[ ,2]
 cx<-cdata[ ,1];cy<-cdata[ ,2]
+nmx<- deparse(substitute(cx));nmy<- deparse(substitute(y)) # get default x and y array names for default xlab, ylab
 depth<-cdata[ ,3]
 densigram<-interp::interp(cx,cy,depth)
-col<-gray.colors(12, start = 0.9, end = 0.3, gamma = 2.2, alpha = NULL, rev = FALSE)#default image color is b/w
-if(imcol){col = hcl.colors(12, "YlOrRd", rev = TRUE)} #color image which is normal default for image function
 # set range of plot to either maximum space of sprinklers (external to cans) or to catch can range, e.g., 1 lateral
 # add a border for room for can and sprinkler labels
-border.x<-par("pin")[1]/40*(max(cy)-min(cy))
-border.y<-par("pin")[2]/40*(max(cy)-min(cy))
+xpin<-par("pin")[1];ypin<-par("pin")[2]; as.ratio<-xpin/ypin #fetch aspect ratios in pin
+border.x<-0.06*(max(cy)-min(cy)) #just use 5%
+border.y<-0.06*(max(cy)-min(cy)) #ditto
 xmin<-min(min(sprinklerx),min(cx))-border.x;xmax<-max(max(sprinklerx),max(cx))+border.x
-ymin<-min(min(sprinklery),min(cy))-border.y;ymax<-max(max(sprinklery),max(cy))+border.y
-image(densigram, col=col,xlim=c(xmin,xmax),ylim=c(ymin,ymax),
-      xaxs="i",yaxs="i")
-points(sprinklerx,sprinklery,pch=16)
-title(main=title,xlab=xlab,ylab=ylab)
-#image.legend(densigram,30,80,size=c(1.5,.10),hor=TRUE,lab=c(5,0,7),cex=0.75,nint=25)
+ymin<-min(min(sprinklery),min(cy))-2*border.y;ymax<-max(max(sprinklery),max(cy))+border.y
+print(ymin);print(ymax);print(border.y)
+#set asp=1 for image.  added points will follow true aspect ratio
+if(is.null(xlim)) xlim=c(xmin,xmax); if(is.null(ylim)) ylim=c(ymin,ymax)
+if(is.null(asp)) asp=1 # set 1:1 aspect ratio by default if not provided
+limage(densigram,xlim=xlim,ylim=ylim,
+      xaxs="i",yaxs="i",asp=asp,...)
+lpoints(sprinklerx,sprinklery,pch=pch,cex=cex,...)
+title(main=main,xlab=xlab,ylab=ylab)
+
 if(con){
-contour(densigram, add=TRUE, plotit=TRUE,labex=0.6)
+lcontour(densigram, add=TRUE, plotit=TRUE,...)
 }
-points(cx,cy,pch=1,col=1)#plot rain gages -plan view
+lpoints(cx,cy,pch=1,cex=cex,...)#plot rain gages -plan view
 if(labelpoints){
-  offset.x<-par("pin")[1]/50
-  offset.y<-par("pin")[2]/50*(max(cy)-min(cy))
-  label.locx<-cx-offset.x # start left of center with label
-  label.locy<-cy+offset.y #start above point
-  gage.labels<-depth
-  text(label.locx,label.locy,gage.labels,cex=0.7,col=1)
+   if(is.null(pos)) pos=1
+   gage.labels<-depth
+   ltext(cx,cy,gage.labels,pos=pos,cex=cex,...)
 }
-#label sprinklers if labels are provided (!null)
+#label sprinklers if labels are provided (!null).  Bold italic to distinguish from can labels.
 if(!is.null(spklab)){
-  text(sprinklerx-offset.x, sprinklery+offset.y,spklab,cex=0.7,col=1)
+  if(is.null(pos)) pos=1
+  ltext(sprinklerx, sprinklery,spklab,pos=pos,cex=cex,...)
 }
 
 if(edastat){
