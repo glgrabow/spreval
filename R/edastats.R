@@ -11,9 +11,9 @@
   nm<- deparse(substitute(x))
   # to suppress main, x, y label defaults pass ann=FALSE at call
   if(is.null(main))main=""# to prevent default main titles, explicitly provide null string
-  lhist<-function(...,notch,axes,log,ylab,ylim,cex.label) hist(...)
+  lhist<-function(...,notch,axes,log,ylab,ylim,cex.label,frame.plot) hist(...)
   lboxplot<-function(...,axes,log,xlab,xlim,cex.label) boxplot(...)
-  lplot<-function(...,notch,axes,ylab,cex.label) plot(...)
+  lplot<-function(...,notch,axes,ylab,cex.label,frame.plot) plot(...)
   lqqnorm<-function(...,notch,xlab,ylab,log,axes,xlim,ylim,cex.label) qqnorm(...)
   if(missing(xlab))
     lhist(x,main=main,xlab=nm,...)
