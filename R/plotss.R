@@ -1,10 +1,11 @@
-plotss2=function(cdata,sploc,con=TRUE,xlab=NULL,ylab=NULL,xlim=NULL,ylim=NULL,main=NULL,labelpoints=TRUE,pos=NULL,spklab=NULL,
-asp=NULL,pch=16,cex=0.8,edastat=FALSE,...)
+plotss=function(cdata,sploc,con=TRUE,xlab=NULL,ylab=NULL,xlim=NULL,ylim=NULL,main=NULL,labelpoints=TRUE,pos=1,spklab=NULL,
+asp=1,pch=16,cex=0.8,edastat=FALSE,...)
 {
 #cdata is n x 3 matrix of catch can data; 1st column x, 2nd column y can locations, 3rd column catch depths
 #sploc is n x 2 matrix of 1st column x, second column y sprinkler location.  x=4, y = 4 for 4 sprinklers
 #with cans in-between
 # xlab and ylab for plan view plot of sprinklers and catch cans, provide units too if wish
+# added "..." to pass graphcial paramters.  Removed imcol argument as color can now be passed as customized.
 #setup plotting space
 #plot.new()
 #user input of pch other than default of 16 changes only sprinkler location symbols, catch cans are fixed at pch=1.
@@ -31,7 +32,6 @@ ymin<-min(min(sprinklery),min(cy))-2*border.y;ymax<-max(max(sprinklery),max(cy))
 print(ymin);print(ymax);print(border.y)
 #set asp=1 for image.  added points will follow true aspect ratio
 if(is.null(xlim)) xlim=c(xmin,xmax); if(is.null(ylim)) ylim=c(ymin,ymax)
-if(is.null(asp)) asp=1 # set 1:1 aspect ratio by default if not provided
 limage(densigram,xlim=xlim,ylim=ylim,
       xaxs="i",yaxs="i",asp=asp,...)
 lpoints(sprinklerx,sprinklery,pch=pch,cex=cex,...)
@@ -48,7 +48,6 @@ if(labelpoints){
 }
 #label sprinklers if labels are provided (!null).  Bold italic to distinguish from can labels.
 if(!is.null(spklab)){
-  if(is.null(pos)) pos=1
   ltext(sprinklerx, sprinklery,spklab,pos=pos,cex=cex,...)
 }
 
