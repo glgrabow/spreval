@@ -14,9 +14,9 @@ eda.shape(x,qq=TRUE,main=NULL,xlab,...)
 \arguments{
   \item{x}{numeric array.}
   \item{qq}{logical; for plotting quartile plot, default=TRUE.}
-  \item{main}{character; main title for plots. Default of NULL yields no title.}
+  \item{main}{character; main title for plots.}
   \item{xlab}{x axis label for histogram and density plots, y axis label for boxplot. If not provided, will default to name of object x.}
-  \item{...} additional graphical parameters to pass to the plot functions called withing function.
+  \item{...} additional graphical parameters to pass to the plot functions called within `eda.shape`.
 %%     ~~Describe \code{x} here~~
 }
 
@@ -30,6 +30,10 @@ eda.shape(x,qq=TRUE,main=NULL,xlab,...)
 %%  \item{comp2 }{Description of 'comp2'}
 %% ...
 }
+
+\note{Wrapper functions for each internally called plot type strip graphical parameters that are not applicable to the specific plot type to prevent warnings and errors.}
+
+
 \references{TIBCO Spotfire S+ 8.2 2010. Guide to Statistics, vol. 1, p.124ff.
 %% ~put references to the literature/web site here ~
 }
@@ -48,7 +52,10 @@ eda.shape(x,qq=TRUE,main=NULL,xlab,...)
 #generate and plot univariate normally distributed data
 require(graphics)
 x<-rnorm(25,1,0.25)
-eda.shape(x,title="my normal data")
+eda.shape(x) #defaults
+#add main title, and pass additional parameters, "col" and
+#"notch""for notched boxplot
+eda.shape(x,main="my normal data",col="blue",notch=TRUE)
   }
 
 % Add one or more standard keywords, see file 'KEYWORDS' in the
