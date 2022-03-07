@@ -5,7 +5,8 @@
 %%  ~~function to do ... ~~
 }
 \description{plots points generated from an `stats::ecdf` object with x and y axis swapped
-(x is cumulative frequency) and with y axis reversed so that min(y)=0 is at top.  Plots points without step function lines.
+(x is cumulative frequency) and with y axis reversed so that min(y)=0 is at top.  Plots points
+without step function lines.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
@@ -17,7 +18,8 @@ rotecdf(x,target=NA,xlab=NULL,ylab=NULL,...)
   \item{target}{target, a constant, e.g., target depth of irrigation.}
   \item{xlab}{label for x axis, standard default provided.}
   \item{ylab}{label for y axis, e.g., depth applied. Default is  name of object x if not supplied.}
-  \item{...}{further graphical parameters to pass to internal calls to \code{\link[graphics]{plot.default}}
+  \item{...}{further graphical parameters to pass to internal calls to
+  \code{\link[graphics]{plot.default}}
 }
 }
 
@@ -53,7 +55,8 @@ x<-rnorm(25,3,1.75)
 rotecdf(x,target,ylab="depth applied (caught)")
 # generate data with mean of target amount and low varibility (uniformity)
 xx<-rnorm(25,3,0.5)
-#no y axis label provided - defaults to array object name.  Pass additional non-default graphical parameters
+#no y axis label provided - defaults to array object name.  Pass additional non-default
+#graphical parameters
 rotecdf(xx,target,lty=2,pch=2)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the

@@ -33,7 +33,7 @@ This is a plan view of catch can data (in.) collected between 4 sprinklers space
 
 These data may be plotted along with the sprinkler locations as a contour and image plot for a better representation of application uniformity using `speval::plotss`.  Here, the upper left sprinkler is given an arbitrary location of (0,0).
 
-```{r,echo=TRUE,results='asis',fig.show='hold',fig.width = 5,fig.height = 5,fig.cap="Raw catch can data"}
+```{r,echo=TRUE,results='asis',fig.show='hold',fig.width = 5,fig.height = 5,fig.cap="Raw catch can data, in."}
 #x,y matrix 20 ft x 20 ft catch can spacing
 x<-seq(10,70,20) # catch can x coordinates. 
 y<-seq(-10,-70,-20) #catch can y coordinates. 

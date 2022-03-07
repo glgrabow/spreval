@@ -17,7 +17,7 @@
 
 "sfplot"=function(x,target=NA,xlab=NULL,ylab=NULL,...){
   #plot a step function with y (depth) axis inverted (ground at top)
-  lplot<-function(...,title,title.col,asp,xlim,ylim,lwd) plot(...) # title and title.col are legend parameters
+  lplot<-function(...,title,title.col,asp,lwd) plot(...) # title and title.col are legend parameters
   labline<-function(...,title,title.col,asp,xlim,ylim) abline(...)
   ltext<-function(...,log, axes, frame.plot, panel.first, panel.last,lty,lwd,title,title.col,col) text(...)
   xecdf<-ecdf(x) #create ecdf object

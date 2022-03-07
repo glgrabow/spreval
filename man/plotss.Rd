@@ -9,7 +9,7 @@
 }
 \usage{
 plotss(cdata,sploc,con=TRUE,xlab=NULL,ylab=NULL,xlim=NULL,
-ylim=NULL,main=NULL,labelpoints=TRUE,pos=1,spklab=NULL,asp=1,
+ylim=NULL,main=NULL,labelpoints=TRUE,pos=1,spklab=NULL,
 pch=16,cex=0.8,edastat=FALSE,...)
 }
 %- maybe also 'usage' for other objects documented here.
@@ -24,11 +24,12 @@ pch=16,cex=0.8,edastat=FALSE,...)
   \item{main}{main title for plot.}
   \item{labelpoints}{logical; plot amounts at can locations? Default is TRUE.}
   \item{pos}{if labelpoints=TRUE, position of point labels, see \code{\link[graphics]{text}}}
-  \item{spklab}{character vector of labels for sprinklers.}
-  \item{asp}{aspect ratio of x and y axis. See \code{\link[graphics]{plot.default}}.}
+  \item{spklab}{character vector of labels for sprinklers. Defaults to bold italic to distinguish
+  from can labels.}
   \item{pch}{symbol type. See \code{\link[graphics]{par}}.}
-  \item{cex}{scaling factor for plotting points and labels.See \code{\link[graphics]{par}}.}
+  \item{cex}{scaling factor for plotting points and point labels.See \code{\link[graphics]{par}}.}
   \item{edastat}{Logical; call eda.stat function for stats on catch depths?}
+  \item{...}{further graphical parameters to pass to internal calls to \code{\link[graphics]{plot.default}}}
 %%     ~~Describe \code{x} here~~
 }
 
@@ -64,7 +65,7 @@ depth<-c(0.3,0.32,0.26,0.26,0.16,0.32,0.14,0.41,
 0.14,0.27,0.38,0.34,0.29,0.32,0.45,0.25)
 cdata<-cbind(x,y,depth)
 plotss(cdata,sploc,xlab="ft",ylab="ft")
-#now black and white, pass "col"
+#now grey scale colors, pass "col"
 plotss(cdata,sploc,xlab="ft",ylab="ft",col=grey.colors(16))
 }
 

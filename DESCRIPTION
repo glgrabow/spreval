@@ -1,7 +1,7 @@
 Package: spreval
 Type: Package
 Title: Evaluation of Sprinkler Irrigation Uniformity and Efficiency
-Version: 1.0.0
+Version: 1.1.0.900
 Authors@R: person(given="Garry", family="Grabow", email="glgrabow@ncsu.edu", role=c("aut", "cre", "cph"),comment=c(ORCID= "0000-0002-9616-2615"))
 Maintainer: Garry Grabow <glgrabow@ncsu.edu>
 Description: Processing and analysis of field collected or simulated sprinkler 
@@ -24,7 +24,9 @@ Description: Processing and analysis of field collected or simulated sprinkler
     graphical representation of sprinkler system uniformity, and other standard
     univariate parametric and non-parametric statistical measures as applied to
     sprinkler system catch depths. A sample data set of field test data spreval::catchcan
-    (catch depths) is provided and is used in examples and vignettes.
+    (catch depths) is provided and is used in examples and vignettes. Agricultural systems
+    emphasized, but this package can be used for landscape irrigation evaluation, and a
+    landscape (turf) vignette is included as an example application.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
@@ -34,6 +36,6 @@ Imports:
     timeDate,interp
 Suggests: 
     fields,knitr,
-    rmarkdown,
+    rmarkdown,plotrix
 VignetteBuilder: knitr
 RoxygenNote: 7.1.1

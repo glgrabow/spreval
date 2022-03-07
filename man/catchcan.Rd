@@ -9,7 +9,7 @@
 }
 \usage{data("catchcan")
 }
-\format{A named list of 3 catch can data sets; lateral, traveler, and solid.set
+\format{A named list of 4 catch can data sets; lateral, traveler, solid.set and landscape.
     \describe{
     \item{\code{catchcan$lateral}}{6x7 matrix of catch can data, units are in./hr. Grid spacing of 10 ft x 10 ft}
     \item{\code{ln}}{a numeric vector of catch can data - nth can to left of lateral}
@@ -20,6 +20,8 @@
     \item{\code{depth}}{collected depth, in.}
 
     \item{\code{catchcan$solid.set}}{4x4 matrix of catch can data, units are in. Can grid spacing of 20 ft x 20 ft inside of 4 operating sprinklers on 80x80 ft sprinkler x lateral spacing.}
+    \item{\code{catchcan$landscape}}{9X7 matrix of catch can data, units are in ml.  Can grid spacing of 9 X 9 ft.}
+
      }
      }
 

@@ -9,7 +9,7 @@ with cumulative frequency on x axis and input array (catch can depths) on y axis
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-sfplot(target=NA,xlab=NULL,ylab=NULL,...)
+sfplot(x,target=NA,xlab=NULL,ylab=NULL,...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

@@ -16,7 +16,7 @@ eda.shape(x,qq=TRUE,main=NULL,xlab,...)
   \item{qq}{logical; for plotting quartile plot, default=TRUE.}
   \item{main}{character; main title for plots.}
   \item{xlab}{x axis label for histogram and density plots, y axis label for boxplot. If not provided, will default to name of object x.}
-  \item{...} additional graphical parameters to pass to the plot functions called within `eda.shape`.
+  \item{...}{additional graphical parameters to pass to the plot functions called within `eda.shape`.}
 %%     ~~Describe \code{x} here~~
 }
 
