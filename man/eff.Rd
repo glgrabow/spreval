@@ -28,11 +28,6 @@ by the total water applied when the target depth is set equal to the soil moistu
 \value{A named list with the following items:
 \item{appeff}{application efficiency based on target depth, decimal}
 \item{appadeq}{application adequacy based on target depth, decimal}
-%%  ~Describe the value returned
-%%  If it is a LIST, use
-%%  \item{comp1 }{Description of 'comp1'}
-%%  \item{comp2 }{Description of 'comp2'}
-%% ...
 }
 
 \author{Garry Grabow \email{glgrabow@ncsu.edu}
