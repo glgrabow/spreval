@@ -6,8 +6,7 @@ pch=16,cex=0.8,edastat=FALSE,...)
 #with cans in-between
 # xlab and ylab for plan view plot of sprinklers and catch cans, provide units too if wish
 # added "..." to pass graphcial paramters.  Removed imcol argument as color can now be passed as customized.
-#setup plotting space
-#plot.new()
+# asp can be passed in plotss extra arguments ,..., e.g., asp=1 for true x/y spatial rendering.
 #user input of pch other than default of 16 changes only sprinkler location symbols, catch cans are fixed at pch=1.
 #col as other graphical parameter imput only applies to image plot. See wrapper functions for exclusions.
 oldpar<-par(no.readonly = TRUE) #get current plot parameters
@@ -16,7 +15,7 @@ on.exit(par(oldpar)) # at exit return to originating plot par on device. Should 
 #lines for sprinkler pattern extents is problematic.  Would need to return current plot user coordinates
 #par$usr
 #write wrappers for plot and plot related functions
-limage<-function(...,xaxs,yaxs,axes,log,labcex,pos) image(...)
+limage<-function(...,xaxs,yaxs,axes,log,labcex,pos) image(...) # can pass asp=1 for true x/y ratio rendering
 lcontour<-function(...,xlim,ylim,col,pos) contour(...) # can pass 'labcex' in contour for line label (not 'cex.lab')
 lpoints<-function(...,log, axes, frame.plot, panel.first, panel.last,labcex,pos,lty,col) points(...)
 ltext<-function(...,log, axes, frame.plot, panel.first, panel.last,labcex,col,lty) text(...)

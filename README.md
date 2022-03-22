@@ -13,8 +13,9 @@
 The `spreval` package contains a number of functions to assess
 irrigation sprinkler system application uniformity and efficiency. Use
 of the functions allow for assessment of lateral-move, solid-set, and
-hose pull (big gun) irrigation systems. The description at the top of
-the [package’s CRAN
+hose pull (big gun) irrigation systems. Assessment of landscape
+sprinkler irrigation systems may also be done using functions contained
+in the package. The description at the top of the [package’s CRAN
 page](http://cloud.r-project.org/web/packages/spreval/index.html)
 provides more detail and background.
 
@@ -47,7 +48,7 @@ Utah. (<https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf>)
 ## Installation
 
 You can install the released version of spreval (release data
-20210-07-08) from [CRAN](https://CRAN.R-project.org) with:
+2021-07-08) from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("spreval")

@@ -38,7 +38,9 @@
     graphical representation of sprinkler system uniformity, and other standard
     univariate parametric and non-parametric statistical measures as applied to
     sprinkler system catch depths. A sample data set of field test data spreval::catchcan
-    (catch depths) is provided and is used in examples and vignettes.'>
+    (catch depths) is provided and is used in examples and vignettes. Agricultural systems
+    emphasized, but this package can be used for landscape irrigation evaluation, and a
+    landscape (turf) vignette is included as an example application.'>
 <meta property="og:image" content="https://glgrabow.github.io/spreval/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -52,6 +54,8 @@
 </script>
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -64,18 +68,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">spreval</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">1.0.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">1.1.0</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -87,6 +85,9 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="articles/landscape.html">Landscape Sprinkler Systems</a>
+    </li>
+    <li>
       <a href="articles/lateral-move.html">lateral-move systems</a>
     </li>
     <li>
@@ -103,7 +104,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/glgrabow/spreval/">
+  <a href="https://github.com/glgrabow/spreval/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -121,53 +122,52 @@
       </header><div class="row">
   <div class="contents col-md-9">
 
-<div id="spreval-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#spreval-" class="anchor"></a>spreval <img src="reference/figures/apple-touch-icon-120x120.png" align="right">
+<div class="section level1">
+<div class="page-header"><h1 id="spreval-">spreval <img src="reference/figures/apple-touch-icon-120x120.png" align="right"><a class="anchor" aria-label="anchor" href="#spreval-"></a>
 </h1></div>
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 </div>
-<div id="evaluation-of-sprinkler-irrigation-uniformity-and-efficiency" class="section level1">
-<h1 class="hasAnchor">
-<a href="#evaluation-of-sprinkler-irrigation-uniformity-and-efficiency" class="anchor"></a>Evaluation of Sprinkler Irrigation Uniformity and Efficiency</h1>
+<div class="section level1">
+<h1 id="evaluation-of-sprinkler-irrigation-uniformity-and-efficiency">Evaluation of Sprinkler Irrigation Uniformity and Efficiency<a class="anchor" aria-label="anchor" href="#evaluation-of-sprinkler-irrigation-uniformity-and-efficiency"></a>
+</h1>
 <!-- badges: start -->
 <!-- badges: end -->
-<div id="brief-description-of-spreval-package" class="section level2">
-<h2 class="hasAnchor">
-<a href="#brief-description-of-spreval-package" class="anchor"></a>Brief Description of spreval package</h2>
-<p>The <code>spreval</code> package contains a number of functions to assess irrigation sprinkler system application uniformity and efficiency. Use of the functions allow for assessment of lateral-move, solid-set, and hose pull (big gun) irrigation systems. The description at the top of the <a href="http://cloud.r-project.org/web/packages/spreval/index.html">package’s CRAN page</a> provides more detail and background.</p>
+<div class="section level2">
+<h2 id="brief-description-of-spreval-package">Brief Description of spreval package<a class="anchor" aria-label="anchor" href="#brief-description-of-spreval-package"></a>
+</h2>
+<p>The <code>spreval</code> package contains a number of functions to assess irrigation sprinkler system application uniformity and efficiency. Use of the functions allow for assessment of lateral-move, solid-set, and hose pull (big gun) irrigation systems. Assessment of landscape sprinkler irrigation systems may also be done using functions contained in the package. The description at the top of the <a href="http://cloud.r-project.org/web/packages/spreval/index.html" class="external-link">package’s CRAN page</a> provides more detail and background.</p>
 <p><code><a href="reference/catchcan.html">spreval::catchcan</a></code> is a data file included in this package. Methods implemented in this package and data used in the vignettes are taken from the references below:</p>
 </div>
-<div id="references" class="section level2">
-<h2 class="hasAnchor">
-<a href="#references" class="anchor"></a>References</h2>
-<p>Christiansen, J.D. 1942. Irrigation by Sprinkling. California Agricultural Experiment Station Bulletin 670. (<a href="https://archive.org/details/irrigationbyspri670chri/page/n3/mode/2up" class="uri">https://archive.org/details/irrigationbyspri670chri/page/n3/mode/2up</a>)</p>
-<p>Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997b. Field calibration procedures for animal wastewater application equipment, hard hose and cable tow traveler irrigation system. NC Cooperative Extension Service publication AG-553-2. Raleigh, NC. (<a href="https://content.ces.ncsu.edu/hard-hose-and-cable-tow-traveler-irrigation-systems" class="uri">https://content.ces.ncsu.edu/hard-hose-and-cable-tow-traveler-irrigation-systems</a>)</p>
-<p>Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997a. Field calibration procedures for animal wastewater application equipment, stationary sprinkler irrigation system. NC Cooperative Extension Service publication AG 553-1. Raleigh, NC. (<a href="https://irrigation.wordpress.ncsu.edu/files/2017/01/ag-553-1-stationary-sprinkler.pdf" class="uri">https://irrigation.wordpress.ncsu.edu/files/2017/01/ag-553-1-stationary-sprinkler.pdf</a>)</p>
-<p>Mirriam and Keller, 1978. Farm System Irrigation Evaluation: A Guide for Management. Form II-1, item 10, p.29. Utah State University, Logan, Utah. (<a href="https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf" class="uri">https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf</a>)</p>
+<div class="section level2">
+<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+</h2>
+<p>Christiansen, J.D. 1942. Irrigation by Sprinkling. California Agricultural Experiment Station Bulletin 670. (<a href="https://archive.org/details/irrigationbyspri670chri/page/n3/mode/2up" class="external-link uri">https://archive.org/details/irrigationbyspri670chri/page/n3/mode/2up</a>)</p>
+<p>Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997b. Field calibration procedures for animal wastewater application equipment, hard hose and cable tow traveler irrigation system. NC Cooperative Extension Service publication AG-553-2. Raleigh, NC. (<a href="https://content.ces.ncsu.edu/hard-hose-and-cable-tow-traveler-irrigation-systems" class="external-link uri">https://content.ces.ncsu.edu/hard-hose-and-cable-tow-traveler-irrigation-systems</a>)</p>
+<p>Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997a. Field calibration procedures for animal wastewater application equipment, stationary sprinkler irrigation system. NC Cooperative Extension Service publication AG 553-1. Raleigh, NC. (<a href="https://irrigation.wordpress.ncsu.edu/files/2017/01/ag-553-1-stationary-sprinkler.pdf" class="external-link uri">https://irrigation.wordpress.ncsu.edu/files/2017/01/ag-553-1-stationary-sprinkler.pdf</a>)</p>
+<p>Mirriam and Keller, 1978. Farm System Irrigation Evaluation: A Guide for Management. Form II-1, item 10, p.29. Utah State University, Logan, Utah. (<a href="https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf" class="external-link uri">https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf</a>)</p>
 </div>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the released version of spreval (release data 20210-07-08) from <a href="https://CRAN.R-project.org">CRAN</a> with:</p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
+<p>You can install the released version of spreval (release data 2021-07-08) from <a href="https://CRAN.R-project.org" class="external-link">CRAN</a> with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"spreval"</span><span class="op">)</span></code></pre></div>
-<p>or you may access from the “Links” listing on this page, or navigate to the <a href="https://github.com/glgrabow/spreval">github repository page</a> and click under “releases” to download the source code and install locally.</p>
-<p>A pdf file documenting all of the package functions is available at: <a href="https://github.com/glgrabow/spreval/blob/master/docs/spreval.pdf">here</a></p>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"spreval"</span><span class="op">)</span></code></pre></div>
+<p>or you may access from the “Links” listing on this page, or navigate to the <a href="https://github.com/glgrabow/spreval" class="external-link">github repository page</a> and click under “releases” to download the source code and install locally.</p>
+<p>A pdf file documenting all of the package functions is available at: <a href="https://github.com/glgrabow/spreval/blob/master/docs/spreval.pdf" class="external-link">here</a></p>
 <p>Check the changelog tab for updates on version history.</p>
 </div>
-<div id="example" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h2>
 <p>A quick example of a couple of things this package will do is shown below. In this example, conventional statistics, e.g., <code>CU</code>, <code>DU</code>, DU low half (<code>DU.lh</code>), and <code>PELQ</code> are computed. Additionally, a cumulative distribution plot of the data are shown with a target depth (<code>sfplot</code>) to help visualize the relative area receiving less than or more than the target depth, and the deviation from the target depth is shown. For perspective, the top of the plot can be considered as the soil surface and the cumulative distribution line the depth of catch:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://glgrabow.github.io/spreval/">spreval</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://glgrabow.github.io/spreval/">spreval</a></span><span class="op">)</span>
 <span class="co">## basic example code</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span><span class="op">(</span><span class="st">"catchcan"</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"catchcan"</span><span class="op">)</span>
 <span class="va">cc.data</span><span class="op">&lt;-</span><span class="va">catchcan</span><span class="op">$</span><span class="va">solid.set</span> <span class="co">#fetch solid set data</span>
-<span class="va">ss.uni</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fu"><a href="reference/CU.html">CU</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,<span class="fu"><a href="reference/DU.html">DU</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,<span class="fu"><a href="reference/DU.lh.html">DU.lh</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,<span class="fu"><a href="reference/PELQ.html">PELQ</a></span><span class="op">(</span><span class="va">cc.data</span>,SI<span class="op">=</span><span class="cn">FALSE</span>,rate<span class="op">=</span><span class="fl">16.98</span>,ss<span class="op">=</span><span class="fl">80</span>,sl<span class="op">=</span><span class="fl">80</span>,dur<span class="op">=</span><span class="fl">2.25</span><span class="op">)</span><span class="op">)</span><span class="co"># use U.S. cust. units</span>
-<span class="va">table</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html">round</a></span><span class="op">(</span><span class="va">ss.uni</span>,<span class="fl">0</span><span class="op">)</span>
-<span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/t.html">t</a></span><span class="op">(</span><span class="va">table</span><span class="op">)</span>,col.names<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"CU"</span>,<span class="st">"DU"</span>,<span class="st">"DU.lh"</span>,<span class="st">"PELQ"</span><span class="op">)</span><span class="op">)</span><span class="co">#transpose array (table) for display</span></code></pre></div>
+<span class="va">ss.uni</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fu"><a href="reference/CU.html">CU</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,<span class="fu"><a href="reference/DU.html">DU</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,<span class="fu"><a href="reference/DU.lh.html">DU.lh</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,<span class="fu"><a href="reference/PELQ.html">PELQ</a></span><span class="op">(</span><span class="va">cc.data</span>,SI<span class="op">=</span><span class="cn">FALSE</span>,rate<span class="op">=</span><span class="fl">16.98</span>,ss<span class="op">=</span><span class="fl">80</span>,sl<span class="op">=</span><span class="fl">80</span>,dur<span class="op">=</span><span class="fl">2.25</span><span class="op">)</span><span class="op">)</span><span class="co"># use U.S. cust. units</span>
+<span class="va">table</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">ss.uni</span>,<span class="fl">0</span><span class="op">)</span>
+<span class="fu">knitr</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/knitr/man/kable.html" class="external-link">kable</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/t.html" class="external-link">t</a></span><span class="op">(</span><span class="va">table</span><span class="op">)</span>,col.names<span class="op">=</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"CU"</span>,<span class="st">"DU"</span>,<span class="st">"DU.lh"</span>,<span class="st">"PELQ"</span><span class="op">)</span><span class="op">)</span><span class="co">#transpose array (table) for display</span></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">CU</th>
@@ -183,7 +183,7 @@
 </tr></tbody>
 </table>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/sfplot.html">sfplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/vector.html">as.vector</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,target<span class="op">=</span><span class="fl">0.57</span>,ylab<span class="op">=</span><span class="st">"depth caught, in."</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="reference/sfplot.html">sfplot</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/vector.html" class="external-link">as.vector</a></span><span class="op">(</span><span class="va">cc.data</span><span class="op">)</span>,target<span class="op">=</span><span class="fl">0.57</span>,ylab<span class="op">=</span><span class="st">"depth caught, in."</span><span class="op">)</span></code></pre></div>
 <p><img src="reference/figures/README-example-1.png" width="100%"></p>
 </div>
 </div>
@@ -192,39 +192,50 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=spreval">https://​cloud.r-project.org/​package=spreval</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/glgrabow/spreval/">https://​github.com/​glgrabow/​spreval/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/glgrabow/spreval/issues">https://​github.com/​glgrabow/​spreval/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=spreval" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/glgrabow/spreval/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/glgrabow/spreval/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li><a href="https://www.r-project.org/Licenses/GPL-3">GPL-3</a></li>
+<li><a href="https://www.r-project.org/Licenses/GPL-3" class="external-link">GPL-3</a></li>
 </ul>
 </div>
+
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
+<ul class="list-unstyled">
+<li><a href="authors.html#citation">Citing spreval</a></li>
+</ul>
+</div>
+
 <div class="developers">
-<h2>Developers</h2>
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Garry Grabow <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0002-9616-2615" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Garry Grabow <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0002-9616-2615" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 </ul>
 </div>
+
+
 
   </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Garry Grabow.</p>
+  <p></p>
+<p>Developed by Garry Grabow.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.2.</p>
 </div>
 
       </footer>
@@ -232,6 +243,8 @@
 
   
 
+
+  
 
   </body>
 </html>

@@ -1,107 +1,76 @@
 ## Test environments
-* local R installation, R 4.1.0
+* local R installation, R 4.1.1
 * ubuntu 16.04 (on travis-ci), R 4.1.0
 * win-builder (devel)
 
-## change since third submission
-* provided URL for Christiansen reference (build_site had generated an
-incorrect URL based on ISBN no.). This had triggered a "fix" request.
-* changed default function parameters related to graphics titles to NULL
-from "" (empty string) for cleaner and more conventional programming
-
-## change since second submission
-* added par(no.readonly-TRUE) and on.exit commands to retain user set graphics
-* added verbiage to better describe purpose and function of the package
-and added references from which implemented methods came.  
-* Notes from rhub checks concerning possible misspellings in description file
-are either an author name or function names that are explicitly listed to the stated references
-
-## change since first submission
-* replaced akima package with interp package
-interp is a FOSS package to avoid ACM license issue of akima
-* moved "fields" library to "suggests" list as it is only used in examples and vignettes
+## change since v. 1.0.0
+fixed bugs and errors. Some minor features added (graphics parameter passing) 
+an additional vignette to illustrate landscape sprinkler system evaluation
+was added.  Values returned from  spreval::eff, i.e.,"appeff"" and "appadeq" 
+have been corrected.  Most functions that output plots, or allow optional plots
+(i.e., eda.shape, plotss, sfplot, rotecdf) now allow optional graphical 
+parameters to be passed via the ... convention and Rd help files updated. 
+Landscape data added to catchcan dataset.
 
 ## R CMD check results (local)
-── R CMD check results ───────────── spreval 1.0.0 ────
-Duration: 46s
+── R CMD check results ───────────────────────── spreval 1.1.0 ────
+Duration: 13.2s
 
 0 errors ✓ | 0 warnings ✓ | 0 notes ✓
 
 R CMD check succeeded
 
-## R CMD check results (debian)
-On debian-clang-devel (r-devel)
-  checking CRAN incoming feasibility ... NOTE
-  Maintainer: 'Garry Grabow <glgrabow@ncsu.edu>'
-  
-  New submission
-  
-  Possibly mis-spelled words in DESCRIPTION:
-    AELQ (12:90)
-    catchcan (26:82)
-    Christiansen (9:64, 10:36)
-    lh (15:64)
-    PELQ (12:36, 17:45)
-    PELQT (17:14)
-    Skogerboe (20:33)
-    SMD (22:51, 23:21)
-    spreval (15:52, 15:81, 17:5, 17:36, 18:70, 26:73)
+## Test environment rhub check_for_cran (debian)
+── spreval 1.1.0: OK
 
-## Test environments (fedora)
+  Build ID:   spreval_1.1.0.tar.gz-25fae9fe55fc4e9d895a60945a31b593
+  Platform:   Debian Linux, R-devel, clang, ISO-8859-15 locale
+  Submitted:  1h 14m 53.1s ago
+  Build time: 17m 20.5s
+
+0 errors ✓ | 0 warnings ✓ | 0 notes ✓
+
+## Test environment rhub check_for_cran  (fedora)
+
+── spreval 1.1.0: OK
+
+  Build ID:   spreval_1.1.0.tar.gz-e0735d24f2bb47a1b676ef20077628cf
+  Platform:   Fedora Linux, R-devel, clang, gfortran
+  Submitted:  2h 9m 51.2s ago
+  Build time: 15m 15.3s
+0 errors ✓ | 0 warnings ✓ | 0 notes ✓
+
 
 - R-hub fedora-clang-devel (r-devel)
 
-## R CMD check results
-> On fedora-clang-devel (r-devel)
-  checking CRAN incoming feasibility ... NOTE
-  Maintainer: ‘Garry Grabow <glgrabow@ncsu.edu>’
-  
-  New submission
-  
-  Possibly mis-spelled words in DESCRIPTION:
-    AELQ (12:90)
-    Christiansen (9:64, 10:36)
-    PELQ (12:36, 17:45)
-    PELQT (17:14)
-    SMD (22:51, 23:21)
-    Skogerboe (20:33)
-    catchcan (26:82)
-    lh (15:64)
-    spreval (15:52, 15:81, 17:5, 17:36, 18:70, 26:73)
 
-0 errors ✓ | 0 warnings ✓ | 1 note x
+## Test environment (rhub::check_on_windows())
+── spreval 1.1.0: OK
 
+  Build ID:   spreval_1.1.0.tar.gz-867b6fc43d424d699be2d1821b229d33
+  Platform:   Windows Server 2008 R2 SP1, R-release, 32/64 bit
+  Submitted:  7m 44.4s ago
+  Build time: 3m 1.9s
 
-## Test environments (rhub::check_on_windows())
-- R-hub windows-x86_64-release (r-release)
-
-## R CMD check results
 0 errors ✓ | 0 warnings ✓ | 0 notes ✓
 
-## rhub::check_win_dev()
+## Test environment devtools::check_win_dev()
 * using log directory 'd:/RCompile/CRANguest/R-devel/spreval.Rcheck'
-* using R Under development (unstable) (2021-07-03 r80596)
+* using R Under development (unstable) (2022-03-21 r81954 ucrt)
 * using platform: x86_64-w64-mingw32 (64-bit)
-* using session charset: ISO8859-1
+* using session charset: UTF-8
 * checking for file 'spreval/DESCRIPTION' ... OK
 * checking extension type ... Package
-* this is package 'spreval' version '1.0.0'
+* this is package 'spreval' version '1.1.0'
 * package encoding: UTF-8
 * checking CRAN incoming feasibility ... NOTE
 Maintainer: 'Garry Grabow <glgrabow@ncsu.edu>'
 
-New submission
-
-Possibly mis-spelled words in DESCRIPTION:
-  AELQ (12:90)
-  Christiansen (9:64, 10:36)
-  PELQ (12:36, 17:45)
-  PELQT (17:14)
-  SMD (22:51, 23:21)
-  Skogerboe (20:33)
-  catchcan (26:82)
-  lh (15:64)
-  spreval (15:52, 15:81, 17:5, 17:36, 18:70, 26:73)
+Found the following (possibly) invalid URLs:
+  URL: http://cloud.r-project.org/web/packages/spreval/index.html (moved to https://cloud.r-project.org/web/packages/spreval/index.html)
+    From: README.md
+    Status: 200
+    Message: OK
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -150,7 +119,7 @@ Possibly mis-spelled words in DESCRIPTION:
 * checking examples ... [5s] OK
 * checking for unstated dependencies in vignettes ... OK
 * checking package vignettes in 'inst/doc' ... OK
-* checking re-building of vignette outputs ... [6s] OK
+* checking re-building of vignette outputs ... [19s] OK
 * checking PDF version of manual ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
