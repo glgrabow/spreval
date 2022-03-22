@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://glgrabow.github.io/spreval/404.html</loc>
+  </url>
+  <url>
+    <loc>https://glgrabow.github.io/spreval/articles/index.html</loc>
+  </url>
+  <url>
+    <loc>https://glgrabow.github.io/spreval/articles/landscape.html</loc>
+  </url>
+  <url>
+    <loc>https://glgrabow.github.io/spreval/articles/lateral-move.html</loc>
+  </url>
+  <url>
+    <loc>https://glgrabow.github.io/spreval/articles/solid-set.html</loc>
+  </url>
+  <url>
+    <loc>https://glgrabow.github.io/spreval/articles/traveling-sys.html</loc>
+  </url>
+  <url>
+    <loc>https://glgrabow.github.io/spreval/authors.html</loc>
+  </url>
+  <url>
     <loc>https://glgrabow.github.io/spreval/index.html</loc>
+  </url>
+  <url>
+    <loc>https://glgrabow.github.io/spreval/news/index.html</loc>
   </url>
   <url>
     <loc>https://glgrabow.github.io/spreval/reference/AELQ.html</loc>
@@ -37,6 +61,9 @@
     <loc>https://glgrabow.github.io/spreval/reference/eff.html</loc>
   </url>
   <url>
+    <loc>https://glgrabow.github.io/spreval/reference/index.html</loc>
+  </url>
+  <url>
     <loc>https://glgrabow.github.io/spreval/reference/overlap.html</loc>
   </url>
   <url>
@@ -53,14 +80,5 @@
   </url>
   <url>
     <loc>https://glgrabow.github.io/spreval/reference/travunif.html</loc>
-  </url>
-  <url>
-    <loc>https://glgrabow.github.io/spreval/articles/lateral-move.html</loc>
-  </url>
-  <url>
-    <loc>https://glgrabow.github.io/spreval/articles/solid-set.html</loc>
-  </url>
-  <url>
-    <loc>https://glgrabow.github.io/spreval/articles/traveling-sys.html</loc>
   </url>
 </urlset>
