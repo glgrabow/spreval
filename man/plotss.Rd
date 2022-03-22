@@ -33,7 +33,7 @@ pch=16,cex=0.8,edastat=FALSE,...)
 %%     ~~Describe \code{x} here~~
 }
 
-\value{densigram (from \code{\link[interp]{interp}} with optional contour plot overlay) and optional summary catch can statistics.}
+\value{densigram (from \code{\link[interp]{interp}} with optional contour plot overlay) and optional summary catch can statistics. Returned object is par(usr) to obtain x,y user coordinates for scaling subsequent plotting of low level plot functions on plotted densigram.}
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
