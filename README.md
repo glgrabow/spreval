@@ -16,12 +16,10 @@ of the functions allow for assessment of lateral-move, solid-set, and
 hose pull (big gun) irrigation systems. Assessment of landscape
 sprinkler irrigation systems may also be done using functions contained
 in the package. The description at the top of the [package’s CRAN
-page](http://cloud.r-project.org/web/packages/spreval/index.html)
-provides more detail and background.
-
-`spreval::catchcan` is a data file included in this package. Methods
-implemented in this package and data used in the vignettes are taken
-from the references below:
+page](https://CRAN.R-project.org/package=spreval) provides more detail
+and background. `spreval::catchcan` is a data file included in this
+package. Methods implemented in this package and data used in the
+vignettes are taken from the references below:
 
 ## References
 
