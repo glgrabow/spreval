@@ -1,3 +1,7 @@
+## resubmission of 1.1.0
+changed URL directed to CRAN spreval index page from README.md to honor https
+(versus http) site.
+
 ## Test environments
 * local R installation, R 4.1.1
 * ubuntu 16.04 (on travis-ci), R 4.1.0
@@ -56,21 +60,15 @@ R CMD check succeeded
 
 ## Test environment devtools::check_win_dev()
 * using log directory 'd:/RCompile/CRANguest/R-devel/spreval.Rcheck'
-* using R Under development (unstable) (2022-03-21 r81954 ucrt)
+* using R Under development (unstable) (2022-03-22 r81960 ucrt)
 * using platform: x86_64-w64-mingw32 (64-bit)
 * using session charset: UTF-8
 * checking for file 'spreval/DESCRIPTION' ... OK
 * checking extension type ... Package
 * this is package 'spreval' version '1.1.0'
 * package encoding: UTF-8
-* checking CRAN incoming feasibility ... NOTE
+* checking CRAN incoming feasibility ... Note_to_CRAN_maintainers
 Maintainer: 'Garry Grabow <glgrabow@ncsu.edu>'
-
-Found the following (possibly) invalid URLs:
-  URL: http://cloud.r-project.org/web/packages/spreval/index.html (moved to https://cloud.r-project.org/web/packages/spreval/index.html)
-    From: README.md
-    Status: 200
-    Message: OK
 * checking package namespace information ... OK
 * checking package dependencies ... OK
 * checking if this is a source package ... OK
@@ -116,11 +114,11 @@ Found the following (possibly) invalid URLs:
 * checking data for ASCII and uncompressed saves ... OK
 * checking installed files from 'inst/doc' ... OK
 * checking files in 'vignettes' ... OK
-* checking examples ... [5s] OK
+* checking examples ... [6s] OK
 * checking for unstated dependencies in vignettes ... OK
 * checking package vignettes in 'inst/doc' ... OK
 * checking re-building of vignette outputs ... [19s] OK
 * checking PDF version of manual ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
-Status: 1 NOTE
+Status: OK
