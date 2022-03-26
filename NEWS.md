@@ -4,10 +4,13 @@
 
 # Second release in CRAN (2022-3-23) with bugs fixes and added features
 * v.1.1.0
-This addresses bugs and adds some minor features. Values returned from  spreval::eff, i.e.,
-"appeff"" and "appadeq" have been corrected.  Most functions that output plots, or allow optional plots
-(i.e., eda.shape, plotss, sfplot, rotecdf) now allow optional graphical parameters to be passed via the ... convention.
-A vignette to illustrate use of the package in landscape sprinkler irrigation application has been added, along with an accompanying landscape irrigation data added to the catchcan dataset as "catchcan$landscape". 
+This addresses bugs and adds some minor features. Values returned from  
+spreval::eff, i.e., "appeff"" and "appadeq" have been corrected.  Most functions
+that output plots, or allow optional plots (i.e., eda.shape, plotss, sfplot, 
+rotecdf) now allow optional graphical parameters to be passed via the ... 
+convention. A vignette to illustrate use of the package in landscape sprinkler 
+irrigation application has been added, along with an accompanying landscape 
+irrigation data added to the catchcan dataset as "catchcan$landscape". 
 ---
 
 # Initial released version in CRAN (2021-07-05)
