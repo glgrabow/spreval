@@ -11,6 +11,7 @@ Values returned from spreval::eff, i.e., "appeff"" and "appadeq" have been
 corrected.  
 
 ## Added features
+
 Most functions that output plots, or allow optional plots 
 (i.e., eda.shape, plotss, sfplot,rotecdf) now allow optional graphical 
 parameters to be passed via the ... convention. A vignette to illustrate 
