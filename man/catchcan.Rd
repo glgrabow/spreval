@@ -65,6 +65,5 @@ cdata<-cbind(grid[ ,1],grid[ ,2],labels) #construct required catch can data matr
 sp.x<-rep(0,3);sp.y<-seq(60,0,-30)# sprinkler spacing (y) = 30 ft, plot top to bottom
 sploc<-cbind(sp.x,sp.y) #construct required sprinkler location matrix
 plotss(cdata,sploc)
-%% maybe str(catchcan) ; plot(catchcan) ...
 }
 \keyword{datasets}
