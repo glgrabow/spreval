@@ -107,22 +107,21 @@
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="va"><a href="https://www.rmetrics.org" class="external-link">timeDate</a></span><span class="op">)</span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Loading required package: timeDate</span>
 <span class="r-in"><span class="co"># summary statistics for random normal data</span></span>
 <span class="r-in"><span class="co"># mean of 1. sd = 0.3</span></span>
 <span class="r-in"><span class="va">ndata</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html" class="external-link">rnorm</a></span><span class="op">(</span><span class="fl">25</span>,<span class="fl">1</span>,<span class="fl">.3</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu">eda.stats</span><span class="op">(</span><span class="va">ndata</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $summary</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  0.3611  0.9128  1.1026  1.0545  1.2340  1.7395 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  0.1981  0.8036  1.0102  0.9711  1.1580  1.3415 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $skew</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -0.1751673</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -0.904781</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"method")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "moment"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $kurt</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] -0.5542378</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.4925601</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"method")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "excess"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
@@ -131,16 +130,16 @@
 <span class="r-in"><span class="va">rdata</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/stats/Exponential.html" class="external-link">rexp</a></span><span class="op">(</span><span class="fl">25</span>,rate<span class="op">=</span><span class="fl">1</span><span class="op">)</span></span>
 <span class="r-in"><span class="fu">eda.stats</span><span class="op">(</span><span class="va">rdata</span><span class="op">)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $summary</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>     Min.  1st Qu.   Median     Mean  3rd Qu.     Max. </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 0.008822 0.116194 0.430716 0.717289 1.115675 2.847587 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  0.1134  0.3149  0.6433  0.8830  1.2549  2.8863 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $skew</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1.297364</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1.102437</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"method")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "moment"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $kurt</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1.066805</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.2641215</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"method")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "excess"</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
