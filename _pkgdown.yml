@@ -1,4 +1,4 @@
 url: https://glgrabow.github.io/spreval/
 template:
   bootstrap: 5
-
+  bootswatch: flatly

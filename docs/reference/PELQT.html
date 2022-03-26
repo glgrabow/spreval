@@ -14,7 +14,7 @@ sprinkler irrigation system considering uniformity (low quarter) and any losses 
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
     
 
-    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary"><div class="container">
     
     <a class="navbar-brand me-2" href="../index.html">spreval</a>
 
@@ -123,8 +123,8 @@ Utah State University, Logan, Utah. <a href="https://pdf.usaid.gov/pdf_docs/PNAA
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co">#see pp 41-43 of reference document</span></span>
 <span class="r-in"><span class="va">SI</span><span class="op">&lt;-</span><span class="cn">FALSE</span> <span class="co"># use U.S. customary units</span></span>
-<span class="r-in"><span class="va">left</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.94</span>,<span class="fl">0.80</span>,<span class="fl">0.59</span>,<span class="fl">0.61</span>,<span class="fl">0.50</span>,<span class="fl">0.42</span>,<span class="fl">0.33</span>,<span class="fl">0.07</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">right</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.73</span>,<span class="fl">0.81</span>,<span class="fl">0.92</span>,<span class="fl">0.64</span>,<span class="fl">0.50</span>,<span class="fl">0.27</span>,<span class="fl">0.20</span>,<span class="fl">0.13</span><span class="op">)</span></span>
+<span class="r-in"><span class="va">left</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.94</span>,<span class="fl">0.80</span>,<span class="fl">0.59</span>,<span class="fl">0.61</span>,<span class="fl">0.50</span>,<span class="fl">0.42</span>,<span class="fl">0.33</span>,<span class="fl">0.07</span><span class="op">)</span></span>
+<span class="r-in"><span class="va">right</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.73</span>,<span class="fl">0.81</span>,<span class="fl">0.92</span>,<span class="fl">0.64</span>,<span class="fl">0.50</span>,<span class="fl">0.27</span>,<span class="fl">0.20</span>,<span class="fl">0.13</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">ls</span><span class="op">&lt;-</span><span class="fl">224</span>;<span class="va">gs</span><span class="op">&lt;-</span><span class="fl">20</span></span>
 <span class="r-in"><span class="co">#first call travunif to return overlapped data given gage spacing and lane spacing</span></span>
 <span class="r-in"><span class="va">out</span><span class="op">&lt;-</span><span class="fu"><a href="travunif.html">travunif</a></span><span class="op">(</span><span class="va">ls</span>,<span class="va">gs</span>,<span class="va">left</span>,<span class="va">right</span><span class="op">)</span></span>
