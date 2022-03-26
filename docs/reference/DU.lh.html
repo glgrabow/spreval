@@ -12,7 +12,7 @@ vs. lower quarter as does DU.  Note that this computation uses the same method a
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
     
 
-    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
+    <nav class="navbar fixed-top navbar-dark navbar-expand-lg bg-primary"><div class="container">
     
     <a class="navbar-brand me-2" href="../index.html">spreval</a>
 
@@ -103,10 +103,10 @@ NA values will be removed in function.
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="co"># data below are volumes caught in ml.  Catch cans must be of</span></span>
 <span class="r-in"><span class="co"># equal surface area at top when using volume data</span></span>
-<span class="r-in"><span class="va">x</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">47</span>,<span class="fl">42</span>,<span class="fl">45</span>,<span class="fl">24</span>,<span class="fl">13</span>,<span class="fl">26</span>,<span class="fl">33</span>,<span class="fl">34</span>,<span class="fl">27</span>,<span class="fl">30</span>,<span class="fl">40</span>,<span class="fl">44</span>,<span class="fl">32</span>,<span class="fl">12</span>,<span class="fl">12</span><span class="op">)</span></span>
+<span class="r-in"><span class="va">x</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">47</span>,<span class="fl">42</span>,<span class="fl">45</span>,<span class="fl">24</span>,<span class="fl">13</span>,<span class="fl">26</span>,<span class="fl">33</span>,<span class="fl">34</span>,<span class="fl">27</span>,<span class="fl">30</span>,<span class="fl">40</span>,<span class="fl">44</span>,<span class="fl">32</span>,<span class="fl">12</span>,<span class="fl">12</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">xdulh</span><span class="op">&lt;-</span><span class="fu">DU.lh</span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
 <span class="r-in"><span class="co">#round results</span></span>
-<span class="r-in"><span class="va">dulhrnd</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/pkg/timeDate/man/base-round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">xdulh</span>,<span class="fl">2</span><span class="op">)</span></span>
+<span class="r-in"><span class="va">dulhrnd</span><span class="op">&lt;-</span><span class="fu"><a href="https://rdrr.io/r/base/Round.html" class="external-link">round</a></span><span class="op">(</span><span class="va">xdulh</span>,<span class="fl">2</span><span class="op">)</span></span>
 <span class="r-in"><span class="va">xdulh</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 71.58351</span>
 <span class="r-in"><span class="va">dulhrnd</span></span>
