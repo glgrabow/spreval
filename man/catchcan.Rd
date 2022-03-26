@@ -4,7 +4,8 @@
 \title{catch can data
 %%   ~~ data name/kind ... ~~
 }
-\description{Three catch can data sets, one each for lateral, hose pull, and solid set sprinkler systems.
+\description{Four catch can data sets, one each for lateral, hose pull, and solid set agricultural
+sprinkler systems, and one for a landscape (turf) irrigation system.
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~
 }
 \usage{data("catchcan")
@@ -20,7 +21,7 @@
     \item{\code{depth}}{collected depth, in.}
 
     \item{\code{catchcan$solid.set}}{4x4 matrix of catch can data, units are in. Can grid spacing of 20 ft x 20 ft inside of 4 operating sprinklers on 80x80 ft sprinkler x lateral spacing.}
-    \item{\code{catchcan$landscape}}{9X7 matrix of catch can data, units are in ml.  Can grid spacing of 9 X 9 ft.}
+    \item{\code{catchcan$landscape}}{9X7 matrix of catch can data, units are in ml.  Can opening is 72 mm (7.2 cm). Can grid spacing of 9 ft X 9 ft.}
 
      }
      }
