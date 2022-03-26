@@ -45,8 +45,8 @@ Utah. (<https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf>)
 
 ## Installation
 
-You can install the released version of spreval (release data
-2021-07-08) from [CRAN](https://CRAN.R-project.org) with:
+You can install the newest released version of spreval (release data
+2022-03-23) from [CRAN](https://CRAN.R-project.org) with:
 
 ``` r
 install.packages("spreval")
