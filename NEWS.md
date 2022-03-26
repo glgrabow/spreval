@@ -1,11 +1,11 @@
-# Development version with added functions for center pivot systems
-* packageName 1.2.0.900 (TBA).
+
+# {spreval} 1.2.0.900 (TBA).
+Development version with added functions for center pivot systems
 ---
 
-# Second release in CRAN (2022-3-23) with bugs fixes and added features
-* packageName 1.1.0.
-This addresses bugs and adds some minor features. 
-
+# {spreval} 1.1.0
+Second release in CRAN (2022-3-23) with bugs fixes and added features.
+ 
 ## Bugs 
 Values returned from spreval::eff, i.e., "appeff"" and "appadeq" have been 
 corrected.  
@@ -19,19 +19,20 @@ along with an accompanying landscape irrigation data added to the catchcan
 dataset as "catchcan$landscape". 
 ---
 
-# Initial released version in CRAN (2021-07-05)
-*  packageName 1.0.0.
+# {spreval} 1.0.0
+Initial released version in CRAN (2021-07-05)
+
 ---
 
-# spreval initial development version 
-*  packageName 1.0.0.900.
+# {spreval} 0.1.0.900
+initial development version 
 
 * added vignette for traveling systems.
 
 [package in github](https://github.com/glgrabow/spreval/blob/master/packages/spreval_0.1.0.900.tar.gz)
 ---
 
-# packageName 0.1 (pre-release)
+# {spreval} 0.1 (pre-release)
 
 * 2 vignettes completed.
 
