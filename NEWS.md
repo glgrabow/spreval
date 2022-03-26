@@ -1,9 +1,9 @@
 # Development version with added functions for center pivot systems
-* packageName 1.2.0.900
+* packageName 1.2.0.900 (TBA).
 ---
 
 # Second release in CRAN (2022-3-23) with bugs fixes and added features
-* packageName 1.1.0
+* packageName 1.1.0.
 This addresses bugs and adds some minor features. 
 
 ## Bugs 
@@ -20,19 +20,19 @@ dataset as "catchcan$landscape".
 ---
 
 # Initial released version in CRAN (2021-07-05)
-*  packageName 1.0.0
+*  packageName 1.0.0.
 ---
 
 # spreval initial development version 
-*  packageName 1.0.0.900
+*  packageName 1.0.0.900.
 
-* added vignette for traveling systems
+* added vignette for traveling systems.
 
 [package in github](https://github.com/glgrabow/spreval/blob/master/packages/spreval_0.1.0.900.tar.gz)
 ---
 
 # packageName 0.1 (pre-release)
 
-* 2 vignettes completed
+* 2 vignettes completed.
 
-* added vignette for hard-hose traveler forthcoming
+* added vignette for hard-hose traveler forthcoming.
