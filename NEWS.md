@@ -2,7 +2,7 @@
 * v.1.2.0.900
 ---
 
-# Second release with bugs fixes and added features
+# Second release in CRAN (2022-3-23) with bugs fixes and added features
 * v.1.1.0
 This addresses bugs and adds some minor features. Values returned from  spreval::eff, i.e.,
 "appeff"" and "appadeq" have been corrected.  Most functions that output plots, or allow optional plots
