@@ -1,0 +1,13 @@
+pandoc: 2.7.3
+pkgdown: 2.0.2
+pkgdown_sha: ~
+articles:
+  landscape: landscape.html
+  lateral-move: lateral-move.html
+  solid-set: solid-set.html
+  traveling-sys: traveling-sys.html
+last_built: 2022-03-26T19:21Z
+urls:
+  reference: https://glgrabow.github.io/spreval/reference
+  article: https://glgrabow.github.io/spreval/articles
+
