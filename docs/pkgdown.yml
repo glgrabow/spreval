@@ -6,6 +6,8 @@ articles:
   lateral-move: lateral-move.html
   solid-set: solid-set.html
   traveling-sys: traveling-sys.html
+news:
+  one_page: false
 last_built: 2022-03-26T17:47Z
 urls:
   reference: https://glgrabow.github.io/spreval/reference
