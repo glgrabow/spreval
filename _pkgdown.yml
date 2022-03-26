@@ -1,4 +1,6 @@
-url: https://glgrabow.github.io/spreval/
+title: spreval
+url: https://glgrabow.github.io/spreval
 template:
-  bootstrap: 5
-  bootswatch: flatly
+  params:
+    bootswatch: flatly
+    ganalytics: UA-12345678-0
