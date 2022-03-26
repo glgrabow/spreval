@@ -1,4 +1,4 @@
-# development version with added functions for center pivot systems
+# Development version with added functions for center pivot systems
 * v.1.2.0.900
 ---
 
