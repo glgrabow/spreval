@@ -1,19 +1,22 @@
 \name{DU.pivot}
 \alias{DU.pivot}
 %- Also NEED an '\alias' for EACH other topic documented here.
-\title{Distribution Uniformity for Center Pivot Systems
+\title{Distribution Uniformity of Center Pivot Systems
 %%  ~~function to do ... ~~
 }
 \description{
-%%  ~~ A concise (1-5 lines) description of what the function does. ~~
+Computes distribution uniformity (DU) of low quarter for center pivot systems using
+catch can (collector) data.  Computation differs from fuction spreval::DU as
+collector data is weighted by the area it represents in a pivoting system.
 }
 \usage{
 DU.pivot(x)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{x}{
-%%     ~~Describe \code{x} here~~
+  \item{x}{numeric array of catch can data.  Catch cans must have equidistant
+  spacing.
+
 }
 }
 \details{
@@ -27,12 +30,17 @@ DU.pivot(x)
 %% ...
 }
 \references{
+Mirriam and Keller, 1978. Farm System Irrigation Evaluation: A Guide for Management.
+PP 41-43. Utah State University, Logan, Utah. https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf
 %% ~put references to the literature/web site here ~
 }
 \author{
 %%  ~~who you are~~
 }
-\note{
+\note{If catch cans (collectors) are not placed near the pivot point, or have
+incomplete catches (system not fully rotated through collectors) those must be
+entered as missing (NA) to insure appropriate weighting of data from completely
+collected containers.
 %%  ~~further notes~~
 }
 
