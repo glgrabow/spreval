@@ -34,9 +34,8 @@ Mirriam and Keller, 1978. Farm System Irrigation Evaluation: A Guide for Managem
 PP 41-43. Utah State University, Logan, Utah. https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf
 %% ~put references to the literature/web site here ~
 }
-\author{
-%%  ~~who you are~~
-}
+\author{Garry Grabow \email{glgrabow@ncsu.edu}
+
 \note{If catch cans (collectors) are not placed near the pivot point, or have
 incomplete catches (system not fully rotated through collectors) those must be
 entered as missing (NA) to insure appropriate weighting of data from completely
