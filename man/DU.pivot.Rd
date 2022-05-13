@@ -49,22 +49,15 @@ collected containers.
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-##---- Should be DIRECTLY executable !! ----
-##-- ==>  Define data, use random,
-##--	or do  help(data=index)  for the standard data sets.
 # data from Mirriam and Keller, p.85 (see references). Values in mls.
+
 pivot.data<-c(NA,NA,NA,NA,NA,NA,NA,NA,141,160,122,130,143,150,134,123,144,138,
 135,207,122,114,115,138,109,113,114,126,116,107,122,140,117,105,111,125,118,127,
 115,147,127,122,118,144,112,124,126,151,120,122,115,143,124,114,115,160,120,110,
 109,117,85,194,148,82)
-out<-DU.pivot(pivot.data)
-out # view answer
->
 
-## The function is currently defined as
-function (x)
-{
-  }
+out<-DU.pivot(pivot.data)
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory (show via RShowDoc("KEYWORDS")):
