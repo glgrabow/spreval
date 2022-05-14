@@ -4,13 +4,15 @@
 \title{catch can data
 %%   ~~ data name/kind ... ~~
 }
-\description{Four catch can data sets, one each for lateral, hose pull, and solid set agricultural
+\description{
+Five catch can data sets, one each for lateral, hose pull, and solid set agricultural
 sprinkler systems, and one for a landscape (turf) irrigation system.
 %%  ~~ A concise (1-5 lines) description of the dataset. ~~
 }
 \usage{data("catchcan")
 }
-\format{A named list of 4 catch can data sets; lateral, traveler, solid.set and landscape.
+\format{A named list of 4 catch can data sets for the following systems; lateral-move,
+traveler, solid set, landscape, and center pivot.
     \describe{
     \item{\code{catchcan$lateral}}{6x7 matrix of catch can data, units are in./hr. Grid spacing of 10 ft x 10 ft}
     \item{\code{ln}}{a numeric vector of catch can data - nth can to left of lateral}
@@ -22,22 +24,29 @@ sprinkler systems, and one for a landscape (turf) irrigation system.
 
     \item{\code{catchcan$solid.set}}{4x4 matrix of catch can data, units are in. Can grid spacing of 20 ft x 20 ft inside of 4 operating sprinklers on 80x80 ft sprinkler x lateral spacing.}
     \item{\code{catchcan$landscape}}{9X7 matrix of catch can data, units are in ml.  Can opening is 72 mm (7.2 cm). Can grid spacing of 9 ft X 9 ft.}
+    \item{\code{catchcan$MKpivot}}{array of catch can data, units are in ml.  Vol./depth 250 ml/in. (250 ml/25.4 mm). Container
+    spacing of 22.5 ft (6.86 m), with first can position at 5 ft (1.52 m) from pivot point.}
 
      }
      }
 
-\source{(lateral)Form II-1, item 10, p.29.
+\source{(lateral) Form II-1, item 10, p.29.
 Utah State University, Logan, Utah. \url{https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf}
 %%  ~~ reference to a publication or URL from which the data were obtained ~~
 
-(traveler)Table 1, pg. 8.
+(traveler) Table 1, pg. 8.
 Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997b.  Field calibration procedures for animal wastewater application equipment, hard hose and cable tow traveler irrigation system. NC Cooperative Extension Service publication  AG-553-2.  Raleigh, NC.
 
-(solid set)Work Sheet 1. p. 13.
+(solid set) Work Sheet 1. p. 13.
 Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997a.  Field calibration procedures for animal wastewater application equipment, stationary sprinkler irrigation system. NC Cooperative Extension Service publication AG 553-1.  Raleigh, NC.
+
+(landscape) Grabow, G.L., 2021.  "Landscape Sprinkler Systems"" (vignette) \url{https://glgrabow.github.io/spreval/articles/landscape.html}.  Data collected 6 Aug. 2021, Resurrection Lutheran Church, Cary, NC.
+
+
+(center pivot) Form V-1. item 17, p. 85.
+Utah State University, Logan, Utah. \url{https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf}
 }
-\references{Mirriam and Keller, 1978. Farm System Irrigation Evaluation: A Guide for Management.
-Form II-1, item 10, p.29.
+\references{Merriam and Keller, 1978. Farm System Irrigation Evaluation: A Guide for Management.
 Utah State University, Logan, Utah. \url{https://pdf.usaid.gov/pdf_docs/PNAAG745.pdf}
 
 Evans, R.O., Barker J.C., Smith J.T., Sheffield R.E. 1997b.  Field calibration procedures for animal wastewater application equipment, hard hose and cable tow traveler irrigation system. NC Cooperative Extension Service publication  AG-553-2.  Raleigh, NC.

@@ -19,10 +19,12 @@ DU.pivot(x)
 
 }
 }
+
 \details{
 %%  ~~ If necessary, more details than the description above ~~
 }
-\value{
+\value{Distribution Uniformity (weighted low quarter) of Center Pivot system
+in percentage.
 %%  ~Describe the value returned
 %%  If it is a LIST, use
 %%  \item{comp1 }{Description of 'comp1'}
@@ -35,13 +37,12 @@ PP 41-43. Utah State University, Logan, Utah. https://pdf.usaid.gov/pdf_docs/PNA
 %% ~put references to the literature/web site here ~
 }
 \author{Garry Grabow \email{glgrabow@ncsu.edu}
-
-\note{If catch cans (collectors) are not placed near the pivot point, or have
+}
+\note
+{If catch cans (collectors) are not placed near the pivot point, or have
 incomplete catches (system not fully rotated through collectors) those must be
 entered as missing (NA) to insure appropriate weighting of data from completely
-collected containers.
-%%  ~~further notes~~
-}
+collected containers.}
 
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
@@ -49,15 +50,13 @@ collected containers.
 %% ~~objects to See Also as \code{\link{help}}, ~~~
 }
 \examples{
-# data from Mirriam and Keller, p.85 (see references). Values in mls.
-
-pivot.data<-c(NA,NA,NA,NA,NA,NA,NA,NA,141,160,122,130,143,150,134,123,144,138,
-135,207,122,114,115,138,109,113,114,126,116,107,122,140,117,105,111,125,118,127,
-115,147,127,122,118,144,112,124,126,151,120,122,115,143,124,114,115,160,120,110,
-109,117,85,194,148,82)
-
-out<-DU.pivot(pivot.data)
-
+# data from catchcan data set
+# Center pivot data from from Mirriam and Keller, p.85 (see references).
+# Values in mls.
+  pivot.data <- catchcan$MKpivot.data
+  out<-DU.pivot(pivot.data)
+  out # print DU
+  eda.shape (pivot.data) # distribution of raw catch data
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory (show via RShowDoc("KEYWORDS")):
