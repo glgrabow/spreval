@@ -53,7 +53,8 @@ collected containers.}
 # data from catchcan data set
 # Center pivot data from from Mirriam and Keller, p.85 (see references).
 # Values in mls.
-  pivot.data <- catchcan$MKpivot.data
+  data(catchcan)
+  pivot.data <- catchcan$MKpivot
   out<-DU.pivot(pivot.data)
   out # print DU
   eda.shape (pivot.data) # distribution of raw catch data
