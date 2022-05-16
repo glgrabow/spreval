@@ -18,6 +18,6 @@
   lqind<-which.min((abs(cumsort.posno-lqsposno))) # find index of lqsorted
   lq<-cumsort.wtd[lqind]/cumsort.posno[lqind]
   sys<-swtd/sposno # weighted system average catch
-  DU<-lq/sys
+  DU<-lq/sys*100 # convert to percentage
 }
 
