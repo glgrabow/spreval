@@ -56,7 +56,7 @@ x<-seq(-35,25,10) # x=0 is lateral position
 y<-seq(55,5,-10) #plan view top to bottom
 grd<-list(x,y) # prepare list for make.surface function [fields]
 grid<-make.surface.grid(grd)
-plot(grid)
+plot(grid, ylim=c(0,max(y))) #ylim to provide room for labeling at bottom
 labels<-matrix(t(use.data),ncol=1)#transpose matrix and stack rows into 1 column
 text(grid[ ,1],grid[ ,2],labels,cex=0.8,pos=1) # plot catch data at collection point
 
@@ -64,6 +64,6 @@ text(grid[ ,1],grid[ ,2],labels,cex=0.8,pos=1) # plot catch data at collection p
 cdata<-cbind(grid[ ,1],grid[ ,2],labels) #construct required catch can data matrix
 sp.x<-rep(0,3);sp.y<-seq(60,0,-30)# sprinkler spacing (y) = 30 ft, plot top to bottom
 sploc<-cbind(sp.x,sp.y) #construct required sprinkler location matrix
-plotss(cdata,sploc)
+plotss(cdata,sploc,asp=1) # true x,y proportion with asp=1
 }
 \keyword{datasets}
